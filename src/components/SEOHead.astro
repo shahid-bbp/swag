@@ -29,7 +29,7 @@ const localBusinessSchema = {
   name: siteConfig.legalName,
   alternateName: siteConfig.name,
   url: siteConfig.siteUrl,
-  logo: `${siteConfig.siteUrl}/images/brand/logo.svg`,
+  logo: `${siteConfig.siteUrl}/images/brand/logo.png`,
   image: `${siteConfig.siteUrl}/images/hero/hero-beauty.jpg`,
   description: siteConfig.description,
   telephone: siteConfig.phone,
@@ -61,6 +61,7 @@ const breadcrumbSchema = breadcrumbs.length > 0 ? {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="icon" type="image/svg+xml" href="/images/brand/logo-mark.svg" />
   
   <title>{fullTitle}</title>
