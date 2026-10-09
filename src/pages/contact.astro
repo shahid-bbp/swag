@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EnquiryForm from '../components/EnquiryForm.astro';
+import { siteConfig } from '../data/site';
+
+const seo = {
+  title: "Contact & Appointments | S For Swag Salon Kochi",
+  description: "Book an appointment or visit S For Swag on MG Road, Opp. Seematti, Kochi. Call +91 90610 77722 or enquire via WhatsApp. Bridal, hair, nail, and wellness consultations.",
+  canonical: `${siteConfig.siteUrl}/contact/`,
+};
+
+const breadcrumbs = [{ name: 'Contact', url: '/contact/' }];
+---
+
+<BaseLayout seo={seo}>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <!-- Hero Header -->
+  <section class="py-16 sm:py-24 bg-[#EFE2CE] border-b border-[#E8D5B7] relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs uppercase tracking-[0.24em] text-[#8E652E] font-semibold">Guest Concierge</span>
+        <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.1]">
+          We Look Forward to <br />
+          <span class="italic font-normal">Welcoming You</span>
+        </h1>
+        <p class="text-sm sm:text-base text-[#5C4D3E] leading-relaxed">
+          Whether planning your signature bridal look, seeking a revitalizing hair spa treatment, or scheduling your regular grooming, our concierge team is at your service.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Grid & Form -->
+  <section class="py-20 bg-[#F7F0E4]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        <!-- Left: Verified Contact Information (Span 5) -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <span class="text-xs uppercase tracking-[0.2em] font-semibold text-[#A77A3F]">Visit Our Salon</span>
+            <h2 class="text-3xl font-serif text-[#28221C] mt-1">Salon Details</h2>
+          </div>
+
+          <!-- Address Card -->
+          <div class="bg-[#FFFCF6] border border-[#E8D5B7] rounded-3xl p-6 sm:p-8 space-y-6 shadow-xs">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-[#EFE2CE] border border-[#A77A3F]/30 flex items-center justify-center text-[#A77A3F] shrink-0 mt-1">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="space-y-1">
+                <span class="text-[11px] uppercase tracking-wider font-semibold text-[#8E7864] block">Official Address</span>
+                <p class="text-sm text-[#4A321C] leading-relaxed font-medium">
+                  {siteConfig.address.floor}, {siteConfig.address.building},<br />
+                  {siteConfig.address.street},<br />
+                  {siteConfig.address.landmark},<br />
+                  {siteConfig.address.city}, {siteConfig.address.district},<br />
+                  {siteConfig.address.state} – {siteConfig.address.pincode}
+                </p>
+                <div class="pt-2">
+                  <a
+                    href={siteConfig.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#A77A3F] hover:text-[#8E652E]"
+                  >
+                    <span>Get Directions on Google Maps</span>
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="flex items-start gap-4 pt-4 border-t border-[#F7F0E4]">
+              <div class="w-10 h-10 rounded-full bg-[#EFE2CE] border border-[#A77A3F]/30 flex items-center justify-center text-[#A77A3F] shrink-0 mt-1">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="space-y-1">
+                <span class="text-[11px] uppercase tracking-wider font-semibold text-[#8E7864] block">Telephone</span>
+                <a href={`tel:${siteConfig.phone}`} class="text-sm font-semibold text-[#4A321C] hover:text-[#A77A3F] transition-colors block">
+                  {siteConfig.phoneFormatted}
+                </a>
+                <p class="text-[11px] text-[#8E7864]">Direct reception line for appointments & enquiries</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-start gap-4 pt-4 border-t border-[#F7F0E4]">
+              <div class="w-10 h-10 rounded-full bg-[#EFE2CE] border border-[#A77A3F]/30 flex items-center justify-center text-[#A77A3F] shrink-0 mt-1">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="space-y-1">
+                <span class="text-[11px] uppercase tracking-wider font-semibold text-[#8E7864] block">Email Inquiries</span>
+                <a href={`mailto:${siteConfig.email}`} class="text-sm font-semibold text-[#4A321C] hover:text-[#A77A3F] transition-colors block">
+                  {siteConfig.email}
+                </a>
+              </div>
+            </div>
+
+            <!-- WhatsApp Direct -->
+            <div class="flex items-start gap-4 pt-4 border-t border-[#F7F0E4]">
+              <div class="w-10 h-10 rounded-full bg-[#25D366]/10 border border-[#25D366]/30 flex items-center justify-center text-[#25D366] shrink-0 mt-1">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+              </div>
+              <div class="space-y-1">
+                <span class="text-[11px] uppercase tracking-wider font-semibold text-[#8E7864] block">WhatsApp Concierge</span>
+                <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-[#25D366] hover:underline block">
+                  Chat with S For Swag
+                </a>
+              </div>
+            </div>
+
+            <!-- Operating Hours Notice -->
+            <div class="pt-4 border-t border-[#F7F0E4] bg-[#F7F0E4]/60 p-4 rounded-xl text-xs text-[#5C4D3E]">
+              <span class="font-semibold text-[#4A321C] block mb-1">Appointment Timing Notice:</span>
+              <p>{siteConfig.openingHoursNote}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form (Span 7) -->
+        <div class="lg:col-span-7" id="appointment">
+          <EnquiryForm
+            title="Online Appointment Booking"
+            subtitle="Fill in your details below and our team will get in touch to confirm your appointment time."
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'beauty-lounge')!;
+
+const seo = {
+  title: "Facials & Skin Clean Up Pricing | S For Swag Beauty Lounge Kochi",
+  description: "Basic Clean Up (₹800), Classic (₹1,500), Organic (₹2,500), Fruit Facial (₹2,500), and Natural Facial (₹5,000) at S For Swag Salon, MG Road Kochi.",
+  canonical: `${siteConfig.siteUrl}/beauty-lounge/facials/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} activeSubcategorySlug="facials" />
+</BaseLayout>

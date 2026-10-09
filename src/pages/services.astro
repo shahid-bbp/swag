@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EnquiryForm from '../components/EnquiryForm.astro';
+import { servicesData } from '../data/services';
+import { siteConfig } from '../data/site';
+
+const seo = {
+  title: "Salon Services & Pricing Menu | S For Swag Kochi",
+  description: "Browse the complete salon service menu of S For Swag on MG Road, Kochi. Verified starting prices for hair treatments, colouring, nail extensions, spa, facials, and bridal packages.",
+  canonical: `${siteConfig.siteUrl}/services/`,
+};
+
+const breadcrumbs = [{ name: 'Services', url: '/services/' }];
+---
+
+<BaseLayout seo={seo}>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <!-- Hero Banner -->
+  <section class="py-16 sm:py-24 bg-[#EFE2CE] border-b border-[#E8D5B7] relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs uppercase tracking-[0.24em] text-[#8E652E] font-semibold">Service Directory</span>
+        <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.1]">
+          Signature Services <br />
+          <span class="italic font-normal">& Treatment Menus</span>
+        </h1>
+        <p class="text-base sm:text-lg text-[#5C4D3E] font-serif italic">
+          "From everyday grooming to once-in-a-lifetime bridal transformations."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Grid -->
+  <section class="py-20 bg-[#F7F0E4]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-20">
+      
+      {servicesData.map((category, index) => {
+        const isReversed = index % 2 === 1;
+        return (
+          <div class={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center ${isReversed ? 'lg:flex-row-reverse' : ''}`}>
+            
+            <!-- Visual Card (Span 5) -->
+            <div class={`lg:col-span-5 ${isReversed ? 'lg:order-2' : ''}`}>
+              <div class="relative overflow-hidden rounded-3xl border-2 border-[#FFFCF6] shadow-xl group">
+                <img
+                  src={category.image}
+                  alt={category.imageAlt}
+                  class="w-full h-auto object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700"
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#28221C]/40 via-transparent to-transparent"></div>
+                <div class="absolute bottom-5 left-6 text-[#FFFCF6]">
+                  <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#E8D5B7] block">S For Swag</span>
+                  <span class="text-xl font-serif font-bold">{category.title}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content Details (Span 7) -->
+            <div class={`lg:col-span-7 space-y-6 ${isReversed ? 'lg:order-1' : ''}`}>
+              <div class="space-y-2">
+                <span class="text-xs uppercase tracking-[0.2em] font-semibold text-[#A77A3F]">{category.tagline}</span>
+                <h2 class="text-3xl sm:text-4xl font-serif text-[#28221C]">{category.title}</h2>
+              </div>
+              
+              <p class="text-sm sm:text-base text-[#5C4D3E] leading-relaxed">
+                {category.fullDesc}
+              </p>
+
+              <!-- Subcategories preview pills -->
+              <div class="space-y-2">
+                <span class="text-[11px] uppercase tracking-wider font-semibold text-[#8E7864] block">Key Offerings:</span>
+                <div class="flex flex-wrap gap-2">
+                  {category.subcategories.map((sub) => (
+                    <a
+                      href={`/${category.slug}/${sub.slug}/`}
+                      class="text-xs bg-[#FFFCF6] hover:bg-[#A77A3F] hover:text-[#FFFCF6] text-[#4A321C] border border-[#E8D5B7] px-3.5 py-1.5 rounded-full transition-all"
+                    >
+                      {sub.title} &rarr;
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div class="pt-2 flex items-center gap-4">
+                <a href={`/${category.slug}/`} class="luxury-pill-btn luxury-pill-gold">
+                  <span>View Full Menu & Pricing</span>
+                  <span>&rarr;</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        );
+      })}
+
+      <!-- Brochure Menu Notes Box -->
+      <div class="p-8 rounded-3xl bg-[#EFE2CE]/80 border border-[#E8D5B7] space-y-4">
+        <h3 class="text-base uppercase tracking-widest font-bold text-[#4A321C]">
+          Salon Pricing Policy & Menu Notes
+        </h3>
+        <p class="text-xs text-[#5C4D3E] leading-relaxed">
+          {siteConfig.pricingDisclaimer}
+        </p>
+      </div>
+
+      <!-- Booking Form -->
+      <div>
+        <EnquiryForm />
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

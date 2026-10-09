@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'nail-studio')!;
+
+const seo = {
+  title: "Nail Art & Add-ons | Chrome, Ombré, Cat Eye S For Swag Kochi",
+  description: "Chrome mirror finish (₹1,500++), Cat Eye (₹500++), Ombré (₹800++), 3D art (₹250++), themed nails at S For Swag Salon, MG Road Kochi.",
+  canonical: `${siteConfig.siteUrl}/nail-studio/nail-addons/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} activeSubcategorySlug="nail-addons" />
+</BaseLayout>

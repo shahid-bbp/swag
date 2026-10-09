@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" fill="none" class="w-full h-auto">
+  <!-- Monogram S with refined serif curves -->
+  <g transform="translate(4, 2)">
+    <path d="M26 12 C24 6 18 4 13 4 C6 4 2 8 2 13 C2 22 28 20 28 36 C28 46 20 52 10 52 C4 52 1 48 0 44 L3.8 42.5 C4.8 45.5 7.2 48 10.5 48 C16.5 48 23 44 23 36 C23 25 1 27 1 13 C1 5 7 0 14 0 C20 0 26 3 28 8 Z" fill="url(#goldGrad)" />
+    <!-- Delicate Flourish -->
+    <path d="M25 8 C23 3 17 1 12 1" stroke="#A77A3F" stroke-width="0.8" stroke-linecap="round" fill="none" />
+    <circle cx="27" cy="10" r="1" fill="#A77A3F" />
+  </g>
+  <!-- Text: S FOR SWAG -->
+  <text x="46" y="30" font-family="'Cormorant Garamond', serif" font-size="21" font-weight="600" letter-spacing="0.12em" fill="#4A321C">S FOR SWAG</text>
+  <!-- Subtitle: THE SALON -->
+  <text x="48" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="500" letter-spacing="0.32em" fill="#A77A3F">THE SALON</text>
+  <!-- Sub-tagline: BY SEEMATTI -->
+  <text x="48" y="55" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.28em" fill="#8E7864">BY SEEMATTI</text>
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C5A059" />
+      <stop offset="50%" stop-color="#A77A3F" />
+      <stop offset="100%" stop-color="#7B5625" />
+    </linearGradient>
+  </defs>
+</svg>

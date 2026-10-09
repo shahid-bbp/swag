@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'beauty-lounge')!;
+
+const seo = {
+  title: "Manicure Services & Pricing | S For Swag Beauty Lounge Kochi",
+  description: "Express manicure (₹700), Classic Spa manicure (₹1,200), Advanced (₹1,800), and Signature Manicure (₹2,500) at S For Swag Salon, MG Road Kochi.",
+  canonical: `${siteConfig.siteUrl}/beauty-lounge/manicure/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} activeSubcategorySlug="manicure" />
+</BaseLayout>

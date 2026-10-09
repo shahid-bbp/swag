@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'beauty-lounge')!;
+
+const seo = {
+  title: "Waxing Services (Strip & Stripless) | S For Swag Salon Kochi",
+  description: "Gentle stripless hard waxing for face/underarms and hygienic strip waxing for arms, legs, back, and full body at S For Swag Salon, MG Road Kochi.",
+  canonical: `${siteConfig.siteUrl}/beauty-lounge/waxing/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} activeSubcategorySlug="waxing" />
+</BaseLayout>

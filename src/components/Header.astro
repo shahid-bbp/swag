@@ -1,0 +1,151 @@
+---
+import { navLinks, siteConfig } from '../data/site';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header id="site-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-4 sm:px-8 bg-[#F7F0E4]/90 backdrop-blur-md border-b border-[#E8D5B7]/60">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Brand Logo -->
+    <a href="/" class="group flex items-center gap-3 transition-transform hover:opacity-95" aria-label="S For Swag Home">
+      <img src="/images/brand/logo.svg" alt="S For Swag The Salon Logo" class="h-10 sm:h-12 w-auto" width="220" height="50" />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-8" aria-label="Main Navigation">
+      {navLinks.map((link) => {
+        const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+        return (
+          <a
+            href={link.href}
+            class={`text-[0.875rem] uppercase tracking-[0.16em] font-medium transition-colors relative py-1 ${
+              isActive ? 'text-[#A77A3F] font-semibold' : 'text-[#4A321C] hover:text-[#A77A3F]'
+            }`}
+          >
+            {link.label}
+            {isActive && (
+              <span class="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#A77A3F]" />
+            )}
+          </a>
+        );
+      })}
+    </nav>
+
+    <!-- Desktop Actions -->
+    <div class="hidden md:flex items-center gap-4">
+      <a
+        href="/contact/#appointment"
+        class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#A77A3F] text-[#4A321C] hover:bg-[#A77A3F] hover:text-[#FFFCF6] text-[0.8125rem] tracking-[0.14em] uppercase font-medium transition-all duration-300 shadow-xs"
+      >
+        <span>Book Appointment</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Mobile Hamburger Button -->
+    <button
+      id="mobile-menu-btn"
+      type="button"
+      class="md:hidden p-2 text-[#4A321C] hover:text-[#A77A3F] focus:outline-none focus:ring-2 focus:ring-[#A77A3F] rounded-lg"
+      aria-label="Toggle mobile menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden fixed top-[72px] left-0 w-full h-[calc(100vh-72px)] bg-[#F7F0E4] border-t border-[#E8D5B7] px-6 py-8 flex flex-col justify-between overflow-y-auto"
+  >
+    <div class="flex flex-col gap-6">
+      <span class="text-[0.6875rem] uppercase tracking-[0.24em] text-[#8E7864] font-semibold">Navigation</span>
+      {navLinks.map((link) => {
+        const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+        return (
+          <a
+            href={link.href}
+            class={`text-xl font-serif py-1 transition-colors ${
+              isActive ? 'text-[#A77A3F] font-bold' : 'text-[#28221C] hover:text-[#A77A3F]'
+            }`}
+          >
+            {link.label}
+          </a>
+        );
+      })}
+
+      <div class="pt-4 border-t border-[#E8D5B7]/80 flex flex-col gap-3">
+        <span class="text-[0.6875rem] uppercase tracking-[0.24em] text-[#8E7864] font-semibold">Services</span>
+        <a href="/beauty-lounge/" class="text-sm text-[#4A321C] hover:text-[#A77A3F]">Beauty Lounge</a>
+        <a href="/nail-studio/" class="text-sm text-[#4A321C] hover:text-[#A77A3F]">Nail Studio</a>
+        <a href="/hair-artistry-spa/" class="text-sm text-[#4A321C] hover:text-[#A77A3F]">Hair Artistry & Spa</a>
+        <a href="/body-wellness-spa/" class="text-sm text-[#4A321C] hover:text-[#A77A3F]">Body Wellness Spa</a>
+        <a href="/bridal/" class="text-sm text-[#4A321C] hover:text-[#A77A3F]">Bridal Studio & Packages</a>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-[#E8D5B7] flex flex-col gap-4">
+      <a
+        href="/contact/#appointment"
+        class="w-full text-center py-3 rounded-full bg-[#A77A3F] text-[#FFFCF6] text-xs uppercase tracking-[0.16em] font-medium shadow-sm hover:bg-[#8E652E] transition-colors"
+      >
+        Book Appointment
+      </a>
+      <div class="flex items-center justify-between text-xs text-[#6C5D4F] pt-2">
+        <a href={`tel:${siteConfig.phone}`} class="hover:text-[#A77A3F]">{siteConfig.phoneFormatted}</a>
+        <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer" class="hover:text-[#A77A3F] font-medium">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  if (menuBtn && mobileMenu && hamburgerIcon && closeIcon) {
+    menuBtn.addEventListener('click', () => {
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!isExpanded));
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+      document.body.classList.toggle('overflow-hidden', !isExpanded);
+    });
+
+    // Close when a link inside mobile menu is clicked
+    const links = mobileMenu.querySelectorAll('a');
+    links.forEach(l => {
+      l.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('overflow-hidden');
+      });
+    });
+  }
+
+  // Header scroll shadow and blur adjustment
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    if (!header) return;
+    if (window.scrollY > 20) {
+      header.classList.add('shadow-xs', 'bg-[#F7F0E4]/95');
+    } else {
+      header.classList.remove('shadow-xs');
+    }
+  }, { passive: true });
+</script>

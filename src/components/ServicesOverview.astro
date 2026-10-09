@@ -1,0 +1,144 @@
+---
+interface ServiceCardItem {
+  title: string;
+  href: string;
+  image: string;
+  alt: string;
+  icon: string;
+}
+
+const serviceCards: ServiceCardItem[] = [
+  {
+    title: "Hair Care",
+    href: "/hair-artistry-spa/",
+    image: "/images/hair/hair-care.webp",
+    alt: "Flowing healthy hair styling at S For Swag Hair Artistry",
+    icon: "hair",
+  },
+  {
+    title: "Nail Care",
+    href: "/nail-studio/",
+    image: "/images/nails/nail-care.webp",
+    alt: "Champagne glitter nail art at S For Swag Nail Studio",
+    icon: "nail",
+  },
+  {
+    title: "Beauty Care",
+    href: "/beauty-lounge/",
+    image: "/images/beauty/beauty-care.webp",
+    alt: "Dewy radiant facial treatment at S For Swag Beauty Lounge",
+    icon: "beauty",
+  },
+  {
+    title: "Bridal Session",
+    href: "/bridal/",
+    image: "/images/bridal/bridal-main.webp",
+    alt: "Traditional Kerala bridal makeup and jewelry at S For Swag Bridal Studio",
+    icon: "bridal",
+  },
+  {
+    title: "Spa & Wellness",
+    href: "/body-wellness-spa/",
+    image: "/images/spa/spa-wellness.webp",
+    alt: "Relaxing wellness massage at S For Swag Spa",
+    icon: "spa",
+  },
+];
+---
+
+<section class="py-20 lg:py-28 bg-[#F7F0E4] border-t border-[#E8D5B7]/60">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    
+    <!-- Header Block -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div class="space-y-3 max-w-xl">
+        <div class="flex items-center gap-3">
+          <span class="text-xs uppercase tracking-[0.24em] text-[#8E652E] font-semibold">Our Services</span>
+          <span class="w-12 h-[1px] bg-[#A77A3F]"></span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-serif text-[#28221C]">Care for Every You</h2>
+        <p class="text-sm sm:text-base text-[#5C4D3E] leading-relaxed">
+          From everyday essentials to special moments, our curated services are designed to bring out your best, always.
+        </p>
+      </div>
+
+      <div>
+        <a
+          href="/services/"
+          class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] font-semibold text-[#8E652E] hover:text-[#4A321C] transition-colors group"
+        >
+          <span>View All Services</span>
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- 5 Arched Cards Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+      {serviceCards.map((card) => (
+        <a
+          href={card.href}
+          class="group flex flex-col bg-[#FFFCF6] rounded-t-full rounded-b-2xl overflow-hidden border border-[#E8D5B7] hover:border-[#A77A3F] transition-all duration-500 hover:-translate-y-2 hover:shadow-xl p-2 sm:p-2.5"
+        >
+          <!-- Arched Photo Container -->
+          <div class="w-full aspect-[4/5] rounded-t-full rounded-b-xl overflow-hidden relative">
+            <img
+              src={card.image}
+              alt={card.alt}
+              class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
+              width="300"
+              height="380"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#28221C]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </div>
+
+          <!-- Bottom Icon & Label Card Area -->
+          <div class="pt-4 pb-3 px-2 text-center flex flex-col items-center justify-center">
+            <!-- Delicate Gold Outline Icon -->
+            <div class="w-8 h-8 rounded-full border border-[#A77A3F]/40 flex items-center justify-center text-[#A77A3F] mb-2 group-hover:border-[#A77A3F] group-hover:bg-[#A77A3F] group-hover:text-[#FFFCF6] transition-all">
+              {card.icon === 'hair' && (
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="6" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                  <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                  <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                </svg>
+              )}
+              {card.icon === 'nail' && (
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M6 3h12l4 6-10 12L2 9z"></path>
+                </svg>
+              )}
+              {card.icon === 'beauty' && (
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              )}
+              {card.icon === 'bridal' && (
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7z"></path>
+                </svg>
+              )}
+              {card.icon === 'spa' && (
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+              )}
+            </div>
+
+            <!-- Title -->
+            <span class="text-[0.6875rem] sm:text-xs font-semibold uppercase tracking-[0.16em] text-[#4A321C] group-hover:text-[#A77A3F] transition-colors">
+              {card.title}
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'beauty-lounge')!;
+
+const seo = {
+  title: "Pedicure Services & Pricing | S For Swag Beauty Lounge Kochi",
+  description: "Express pedicure (₹900), Classic Spa pedicure (₹1,600), Advanced pedicure (₹2,500), and Signature Pedicure (₹3,500) at S For Swag Salon Kochi.",
+  canonical: `${siteConfig.siteUrl}/beauty-lounge/pedicure/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} activeSubcategorySlug="pedicure" />
+</BaseLayout>

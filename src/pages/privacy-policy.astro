@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { siteConfig } from '../data/site';
+
+const seo = {
+  title: "Privacy Policy | S For Swag The Salon Kochi",
+  description: "Privacy Policy for S For Swag Salon, Kochi. Learn how we handle appointment enquiries, contact information, and guest communications.",
+  canonical: `${siteConfig.siteUrl}/privacy-policy/`,
+};
+
+const breadcrumbs = [{ name: 'Privacy Policy', url: '/privacy-policy/' }];
+---
+
+<BaseLayout seo={seo}>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section class="py-16 sm:py-24 bg-[#EFE2CE] border-b border-[#E8D5B7]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-8">
+      <span class="text-xs uppercase tracking-[0.24em] text-[#8E652E] font-semibold">Legal & Transparency</span>
+      <h1 class="text-4xl sm:text-5xl font-serif text-[#28221C] mt-2">Privacy Policy</h1>
+      <p class="text-xs text-[#8E7864] mt-2">Last Updated: October 2026 &bull; S For Swag — The Salon by Seematti</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#F7F0E4]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-8 space-y-8 text-sm text-[#5C4D3E] leading-relaxed">
+      
+      <div class="space-y-3">
+        <h2 class="text-2xl font-serif text-[#28221C]">1. Introduction</h2>
+        <p>
+          At <strong>{siteConfig.legalName}</strong> ("S For Swag", "we", "our", or "us"), we value your trust and are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard personal information submitted by visitors to our salon website.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <h2 class="text-2xl font-serif text-[#28221C]">2. Information We Collect</h2>
+        <p>
+          We only collect personal information that you voluntarily provide when submitting an appointment enquiry or contacting our team. This may include:
+        </p>
+        <ul class="list-disc list-inside space-y-1 pl-2">
+          <li>Full Name</li>
+          <li>Phone Number (used exclusively for appointment confirmations and scheduling)</li>
+          <li>Email Address (optional)</li>
+          <li>Service preferences and preferred dates</li>
+          <li>Special requests or consultation notes</li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h2 class="text-2xl font-serif text-[#28221C]">3. How We Use Your Information</h2>
+        <p>
+          The information collected is used solely to:
+        </p>
+        <ul class="list-disc list-inside space-y-1 pl-2">
+          <li>Confirm, schedule, or reschedule salon and bridal appointments.</li>
+          <li>Communicate essential pre-appointment guidance and consultation details.</li>
+          <li>Respond to enquiries submitted through our contact forms or direct channels.</li>
+        </ul>
+        <p class="pt-1">
+          We do not sell, rent, lease, or trade your personal information to third parties. We do not engage in automated spam communications.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <h2 class="text-2xl font-serif text-[#28221C]">4. Data Retention & Security</h2>
+        <p>
+          We retain appointment contact information only as long as necessary to fulfill guest services and record-keeping requirements. We utilize industry-standard security safeguards to protect your personal details from unauthorized access or disclosure.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <h2 class="text-2xl font-serif text-[#28221C]">5. Contact Us</h2>
+        <p>
+          If you have questions regarding this Privacy Policy or wish to request the removal of your contact details from our records, please reach out to us at:
+        </p>
+        <div class="p-5 rounded-2xl bg-[#FFFCF6] border border-[#E8D5B7] space-y-1 text-xs">
+          <p><strong>{siteConfig.legalName}</strong></p>
+          <p>{siteConfig.address.full}</p>
+          <p>Email: <a href={`mailto:${siteConfig.email}`} class="text-[#A77A3F] underline">{siteConfig.email}</a></p>
+          <p>Phone: <a href={`tel:${siteConfig.phone}`} class="text-[#A77A3F] underline">{siteConfig.phoneFormatted}</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

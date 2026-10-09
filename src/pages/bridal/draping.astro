@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'bridal')!;
+
+const seo = {
+  title: "Saree Draping & Bridal Add-ons | Kerala Set Saree Kochi",
+  description: "Bridal saree draping (₹1,500++), Kerala Set Saree (₹1,200++), veil/dupatta setting (₹800++), hair accessories setting, and bridesmaid combo at S For Swag Kochi.",
+  canonical: `${siteConfig.siteUrl}/bridal/draping/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} activeSubcategorySlug="draping" />
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'hair-artistry-spa')!;
+
+const seo = {
+  title: "Hair Artistry & Spa | Hair Spa, Colouring, Botox & Smoothing Kochi",
+  description: "Hair treatments for women & men, Balayage, Ombré, Botox (₹8,500), Nanoplasty (₹8,500), and Fusio Dose rituals at S For Swag Salon, MG Road Kochi.",
+  canonical: `${siteConfig.siteUrl}/hair-artistry-spa/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} />
+</BaseLayout>

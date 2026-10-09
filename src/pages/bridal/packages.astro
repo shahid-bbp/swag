@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BridalPackageComparison from '../../components/BridalPackageComparison.astro';
+import EnquiryForm from '../../components/EnquiryForm.astro';
+import { siteConfig } from '../../data/site';
+
+const seo = {
+  title: "Bridal Packages (Silver, Gold, Platinum) | S For Swag Kochi",
+  description: "Silver Bride (₹25,999), Gold Bride (₹45,999), and Platinum Bride (₹65,999) packages at S For Swag Salon, MG Road Kochi. Inclusions and pre-bridal preparation guide.",
+  canonical: `${siteConfig.siteUrl}/bridal/packages/`,
+};
+
+const breadcrumbs = [
+  { name: 'Services', url: '/services/' },
+  { name: 'Bridal Studio', url: '/bridal/' },
+  { name: 'Packages', url: '/bridal/packages/' },
+];
+---
+
+<BaseLayout seo={seo}>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section class="py-16 sm:py-24 bg-[#EFE2CE] border-b border-[#E8D5B7]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs uppercase tracking-[0.24em] text-[#8E652E] font-semibold">Bridal Collections</span>
+        <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.1]">
+          Silver, Gold & Platinum <br />
+          <span class="italic font-normal">Bridal Packages</span>
+        </h1>
+        <p class="text-sm sm:text-base text-[#5C4D3E] leading-relaxed">
+          Comprehensive bridal journeys designed to prepare your hair, skin, and nails before the big day, culminating in signature wedding makeup and hairstyling.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-[#F7F0E4]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
+      <BridalPackageComparison />
+
+      <div id="book-appointment">
+        <EnquiryForm
+          preselectedService="Bridal Studio — Gold Bride Package (₹45,999)"
+          title="Book Your Bridal Package Consultation"
+          subtitle="Let our bridal experts personalize your pre-wedding package according to your functions."
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

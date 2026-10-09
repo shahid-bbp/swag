@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'bridal')!;
+
+const seo = {
+  title: "Bridal Makeup & Hairstyling | HD & Airbrush Artistry Kochi",
+  description: "Traditional/HD bridal makeup (₹15,000++), Airbrush makeup (₹25,000++), engagement makeup (₹8,000++), and bridal hairstyling (₹3,500++) at S For Swag Kochi.",
+  canonical: `${siteConfig.siteUrl}/bridal/makeup-and-hair/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} activeSubcategorySlug="makeup-and-hair" />
+</BaseLayout>

@@ -1,0 +1,82 @@
+---
+const bridalLinks = [
+  { label: "Bridal Makeup", href: "/bridal/makeup-and-hair/" },
+  { label: "Hair & Styling", href: "/bridal/makeup-and-hair/" },
+  { label: "Nails & Artistry", href: "/nail-studio/" },
+  { label: "Pre-Bridal Packages", href: "/bridal/packages/" },
+  { label: "Skin Care & Glow", href: "/beauty-lounge/facials/" },
+];
+---
+
+<section class="py-16 sm:py-24 bg-[#EFE2CE] relative overflow-hidden border-t border-b border-[#E8D5B7]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="bg-[#FFFCF6] rounded-3xl border border-[#E8D5B7] overflow-hidden shadow-lg">
+      <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+        
+        <!-- Left: Bridal Image (Span 4) -->
+        <div class="lg:col-span-4 h-full relative overflow-hidden min-h-[340px] lg:min-h-[460px]">
+          <img
+            src="/images/bridal/bridal-main.webp"
+            alt="Kerala bride in traditional gold temple jewellery at S For Swag Kochi"
+            class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+            width="600"
+            height="800"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent to-[#FFFCF6]/30"></div>
+        </div>
+
+        <!-- Center: Headline & CTA (Span 5) -->
+        <div class="lg:col-span-5 p-8 sm:p-12 space-y-6">
+          <div class="space-y-2">
+            <span class="text-[0.6875rem] uppercase tracking-[0.24em] text-[#8E652E] font-semibold">
+              The Bridal Experience
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-serif text-[#28221C] leading-[1.12]">
+              Your Day. <br />
+              <span class="italic font-normal">Your Signature Look.</span>
+            </h2>
+          </div>
+
+          <p class="text-sm text-[#5C4D3E] leading-relaxed max-w-md">
+            Bespoke bridal beauty experiences designed around you. From pre-wedding skin preparation and hair spa therapies to flawless HD/Airbrush makeup, traditional Kerala set saree draping, and jewelry setting.
+          </p>
+
+          <div class="pt-2">
+            <a
+              href="/bridal/"
+              class="luxury-pill-btn luxury-pill-gold group"
+            >
+              <span>Explore Bridal</span>
+              <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Bridal Services Menu Rail (Span 3) -->
+        <div class="lg:col-span-3 p-8 lg:p-10 border-t lg:border-t-0 lg:border-l border-[#E8D5B7] bg-[#F7F0E4]/60 h-full flex flex-col justify-center">
+          <span class="text-[0.6875rem] uppercase tracking-[0.2em] font-semibold text-[#8E652E] mb-4">
+            Curated Services
+          </span>
+          <ul class="space-y-3.5">
+            {bridalLinks.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="flex items-center justify-between text-sm font-serif text-[#4A321C] hover:text-[#A77A3F] transition-colors group py-1"
+                >
+                  <span class="group-hover:translate-x-1 transition-transform">{item.label}</span>
+                  <span class="text-xs text-[#A77A3F] opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

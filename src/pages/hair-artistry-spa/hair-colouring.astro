@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'hair-artistry-spa')!;
+
+const seo = {
+  title: "Hair Colouring, Balayage & Highlights | S For Swag Salon Kochi",
+  description: "Root touch-up from ₹1,000, global colour from ₹2,500++, hand-painted Balayage (₹6,000++), and Ombré (₹5,000++) at S For Swag Salon, MG Road Kochi.",
+  canonical: `${siteConfig.siteUrl}/hair-artistry-spa/hair-colouring/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} activeSubcategorySlug="hair-colouring" />
+</BaseLayout>

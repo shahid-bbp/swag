@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg-primary: #F7F0E4;
+    --color-bg-secondary: #EFE2CE;
+    --color-champagne: #E8D5B7;
+    --color-gold: #A77A3F;
+    --color-gold-light: #D5B888;
+    --color-gold-dark: #845D2B;
+    --color-brown-deep: #4A321C;
+    --color-text-main: #28221C;
+    --color-text-muted: #6C5D4F;
+    --color-white: #FFFCF6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: #E8D5B7;
+    color: #4A321C;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Custom Luxury Utility Classes */
+.bg-cream-primary { background-color: #F7F0E4; }
+.bg-cream-secondary { background-color: #EFE2CE; }
+.bg-champagne { background-color: #E8D5B7; }
+.bg-gold { background-color: #A77A3F; }
+.bg-brown-deep { background-color: #4A321C; }
+.bg-white-cream { background-color: #FFFCF6; }
+
+.text-gold { color: #A77A3F; }
+.text-gold-dark { color: #845D2B; }
+.text-brown-deep { color: #4A321C; }
+.text-dark { color: #28221C; }
+.text-muted { color: #6C5D4F; }
+
+.border-gold { border-color: #A77A3F; }
+.border-gold-light { border-color: #D5B888; }
+.border-champagne { border-color: #E8D5B7; }
+
+/* Elegant Arch Borders & Masking */
+.arch-card-top {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+.arch-full {
+  border-radius: 9999px 9999px 0 0;
+}
+
+.luxury-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.75rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-pill-gold {
+  background-color: #A77A3F;
+  color: #FFFCF6;
+  border: 1px solid #A77A3F;
+}
+.luxury-pill-gold:hover {
+  background-color: #8E652E;
+  border-color: #8E652E;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(167, 122, 63, 0.25);
+}
+
+.luxury-pill-outline {
+  background-color: transparent;
+  color: #4A321C;
+  border: 1px solid #A77A3F;
+}
+.luxury-pill-outline:hover {
+  background-color: #A77A3F;
+  color: #FFFCF6;
+  transform: translateY(-1px);
+}
+
+/* Subtle animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

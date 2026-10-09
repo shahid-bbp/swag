@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'beauty-lounge')!;
+
+const seo = {
+  title: "Beauty Lounge | Facials, Waxing, Grooming, Manicure & Pedicure Kochi",
+  description: "Experience premium skincare and grooming at S For Swag Beauty Lounge Kochi. Clean ups from ₹800, facials from ₹1,800, stripless waxing, and spa manicures.",
+  canonical: `${siteConfig.siteUrl}/beauty-lounge/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} />
+</BaseLayout>

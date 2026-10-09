@@ -1,0 +1,133 @@
+---
+import { siteConfig } from '../data/site';
+---
+
+<section class="relative bg-[#F7F0E4] overflow-hidden pt-6 pb-16 lg:pt-12 lg:pb-24 border-b border-[#E8D5B7]/50">
+  <!-- Subtle ambient decorative glow -->
+  <div class="absolute -top-32 left-1/4 w-96 h-96 bg-[#E8D5B7]/40 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- Left Content (Span 7) -->
+      <div class="lg:col-span-7 space-y-6 lg:pr-8">
+        
+        <!-- Eyebrow -->
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-[1px] bg-[#A77A3F]"></span>
+          <p class="text-xs sm:text-sm uppercase tracking-[0.22em] text-[#8E652E] font-semibold">
+            Premium Unisex Salon &bull; By Seematti
+          </p>
+        </div>
+
+        <!-- Main Headline -->
+        <div class="space-y-2">
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif text-[#28221C] leading-[1.08] tracking-tight">
+            More Than <br />
+            Just a Salon
+          </h1>
+          <p class="text-2xl sm:text-3xl lg:text-4xl font-serif italic text-[#8E652E] font-normal">
+            It's a Beautiful Experience
+          </p>
+        </div>
+
+        <!-- Tagline & Supporting Copy -->
+        <div class="space-y-3 max-w-xl">
+          <p class="text-base sm:text-lg text-[#4A321C] font-serif italic leading-relaxed">
+            "{siteConfig.tagline}"
+          </p>
+          <p class="text-sm sm:text-base text-[#6C5D4F] leading-relaxed">
+            Where expert care, modern techniques and personalised attention come together to bring out the best in you — always. Set on Mahatma Gandhi Road in Kochi, our sanctuary offers bespoke hair artistry, couture bridal styling, skin care, and holistic wellness.
+          </p>
+        </div>
+
+        <!-- Call to Actions -->
+        <div class="pt-2 flex flex-wrap items-center gap-4">
+          <a
+            href="/services/"
+            class="luxury-pill-btn luxury-pill-gold group"
+          >
+            <span>Explore Services</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+
+          <a
+            href="/contact/#appointment"
+            class="luxury-pill-btn luxury-pill-outline group"
+          >
+            <span>Book an Appointment</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Micro Feature Badges -->
+        <div class="pt-6 border-t border-[#E8D5B7]/80 flex flex-wrap items-center gap-6 text-xs text-[#6C5D4F]">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#A77A3F]"></span>
+            <span>Opp. Seematti, MG Road</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#A77A3F]"></span>
+            <span>Unisex Styling & Grooming</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#A77A3F]"></span>
+            <span>Master Bridal Destination</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Content / Visual Presentation (Span 5) -->
+      <div class="lg:col-span-5 relative flex justify-center items-center">
+        
+        <!-- Golden Halo Background Circle -->
+        <div class="absolute w-[320px] sm:w-[420px] h-[320px] sm:h-[420px] rounded-full bg-gradient-to-tr from-[#E8D5B7] via-[#F2E4CB] to-[#E2CBA3] shadow-inner opacity-80 -z-10 translate-x-4 -translate-y-4"></div>
+        <div class="absolute w-[340px] sm:w-[440px] h-[340px] sm:h-[440px] rounded-full border border-[#A77A3F]/30 -z-10 translate-x-2 -translate-y-2"></div>
+
+        <!-- Main Model Portrait -->
+        <div class="relative w-full max-w-[380px] sm:max-w-[420px] overflow-hidden rounded-t-[140px] rounded-b-[40px] shadow-2xl border-2 border-[#FFFCF6]">
+          <img
+            src="/images/hero/hero-beauty.webp"
+            alt="Editorial beauty model with radiant skin and golden silk at S For Swag Salon Kochi"
+            class="w-full h-auto object-cover aspect-[3/4] hover:scale-105 transition-transform duration-700"
+            width="600"
+            height="800"
+            loading="eager"
+            fetchpriority="high"
+          />
+
+          <!-- Delicate gold overlay frame accent -->
+          <div class="absolute inset-0 pointer-events-none border border-[#A77A3F]/20 rounded-t-[140px] rounded-b-[40px]"></div>
+        </div>
+
+        <!-- Vertical Service Indicators (from screenshot right rail) -->
+        <div class="hidden xl:flex flex-col items-center gap-6 absolute -right-12 top-1/2 -translate-y-1/2 text-[9px] uppercase tracking-[0.3em] text-[#8E7864] select-none">
+          <span class="rotate-90 origin-center whitespace-nowrap">Hair</span>
+          <span class="w-1 h-1 rounded-full bg-[#A77A3F]/50"></span>
+          <span class="rotate-90 origin-center whitespace-nowrap">Nails</span>
+          <span class="w-1 h-1 rounded-full bg-[#A77A3F]/50"></span>
+          <span class="rotate-90 origin-center whitespace-nowrap">Beauty</span>
+          <span class="w-1 h-1 rounded-full bg-[#A77A3F]/50"></span>
+          <span class="rotate-90 origin-center whitespace-nowrap">Bridal</span>
+        </div>
+
+        <!-- Understated slide indicator (from screenshot bottom right) -->
+        <div class="absolute -bottom-6 right-4 flex items-center gap-2 text-[10px] text-[#8E7864] tracking-widest font-mono">
+          <span class="text-[#A77A3F] font-bold">01</span>
+          <span class="w-4 h-[1px] bg-[#A77A3F]"></span>
+          <span>02</span>
+          <span>03</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

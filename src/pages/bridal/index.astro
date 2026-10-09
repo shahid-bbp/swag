@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BridalPackageComparison from '../../components/BridalPackageComparison.astro';
+import EnquiryForm from '../../components/EnquiryForm.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const bridalCategory = servicesData.find((c) => c.slug === 'bridal')!;
+
+const seo = {
+  title: "Bridal Studio & Packages | Kerala Bridal Makeup & Saree Draping Kochi",
+  description: "Bespoke bridal packages in Kochi by Seematti. Silver (₹25,999), Gold (₹45,999), Platinum (₹65,999), HD & Airbrush bridal makeup, and Kerala set saree draping.",
+  canonical: `${siteConfig.siteUrl}/bridal/`,
+};
+
+const breadcrumbs = [
+  { name: 'Services', url: '/services/' },
+  { name: 'Bridal Studio', url: '/bridal/' },
+];
+---
+
+<BaseLayout seo={seo}>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <!-- Bridal Hero -->
+  <section class="relative py-16 sm:py-24 bg-[#EFE2CE] border-b border-[#E8D5B7] overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-7 space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="text-xs uppercase tracking-[0.24em] text-[#8E652E] font-semibold">Couture Bridal Beauty &bull; By Seematti</span>
+            <span class="w-12 h-[1px] bg-[#A77A3F]"></span>
+          </div>
+          <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.08]">
+            Your Day. <br />
+            <span class="italic font-normal">Your Signature Look.</span>
+          </h1>
+          <p class="text-base sm:text-lg text-[#5C4D3E] font-serif italic">
+            "Every bride carries an individual grace. We craft beauty that reflects your soul."
+          </p>
+          <p class="text-sm sm:text-base text-[#6C5D4F] leading-relaxed max-w-xl">
+            Backed by the century-long bridal heritage of Seematti, S For Swag provides Kochi's most comprehensive couture bridal experience. From customized pre-bridal skin and hair conditioning to flawless wedding day HD & Airbrush makeup, traditional Kerala set saree pleating, and veil setting.
+          </p>
+
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a href="#bridal-packages" class="luxury-pill-btn luxury-pill-gold">
+              View Packages & Comparison &rarr;
+            </a>
+            <a href="/bridal/makeup-and-hair/" class="luxury-pill-btn luxury-pill-outline">
+              Makeup & Hair Menu &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="rounded-3xl overflow-hidden border-2 border-[#FFFCF6] shadow-xl relative group">
+            <img
+              src="/images/bridal/bridal-main.webp"
+              alt="South Indian Kerala bride in temple jewellery at S For Swag Kochi"
+              class="w-full h-auto object-cover aspect-[3/4] group-hover:scale-105 transition-transform duration-700"
+              width="600"
+              height="800"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#28221C]/50 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 text-[#FFFCF6]">
+              <span class="text-xs uppercase tracking-[0.2em] font-semibold text-[#E8D5B7] block">Signature Bridal</span>
+              <span class="text-2xl font-serif">Kochi, Kerala</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sub-routes Navigation Pills -->
+  <section class="py-4 bg-[#FFFCF6] border-b border-[#E8D5B7]/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-wrap items-center justify-center gap-3 text-xs uppercase tracking-wider font-medium">
+      <a href="/bridal/packages/" class="px-5 py-2 rounded-full bg-[#A77A3F] text-[#FFFCF6]">
+        Bridal Packages (Silver, Gold, Platinum)
+      </a>
+      <a href="/bridal/makeup-and-hair/" class="px-5 py-2 rounded-full bg-[#F7F0E4] text-[#4A321C] border border-[#E8D5B7] hover:border-[#A77A3F]">
+        Bridal Makeup & Hair Menu
+      </a>
+      <a href="/bridal/draping/" class="px-5 py-2 rounded-full bg-[#F7F0E4] text-[#4A321C] border border-[#E8D5B7] hover:border-[#A77A3F]">
+        Saree Draping & Add-ons
+      </a>
+    </div>
+  </section>
+
+  <!-- Packages Section -->
+  <section id="bridal-packages" class="py-20 bg-[#F7F0E4]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs uppercase tracking-[0.24em] text-[#8E652E] font-semibold">Bridal Collections</span>
+        <h2 class="text-3xl sm:text-5xl font-serif text-[#28221C]">Bespoke Bridal Packages</h2>
+        <p class="text-sm text-[#5C4D3E]">
+          Carefully structured packages designed to nurture your skin, hair, and spirit before the wedding day.
+        </p>
+      </div>
+
+      <BridalPackageComparison />
+
+      <!-- Official Brochure Notes -->
+      <div class="p-8 rounded-3xl bg-[#EFE2CE]/80 border border-[#E8D5B7] space-y-3">
+        <h3 class="text-sm uppercase tracking-widest font-bold text-[#4A321C]">
+          Important Bridal Notes
+        </h3>
+        <ul class="text-xs text-[#5C4D3E] space-y-1.5 list-disc list-inside leading-relaxed">
+          <li>Bridal packages are customised after consultation and are subject to appointment availability.</li>
+          <li>Makeup, hairstyle, saree draping and accessories can be customised according to the bride's look and functions.</li>
+          <li>All prices are starting prices and may vary based on individual requirements, hair length, density, and complexity.</li>
+          <li>Travel expenses will be additional for locations outside city limits. GST, if applicable, may be charged separately.</li>
+        </ul>
+      </div>
+
+      <!-- Booking Form -->
+      <div id="book-appointment">
+        <EnquiryForm
+          preselectedService="Bridal Studio — Gold Bride Package (₹45,999)"
+          title="Reserve Your Bridal Consultation"
+          subtitle="Speak with our bridal art directors to secure your dates and schedule trials."
+        />
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,99 @@
+---
+import { siteConfig } from '../data/site';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  breadcrumbs?: { name: string; url: string }[];
+}
+
+const {
+  title = `${siteConfig.name} — ${siteConfig.tagline} | Premium Unisex Salon Kochi`,
+  description = siteConfig.description,
+  canonical = Astro.url.href,
+  image = `${siteConfig.siteUrl}/images/hero/hero-beauty.jpg`,
+  type = 'website',
+  breadcrumbs = [],
+} = Astro.props;
+
+const fullTitle = title.includes(siteConfig.name) ? title : `${title} | ${siteConfig.name}`;
+
+// Schema.org LocalBusiness / BeautySalon JSON-LD
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BeautySalon',
+  '@id': `${siteConfig.siteUrl}/#salon`,
+  name: siteConfig.legalName,
+  alternateName: siteConfig.name,
+  url: siteConfig.siteUrl,
+  logo: `${siteConfig.siteUrl}/images/brand/logo.svg`,
+  image: `${siteConfig.siteUrl}/images/hero/hero-beauty.jpg`,
+  description: siteConfig.description,
+  telephone: siteConfig.phone,
+  email: siteConfig.email,
+  priceRange: '₹₹₹',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: `${siteConfig.address.floor}, ${siteConfig.address.building}, ${siteConfig.address.street}, ${siteConfig.address.landmark}`,
+    addressLocality: siteConfig.address.city,
+    addressRegion: siteConfig.address.state,
+    postalCode: siteConfig.address.pincode,
+    addressCountry: 'IN',
+  },
+  sameAs: [siteConfig.instagramUrl, siteConfig.facebookUrl].filter(Boolean),
+};
+
+const breadcrumbSchema = breadcrumbs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbs.map((crumb, idx) => ({
+    '@type': 'ListItem',
+    position: idx + 1,
+    name: crumb.name,
+    item: crumb.url.startsWith('http') ? crumb.url : `${siteConfig.siteUrl}${crumb.url}`,
+  })),
+} : null;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/images/brand/logo-mark.svg" />
+  
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+  <meta property="og:site_name" content={siteConfig.name} />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonical} />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  {breadcrumbSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  )}
+</head>

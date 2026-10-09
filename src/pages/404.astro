@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+
+const seo = {
+  title: "Page Not Found | S For Swag Salon Kochi",
+  description: "The page you are looking for does not exist. Explore S For Swag salon services, bridal packages, or return to home.",
+};
+---
+
+<BaseLayout seo={seo}>
+  <section class="py-24 sm:py-32 bg-[#F7F0E4] text-center px-4">
+    <div class="max-w-xl mx-auto space-y-6">
+      <span class="text-xs uppercase tracking-[0.24em] text-[#8E652E] font-semibold">404 &bull; Page Not Found</span>
+      <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C]">
+        Looking for Something Else?
+      </h1>
+      <p class="text-sm sm:text-base text-[#5C4D3E] leading-relaxed">
+        The page you are looking for might have been moved or is currently unavailable. Please explore our services or head back to the salon homepage.
+      </p>
+
+      <div class="pt-4 flex flex-wrap justify-center gap-4">
+        <a href="/" class="luxury-pill-btn luxury-pill-gold">
+          <span>Return to Homepage</span>
+          <span>&rarr;</span>
+        </a>
+        <a href="/services/" class="luxury-pill-btn luxury-pill-outline">
+          <span>Browse Services</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

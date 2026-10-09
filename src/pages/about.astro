@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { siteConfig } from '../data/site';
+
+const seo = {
+  title: "About Us | S For Swag The Salon by Seematti Kochi",
+  description: "Learn about S For Swag — a premium unisex salon by Seematti on MG Road, Kochi. Our beauty philosophy, expert stylists, modern space, and bespoke self-care experience.",
+  canonical: `${siteConfig.siteUrl}/about/`,
+};
+
+const breadcrumbs = [{ name: 'About Us', url: '/about/' }];
+---
+
+<BaseLayout seo={seo}>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <!-- Hero Banner -->
+  <section class="py-16 sm:py-24 bg-[#EFE2CE] border-b border-[#E8D5B7] relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs uppercase tracking-[0.24em] text-[#8E652E] font-semibold">Our Story &bull; By Seematti</span>
+        <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.1]">
+          Where Self-Care Becomes <br />
+          <span class="italic font-normal">A Beautiful Lifestyle</span>
+        </h1>
+        <p class="text-base sm:text-lg text-[#5C4D3E] font-serif italic">
+          "Beauty is not about changing who you are. It is about bringing out what feels right for you."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Narrative Section -->
+  <section class="py-20 lg:py-24 bg-[#F7F0E4]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs uppercase tracking-[0.2em] font-semibold text-[#A77A3F]">Philosophy & Heritage</span>
+          <h2 class="text-3xl sm:text-4xl font-serif text-[#28221C]">
+            Crafted with Artistry, Powered by Care
+          </h2>
+          <div class="space-y-4 text-sm sm:text-base text-[#5C4D3E] leading-relaxed">
+            <p>
+              S for Swag is a premium unisex salon by Seematti, designed for those who believe self-care is not a luxury, but a lifestyle. Set in the vibrant heart of Mahatma Gandhi Road, opposite Seematti in Kacheripady, Kochi, this is a space made for transformations, special celebrations, and simply taking some well-deserved time for yourself.
+            </p>
+            <p>
+              We blend deep industry expertise with modern techniques to offer a seamless beauty experience — from everyday essentials to high-fashion bridal occasions. Our team of skilled hairstylists, beauty therapists, and nail artists are dedicated to understanding your individual preferences and bringing out your signature swag.
+            </p>
+            <p>
+              Every detail in our salon — from the soft amber ambient backlighting and ergonomic leather chairs to our sanitized private rooms and premium product lines — has been curated to ensure you step out feeling confident, radiant, and renewed.
+            </p>
+          </div>
+
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a href="/services/" class="luxury-pill-btn luxury-pill-gold">
+              Explore Our Services &rarr;
+            </a>
+            <a href="/contact/#appointment" class="luxury-pill-btn luxury-pill-outline">
+              Book Appointment &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 space-y-6">
+          <div class="rounded-3xl overflow-hidden border-2 border-[#FFFCF6] shadow-xl">
+            <img
+              src="/images/salon/salon-interior.webp"
+              alt="Luxury interior reception of S For Swag Salon Kochi"
+              class="w-full h-auto object-cover aspect-[16/10]"
+              width="720"
+              height="450"
+            />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-2xl overflow-hidden border border-[#E8D5B7] shadow-sm">
+              <img
+                src="/images/hero/hero-beauty.webp"
+                alt="Radiant skincare and makeup artistry"
+                class="w-full h-auto object-cover aspect-[4/3]"
+                width="360"
+                height="270"
+              />
+            </div>
+            <div class="rounded-2xl overflow-hidden border border-[#E8D5B7] shadow-sm">
+              <img
+                src="/images/salon/mens-grooming.webp"
+                alt="Men's styling and haircut salon station"
+                class="w-full h-auto object-cover aspect-[4/3]"
+                width="360"
+                height="270"
+              />
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Core Pillars -->
+      <div class="mt-20 pt-16 border-t border-[#E8D5B7] grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="bg-[#FFFCF6] p-6 rounded-2xl border border-[#E8D5B7] space-y-2">
+          <div class="text-[#A77A3F] font-serif text-2xl font-bold">01</div>
+          <h3 class="font-serif text-lg text-[#28221C]">Personalised Attention</h3>
+          <p class="text-xs text-[#6C5D4F] leading-relaxed">We take time to listen, assess your hair/skin texture, and recommend customized solutions.</p>
+        </div>
+
+        <div class="bg-[#FFFCF6] p-6 rounded-2xl border border-[#E8D5B7] space-y-2">
+          <div class="text-[#A77A3F] font-serif text-2xl font-bold">02</div>
+          <h3 class="font-serif text-lg text-[#28221C]">Uncompromising Hygiene</h3>
+          <p class="text-xs text-[#6C5D4F] leading-relaxed">Medical-grade sterilization of instruments, disposable linens, and strict sanitary protocols.</p>
+        </div>
+
+        <div class="bg-[#FFFCF6] p-6 rounded-2xl border border-[#E8D5B7] space-y-2">
+          <div class="text-[#A77A3F] font-serif text-2xl font-bold">03</div>
+          <h3 class="font-serif text-lg text-[#28221C]">Prestige Formulations</h3>
+          <p class="text-xs text-[#6C5D4F] leading-relaxed">We work exclusively with globally renowned salon brands like L'Oréal Professionnel, Kerastase, and organic botanicals.</p>
+        </div>
+
+        <div class="bg-[#FFFCF6] p-6 rounded-2xl border border-[#E8D5B7] space-y-2">
+          <div class="text-[#A77A3F] font-serif text-2xl font-bold">04</div>
+          <h3 class="font-serif text-lg text-[#28221C]">Seematti Heritage</h3>
+          <p class="text-xs text-[#6C5D4F] leading-relaxed">Backed by the trusted legacy of Seematti, synonymous with South Indian grace, couture, and bridal excellence.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

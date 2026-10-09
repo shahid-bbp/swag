@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'nail-studio')!;
+
+const seo = {
+  title: "Nail Studio | Extensions, Gel Polish & Nail Art Kochi",
+  description: "Couture nail extensions, French tips, hard gel, chrome finish, cat eye, and 3D nail art at S For Swag Nail Studio, MG Road Kochi.",
+  canonical: `${siteConfig.siteUrl}/nail-studio/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} />
+</BaseLayout>

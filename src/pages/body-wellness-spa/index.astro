@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'body-wellness-spa')!;
+
+const seo = {
+  title: "Body Wellness Spa & Massages | S For Swag Salon Kochi",
+  description: "Aroma Bliss massage, Swedish massage, Deep Tissue, Foot reflexology, and Indian Head massage at S For Swag Body Wellness Spa, MG Road Kochi.",
+  canonical: `${siteConfig.siteUrl}/body-wellness-spa/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} />
+</BaseLayout>

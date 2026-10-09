@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'nail-studio')!;
+
+const seo = {
+  title: "Nail Extensions & Gel Services | S For Swag Kochi",
+  description: "Gel extensions (₹3,500), Soft gel (₹3,000), Gel polish fingers/toes (₹1,000), French tips (₹1,500) and refills at S For Swag Nail Studio Kochi.",
+  canonical: `${siteConfig.siteUrl}/nail-studio/nail-services/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} activeSubcategorySlug="nail-services" />
+</BaseLayout>

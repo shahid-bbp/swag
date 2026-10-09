@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'hair-artistry-spa')!;
+
+const seo = {
+  title: "Hair Treatments (Men & Women) | L'Oréal Spa & Scalp Therapy Kochi",
+  description: "Hot oil massage, L'Oréal hair spa, anti-dandruff scalp peeling, bond strengthening, and filler therapy for men and women at S For Swag Kochi.",
+  canonical: `${siteConfig.siteUrl}/hair-artistry-spa/hair-treatment/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} activeSubcategorySlug="hair-treatment" />
+</BaseLayout>

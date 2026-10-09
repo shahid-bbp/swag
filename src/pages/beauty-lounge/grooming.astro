@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'beauty-lounge')!;
+
+const seo = {
+  title: "Precision Grooming, Threading & Detan | S For Swag Salon Kochi",
+  description: "Eyebrows (₹100), full face threading (₹450), face & neck detan (₹700), and full body detan (₹4,500) at S For Swag Salon, MG Road Kochi.",
+  canonical: `${siteConfig.siteUrl}/beauty-lounge/grooming/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} activeSubcategorySlug="grooming" />
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/ServiceCategoryView.astro';
+import { servicesData } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+const category = servicesData.find((c) => c.slug === 'hair-artistry-spa')!;
+
+const seo = {
+  title: "Hair Transformation, Botox & Nanoplasty | S For Swag Kochi",
+  description: "Hair Botox (₹8,500), Cysteine (₹6,500), Nanoplasty (₹8,500), Smoothing (₹6,000), Fusio Dose rituals, and Caviar infusions at S For Swag Salon Kochi.",
+  canonical: `${siteConfig.siteUrl}/hair-artistry-spa/hair-transformation/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServiceCategoryView category={category} activeSubcategorySlug="hair-transformation" />
+</BaseLayout>

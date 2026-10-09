@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ServicesOverview from '../components/ServicesOverview.astro';
+import ExperienceSection from '../components/ExperienceSection.astro';
+import BridalBanner from '../components/BridalBanner.astro';
+import ContactSection from '../components/ContactSection.astro';
+import { siteConfig } from '../data/site';
+
+const seo = {
+  title: `${siteConfig.name} — ${siteConfig.tagline} | Premium Unisex Salon Kochi`,
+  description: "S For Swag is a luxury unisex salon and bridal beauty destination on MG Road, Kochi, Kerala. Expert hair artistry, couture bridal styling, skin care, nails, and wellness.",
+  canonical: `${siteConfig.siteUrl}/`,
+};
+---
+
+<BaseLayout seo={seo}>
+  <Hero />
+  <AboutSection />
+  <ServicesOverview />
+  <ExperienceSection />
+  <BridalBanner />
+  <ContactSection />
+</BaseLayout>
