@@ -1,57 +1,61 @@
 ---
 import { siteConfig } from '../data/site';
 
-interface Slide {
+interface SlideData {
   id: string;
   number: string;
-  eyebrow: string;
-  titleLine1: string;
-  titleLine2: string;
+  bgImage: string;
+  eyebrowLine1: string;
+  eyebrowLine2: string;
+  title1: string;
+  title2: string;
+  titleBold: string;
   italicSub: string;
   description: string;
-  image: string;
-  imageAlt: string;
   ctaText: string;
   ctaLink: string;
 }
 
-const slides: Slide[] = [
+const slides: SlideData[] = [
   {
     id: "slide-1",
     number: "01",
-    eyebrow: "PREMIUM UNISEX SALON\nBY SEEMATTI",
-    titleLine1: "More Than",
-    titleLine2: "Just a Salon",
+    bgImage: "/images/hero/hero-slide-1.webp",
+    eyebrowLine1: "PREMIUM UNISEX SALON",
+    eyebrowLine2: "BY SEEMATTI",
+    title1: "More Than",
+    title2: "Just a",
+    titleBold: "Salon",
     italicSub: "It's a Beautiful Experience",
     description: "Where expert care, modern techniques and personalised attention come together to bring out the best in you — always.",
-    image: "/images/hero/model-1.webp",
-    imageAlt: "Editorial beauty model with radiant skin at S For Swag Salon Kochi",
     ctaText: "EXPLORE SERVICES",
     ctaLink: "/services/",
   },
   {
     id: "slide-2",
     number: "02",
-    eyebrow: "HAIR ARTISTRY & SPA\nBY SEEMATTI",
-    titleLine1: "Couture Hair",
-    titleLine2: "Artistry & Care",
+    bgImage: "/images/hero/hero-slide-2.webp",
+    eyebrowLine1: "HAIR ARTISTRY & SPA",
+    eyebrowLine2: "BY SEEMATTI",
+    title1: "Couture Hair",
+    title2: "Artistry &",
+    titleBold: "Care",
     italicSub: "Crafted with Precision & Passion",
     description: "From restorative Fusio Dose and Caviar rituals to hand-painted Balayage, Botox, and Nanoplasty transformations.",
-    image: "/images/hero/model-2.webp",
-    imageAlt: "Silk glossy hair transformation at S For Swag Hair Artistry",
     ctaText: "DISCOVER HAIR CARE",
     ctaLink: "/hair-artistry-spa/",
   },
   {
     id: "slide-3",
     number: "03",
-    eyebrow: "THE BRIDAL EXPERIENCE\nBY SEEMATTI",
-    titleLine1: "Your Day.",
-    titleLine2: "Your Grace.",
+    bgImage: "/images/hero/hero-slide-3.webp",
+    eyebrowLine1: "THE BRIDAL EXPERIENCE",
+    eyebrowLine2: "BY SEEMATTI",
+    title1: "Your Day.",
+    title2: "Your",
+    titleBold: "Grace",
     italicSub: "Your Signature Look",
     description: "Bespoke bridal journeys combining century-long Seematti heritage with high-definition and airbrush makeup.",
-    image: "/images/hero/model-1.webp",
-    imageAlt: "Bridal elegance at S For Swag Bridal Studio",
     ctaText: "EXPLORE BRIDAL",
     ctaLink: "/bridal/",
   },
@@ -60,119 +64,103 @@ const slides: Slide[] = [
 
 <section
   id="hero-slider"
-  class="relative bg-[#F7F0E4] overflow-hidden border-b border-[#E8D5B7]/50 select-none bg-no-repeat bg-cover bg-right sm:bg-center"
-  style="background-image: url('/images/hero/hero-bg.webp');"
-  aria-label="Hero Highlights Slider"
+  class="relative w-full overflow-hidden bg-[#F7F0E4] border-b border-[#E8D5B7]/50 select-none"
+  aria-label="S For Swag Hero Banner"
 >
-  <!-- Ambient gradient to preserve text clarity on the left -->
-  <div class="absolute inset-0 bg-gradient-to-r from-[#F7F0E4]/95 via-[#F7F0E4]/70 to-transparent lg:from-[#F7F0E4]/90 lg:via-[#F7F0E4]/40 lg:to-transparent pointer-events-none"></div>
-
-  <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-    <!-- Compact, elegant height replicating the reference screenshot -->
-    <div class="relative min-h-[430px] sm:min-h-[470px] lg:min-h-[500px] flex items-center py-6 sm:py-8 lg:py-10">
-      
-      {slides.map((slide, index) => {
-        const isFirst = index === 0;
-        return (
-          <div
-            class={`hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out flex flex-col lg:flex-row items-center justify-between ${
-              isFirst ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
-            }`}
-            data-slide-index={index}
-            role="group"
-            aria-roledescription="slide"
-            aria-label={`${index + 1} of ${slides.length}`}
-          >
-            <!-- Left Text Content -->
-            <div class="w-full lg:w-[52%] space-y-4 sm:space-y-5 lg:pr-4 z-10 pt-2 sm:pt-4">
+  <!-- Fixed aspect ratio container matching reference 2.5:1 ratio -->
+  <div class="relative w-full min-h-[460px] sm:min-h-[500px] lg:min-h-[520px] xl:min-h-[540px]">
+    
+    {slides.map((slide, index) => {
+      const isFirst = index === 0;
+      return (
+        <div
+          class={`hero-slide absolute inset-0 w-full h-full bg-cover bg-no-repeat transition-opacity duration-700 ease-in-out ${
+            isFirst ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
+          }`}
+          style={`background-image: url('${slide.bgImage}'); background-position: center right;`}
+          data-slide-index={index}
+          role="group"
+          aria-roledescription="slide"
+          aria-label={`${index + 1} of ${slides.length}`}
+        >
+          <!-- Text Content Wrapper -->
+          <div class="max-w-7xl mx-auto h-full px-6 sm:px-10 lg:px-12 flex items-center">
+            <div class="w-full sm:w-[58%] md:w-[52%] lg:w-[48%] py-8 sm:py-12 z-20">
               
-              <!-- Eyebrow -->
-              <div class="space-y-0.5">
-                <p class="text-[10px] sm:text-[11px] uppercase tracking-[0.24em] text-[#8E652E] font-semibold leading-relaxed whitespace-pre-line">
-                  {slide.eyebrow}
+              <!-- Eyebrow with decorative gold underline -->
+              <div class="space-y-0.5 mb-3 sm:mb-4">
+                <p class="text-[10px] sm:text-xs uppercase tracking-[0.24em] text-[#8E652E] font-medium">
+                  {slide.eyebrowLine1}
                 </p>
+                <p class="text-[10px] sm:text-xs uppercase tracking-[0.24em] text-[#8E652E] font-medium">
+                  {slide.eyebrowLine2}
+                </p>
+                <div class="w-10 sm:w-12 h-[1px] bg-[#A77A3F] mt-2"></div>
               </div>
 
-              <!-- Main Headline -->
+              <!-- Main Heading matching exact reference typography -->
               <div class="space-y-1">
-                <h1 class="text-3xl sm:text-5xl lg:text-[3.5rem] font-serif text-[#28221C] leading-[1.04] tracking-tight">
-                  {slide.titleLine1} <br />
-                  {slide.titleLine2}
+                <h1 class="text-3xl sm:text-5xl lg:text-[3.6rem] font-serif text-[#28221C] leading-[1.06] tracking-tight">
+                  {slide.title1} <br />
+                  <span class="font-normal">{slide.title2}</span> <span class="font-semibold">{slide.titleBold}</span>
                 </h1>
-                <p class="text-xl sm:text-2xl lg:text-3xl font-serif italic text-[#8E652E] font-normal pt-0.5">
+                <p class="text-xl sm:text-2xl lg:text-3xl font-serif italic text-[#8E652E] font-normal pt-1 mb-3">
                   {slide.italicSub}
                 </p>
               </div>
 
               <!-- Supporting Paragraph -->
-              <p class="text-xs sm:text-sm text-[#5C4D3E] leading-relaxed max-w-md pt-0.5">
+              <p class="text-xs sm:text-sm text-[#5C4D3E] max-w-sm sm:max-w-md leading-relaxed mb-6 font-normal">
                 {slide.description}
               </p>
 
-              <!-- Single Rounded Pill Button (Exact replica of reference image) -->
-              <div class="pt-2">
+              <!-- Filled Pill CTA Button -->
+              <div>
                 <a
                   href={slide.ctaLink}
-                  class="inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-[#9B733D] hover:bg-[#845F2E] text-[#FFFCF6] text-[11px] sm:text-xs uppercase tracking-[0.18em] font-medium transition-all shadow-xs group"
+                  class="inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-[#916938] hover:bg-[#7A5526] text-[#FFFCF6] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium shadow-xs transition-all duration-300 group"
                 >
                   <span>{slide.ctaText}</span>
-                  <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
+                  <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
                 </a>
               </div>
 
             </div>
-
-            <!-- Right Visual Model Portrait -->
-            <div class="w-full lg:w-[48%] h-full relative flex items-end justify-center lg:justify-end pointer-events-none mt-4 lg:mt-0">
-              <div class="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[480px] h-[340px] sm:h-[420px] lg:h-[480px] flex items-end justify-end">
-                <img
-                  src={slide.image}
-                  alt={slide.imageAlt}
-                  class="max-h-full w-auto object-contain object-bottom drop-shadow-xl"
-                  width="500"
-                  height="500"
-                  loading={isFirst ? "eager" : "lazy"}
-                  fetchpriority={isFirst ? "high" : "auto"}
-                />
-              </div>
-            </div>
-
           </div>
-        );
-      })}
+        </div>
+      );
+    })}
 
-      <!-- Vertical Edge Indicator (HAIR / NAILS / BEAUTY / BRIDAL) -->
-      <div class="hidden xl:flex flex-col items-center gap-5 absolute -right-4 top-1/2 -translate-y-1/2 text-[9px] uppercase tracking-[0.3em] text-[#8E7864] select-none z-20">
-        <span class="rotate-90 origin-center whitespace-nowrap">Hair</span>
-        <span class="w-1 h-1 rounded-full bg-[#A77A3F]/50"></span>
-        <span class="rotate-90 origin-center whitespace-nowrap">Nails</span>
-        <span class="w-1 h-1 rounded-full bg-[#A77A3F]/50"></span>
-        <span class="rotate-90 origin-center whitespace-nowrap">Beauty</span>
-        <span class="w-1 h-1 rounded-full bg-[#A77A3F]/50"></span>
-        <span class="rotate-90 origin-center whitespace-nowrap">Bridal</span>
-      </div>
-
+    <!-- Vertical Label on Far Right Edge (from reference image) -->
+    <div class="hidden lg:flex flex-col items-center gap-4 absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 text-[9px] uppercase tracking-[0.3em] text-[#8E7864] select-none z-20 pointer-events-none">
+      <span class="rotate-90 origin-center whitespace-nowrap">HAIR</span>
+      <span class="w-1 h-1 rounded-full bg-[#A77A3F]/50"></span>
+      <span class="rotate-90 origin-center whitespace-nowrap">NAILS</span>
+      <span class="w-1 h-1 rounded-full bg-[#A77A3F]/50"></span>
+      <span class="rotate-90 origin-center whitespace-nowrap">BEAUTY</span>
+      <span class="w-1 h-1 rounded-full bg-[#A77A3F]/50"></span>
+      <span class="rotate-90 origin-center whitespace-nowrap">BRIDAL</span>
     </div>
 
-    <!-- Bottom Slider Selector (01, 02, 03 exactly as shown in reference) -->
-    <div class="pb-2 flex items-center justify-end pr-2 sm:pr-8 gap-3 z-30 relative" aria-label="Slider Pagination">
+    <!-- Bottom Right Pagination Controls (01, 02, 03) -->
+    <div
+      class="absolute bottom-4 sm:bottom-6 right-8 sm:right-16 flex items-center gap-3 z-30 font-mono text-xs tracking-widest"
+      aria-label="Slider Pagination"
+    >
       {slides.map((s, index) => {
         const isFirst = index === 0;
         return (
           <button
             type="button"
-            class="slide-nav-btn group flex items-center gap-1.5 text-xs font-mono tracking-widest cursor-pointer py-1.5 px-1 focus:outline-none focus:ring-1 focus:ring-[#A77A3F] rounded transition-all"
+            class="slide-nav-btn cursor-pointer py-1 px-1 transition-all flex items-center gap-1.5 focus:outline-none"
             data-target={index}
             aria-label={`Go to slide ${s.number}`}
-            aria-selected={isFirst ? 'true' : 'false'}
+            aria-selected={isFirst ? "true" : "false"}
           >
+            <span class={`slide-line h-[1.5px] transition-all duration-300 ${isFirst ? 'w-4 bg-[#A77A3F]' : 'hidden w-0'}`}></span>
             <span class={`slide-num font-semibold transition-colors ${isFirst ? 'text-[#A77A3F]' : 'text-[#8E7864] hover:text-[#4A321C]'}`}>
               {s.number}
             </span>
-            <span class={`slide-line h-[1.5px] transition-all duration-300 ${isFirst ? 'w-5 bg-[#A77A3F]' : 'w-1.5 bg-[#D5B888]/40 group-hover:w-3'}`}></span>
           </button>
         );
       })}
@@ -215,14 +203,14 @@ const slides: Slide[] = [
           btn.setAttribute('aria-selected', 'true');
           numSpan?.classList.remove('text-[#8E7864]');
           numSpan?.classList.add('text-[#A77A3F]');
-          lineSpan?.classList.remove('w-1.5', 'bg-[#D5B888]/40');
-          lineSpan?.classList.add('w-5', 'bg-[#A77A3F]');
+          lineSpan?.classList.remove('hidden', 'w-0');
+          lineSpan?.classList.add('w-4', 'bg-[#A77A3F]');
         } else {
           btn.setAttribute('aria-selected', 'false');
           numSpan?.classList.remove('text-[#A77A3F]');
           numSpan?.classList.add('text-[#8E7864]');
-          lineSpan?.classList.remove('w-5', 'bg-[#A77A3F]');
-          lineSpan?.classList.add('w-1.5', 'bg-[#D5B888]/40');
+          lineSpan?.classList.add('hidden', 'w-0');
+          lineSpan?.classList.remove('w-4', 'bg-[#A77A3F]');
         }
       });
 
