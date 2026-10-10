@@ -931,7 +931,7 @@ export const servicesData: ServiceCategory[] = [
       "Bespoke bridal beauty packages (Silver, Gold, Platinum), HD & Airbrush makeup, Kerala set saree draping, and pre-bridal journeys.",
     fullDesc:
       "Every bride deserves to look and feel effortlessly magnificent. By combining heritage elegance with modern artistry, S For Swag bridal artists craft bespoke looks tailored to your unique features, wedding attire, and ceremony lighting. From pre-bridal skin prep to wedding-day hair accessories and saree pleating, we are with you every step of the way.",
-    image: "/images/optimized/bridal-main.webp",
+    image: "/images/optimized/bridal-main.webp?v=2",
     imageAlt: "Radiant Kerala bride in temple jewellery and silk saree at S For Swag Bridal Studio Kochi",
     accentIcon: "crown",
     subcategories: [
