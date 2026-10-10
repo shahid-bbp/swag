@@ -1,253 +1,317 @@
 ---
 import { siteConfig } from '../data/site';
 
-interface SlideData {
-  id: string;
-  number: string;
-  bgImage: string;
-  eyebrowLine1: string;
-  eyebrowLine2: string;
-  title1: string;
-  title2: string;
-  titleBold: string;
-  italicSub: string;
-  description: string;
-  ctaText: string;
-  ctaLink: string;
-}
-
-const slides: SlideData[] = [
+const slides = [
   {
-    id: "slide-1",
-    number: "01",
-    bgImage: "/images/hero/hero-slide-1.webp",
-    eyebrowLine1: "PREMIUM UNISEX SALON",
-    eyebrowLine2: "BY SEEMATTI",
-    title1: "More Than",
-    title2: "Just a",
-    titleBold: "Salon",
-    italicSub: "It's a Beautiful Experience",
-    description: "Where expert care, modern techniques and personalised attention come together to bring out the best in you — always.",
-    ctaText: "EXPLORE SERVICES",
-    ctaLink: "/services/",
+    id: 'hero-slide-1',
+    image: '/images/hero/model-3-hero.webp',
+    width: 721, height: 673,
+    alt: 'Beauty model with eyes closed, an elegant updo and champagne satin draping',
+    eyebrow: 'Premium unisex salon',
+    title: 'More Than Just a Salon',
+    titleLine: 'More Than', titleEnd: 'Just a', titleAccent: 'Salon',
+    subtitle: "It's a Beautiful Experience",
+    description: 'Where expert care, modern techniques and personalised attention come together to bring out the best in you — always.',
+    cta: 'Explore services', href: '/services/',
   },
   {
-    id: "slide-2",
-    number: "02",
-    bgImage: "/images/hero/hero-slide-2.webp",
-    eyebrowLine1: "HAIR ARTISTRY & SPA",
-    eyebrowLine2: "BY SEEMATTI",
-    title1: "Couture Hair",
-    title2: "Artistry &",
-    titleBold: "Care",
-    italicSub: "Crafted with Precision & Passion",
-    description: "From restorative Fusio Dose and Caviar rituals to hand-painted Balayage, Botox, and Nanoplasty transformations.",
-    ctaText: "DISCOVER HAIR CARE",
-    ctaLink: "/hair-artistry-spa/",
+    id: 'hero-slide-2',
+    image: '/images/hero/model-3-hero.webp',
+    width: 673, height: 1022,
+    alt: 'Beauty model facing the camera with a softly styled updo and gold satin wrap',
+    eyebrow: 'Hair artistry & spa',
+    title: 'Couture Hair Artistry & Care',
+    titleLine: 'Couture Hair', titleEnd: 'Artistry &', titleAccent: 'Care',
+    subtitle: 'Crafted with Precision & Passion',
+    description: 'From restorative Fusio Dose and Caviar rituals to hand-painted Balayage, Botox, and Nanoplasty transformations.',
+    cta: 'Discover hair care', href: '/hair-artistry-spa/',
   },
   {
-    id: "slide-3",
-    number: "03",
-    bgImage: "/images/hero/hero-slide-3.webp",
-    eyebrowLine1: "THE BRIDAL EXPERIENCE",
-    eyebrowLine2: "BY SEEMATTI",
-    title1: "Your Day.",
-    title2: "Your",
-    titleBold: "Grace",
-    italicSub: "Your Signature Look",
-    description: "Bespoke bridal journeys combining century-long Seematti heritage with high-definition and airbrush makeup.",
-    ctaText: "EXPLORE BRIDAL",
-    ctaLink: "/bridal/",
+    id: 'hero-slide-3',
+    image: '/images/hero/model-3-hero.webp',
+    width: 846, height: 989,
+    alt: 'Beauty model with luminous makeup, gold earrings and a champagne satin shawl',
+    eyebrow: 'The bridal experience',
+    title: 'Your Day. Your Grace',
+    titleLine: 'Your Day.', titleEnd: 'Your', titleAccent: 'Grace',
+    subtitle: 'Your Signature Look',
+    description: 'Bespoke bridal journeys combining century-long Seematti heritage with high-definition and airbrush makeup.',
+    cta: 'Explore bridal', href: '/bridal/',
   },
 ];
 ---
 
-<section
-  id="hero-slider"
-  class="relative w-full overflow-hidden bg-[#F7F0E4] border-b border-[#E8D5B7]/50 select-none"
-  aria-label="S For Swag Hero Banner"
->
-  <!-- Fixed aspect ratio container matching reference 2.5:1 ratio -->
-  <div class="relative w-full min-h-[460px] sm:min-h-[500px] lg:min-h-[520px] xl:min-h-[540px]">
-    
-    {slides.map((slide, index) => {
-      const isFirst = index === 0;
-      return (
-        <div
-          class={`hero-slide absolute inset-0 w-full h-full bg-cover bg-no-repeat transition-opacity duration-700 ease-in-out ${
-            isFirst ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
-          }`}
-          style={`background-image: url('${slide.bgImage}'); background-position: center right;`}
-          data-slide-index={index}
-          role="group"
-          aria-roledescription="slide"
-          aria-label={`${index + 1} of ${slides.length}`}
-        >
-          <!-- Text Content Wrapper -->
-          <div class="max-w-7xl mx-auto h-full px-6 sm:px-10 lg:px-12 flex items-center">
-            <div class="w-full sm:w-[58%] md:w-[52%] lg:w-[48%] py-8 sm:py-12 z-20">
-              
-              <!-- Eyebrow with decorative gold underline -->
-              <div class="space-y-0.5 mb-3 sm:mb-4">
-                <p class="text-[10px] sm:text-xs uppercase tracking-[0.24em] text-[#8E652E] font-medium">
-                  {slide.eyebrowLine1}
-                </p>
-                <p class="text-[10px] sm:text-xs uppercase tracking-[0.24em] text-[#8E652E] font-medium">
-                  {slide.eyebrowLine2}
-                </p>
-                <div class="w-10 sm:w-12 h-[1px] bg-[#A77A3F] mt-2"></div>
-              </div>
-
-              <!-- Main Heading matching exact reference typography -->
-              <div class="space-y-1">
-                <h1 class="text-3xl sm:text-5xl lg:text-[3.6rem] font-serif text-[#28221C] leading-[1.06] tracking-tight">
-                  {slide.title1} <br />
-                  <span class="font-normal">{slide.title2}</span> <span class="font-semibold">{slide.titleBold}</span>
-                </h1>
-                <p class="text-xl sm:text-2xl lg:text-3xl font-serif italic text-[#8E652E] font-normal pt-1 mb-3">
-                  {slide.italicSub}
-                </p>
-              </div>
-
-              <!-- Supporting Paragraph -->
-              <p class="text-xs sm:text-sm text-[#5C4D3E] max-w-sm sm:max-w-md leading-relaxed mb-6 font-normal">
-                {slide.description}
-              </p>
-
-              <!-- Filled Pill CTA Button -->
-              <div>
-                <a
-                  href={slide.ctaLink}
-                  class="inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-[#916938] hover:bg-[#7A5526] text-[#FFFCF6] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium shadow-xs transition-all duration-300 group"
-                >
-                  <span>{slide.ctaText}</span>
-                  <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
-                </a>
-              </div>
-
+<section id="hero-slider" class="hero" aria-label="S For Swag beauty experiences" aria-roledescription="carousel">
+  <hero-carousel data-interval="6000">
+    <div class="hero-stage">
+      {slides.map((slide, index) => {
+        const Heading = index === 0 ? 'h1' : 'h2';
+        return (
+          <div
+            id={slide.id}
+            class={`hero-slide hero-slide-${index + 1}`}
+            data-slide
+            data-active={index === 0 ? 'true' : 'false'}
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`${index + 1} of ${slides.length}: ${slide.title}`}
+            aria-hidden={index !== 0 ? 'true' : 'false'}
+            inert={index !== 0}
+          >
+            <div class="hero-copy">
+              <p class="hero-eyebrow">{slide.eyebrow}<span>{siteConfig.byLine}</span></p>
+              <Heading class="hero-heading">
+                {slide.titleLine}<br />
+                {slide.titleEnd}{' '}<strong>{slide.titleAccent}</strong>
+              </Heading>
+              <p class="hero-subtitle font-serif">{slide.subtitle}</p>
+              <p class="hero-description">{slide.description}</p>
+              <a href={slide.href} class="hero-cta luxury-pill-btn">
+                {slide.cta}
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M4 12h15m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+            <div class="hero-visual">
+              <img
+                class="hero-model"
+                src={slide.image}
+                alt={slide.alt}
+                width={slide.width}
+                height={slide.height}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                fetchpriority={index === 0 ? 'high' : 'low'}
+                decoding="async"
+              />
             </div>
           </div>
-        </div>
-      );
-    })}
-
-    <!-- Vertical Label on Far Right Edge (from reference image) -->
-    <div class="hidden lg:flex flex-col items-center gap-4 absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 text-[9px] uppercase tracking-[0.3em] text-[#8E7864] select-none z-20 pointer-events-none">
-      <span class="rotate-90 origin-center whitespace-nowrap">HAIR</span>
-      <span class="w-1 h-1 rounded-full bg-[#A77A3F]/50"></span>
-      <span class="rotate-90 origin-center whitespace-nowrap">NAILS</span>
-      <span class="w-1 h-1 rounded-full bg-[#A77A3F]/50"></span>
-      <span class="rotate-90 origin-center whitespace-nowrap">BEAUTY</span>
-      <span class="w-1 h-1 rounded-full bg-[#A77A3F]/50"></span>
-      <span class="rotate-90 origin-center whitespace-nowrap">BRIDAL</span>
-    </div>
-
-    <!-- Bottom Right Pagination Controls (01, 02, 03) -->
-    <div
-      class="absolute bottom-4 sm:bottom-6 right-8 sm:right-16 flex items-center gap-3 z-30 font-mono text-xs tracking-widest"
-      aria-label="Slider Pagination"
-    >
-      {slides.map((s, index) => {
-        const isFirst = index === 0;
-        return (
-          <button
-            type="button"
-            class="slide-nav-btn cursor-pointer py-1 px-1 transition-all flex items-center gap-1.5 focus:outline-none"
-            data-target={index}
-            aria-label={`Go to slide ${s.number}`}
-            aria-selected={isFirst ? "true" : "false"}
-          >
-            <span class={`slide-line h-[1.5px] transition-all duration-300 ${isFirst ? 'w-4 bg-[#A77A3F]' : 'hidden w-0'}`}></span>
-            <span class={`slide-num font-semibold transition-colors ${isFirst ? 'text-[#A77A3F]' : 'text-[#8E7864] hover:text-[#4A321C]'}`}>
-              {s.number}
-            </span>
-          </button>
         );
       })}
     </div>
 
-  </div>
+    <p class="hero-services" aria-hidden="true">Hair <span>·</span> Nails <span>·</span> Beauty <span>·</span> Bridal</p>
+    <div class="hero-controls" role="group" aria-label="Slideshow controls">
+      <div class="hero-pagination" role="group" aria-label="Choose a slide">
+        {slides.map((slide, index) => (
+          <button
+            type="button"
+            class="hero-indicator"
+            data-slide-target={index}
+            aria-label={`Show slide ${index + 1}: ${slide.title}`}
+            aria-controls={slide.id}
+            aria-pressed={index === 0 ? 'true' : 'false'}
+          >
+            <span aria-hidden="true" class="hero-dot"></span>
+          </button>
+        ))}
+      </div>
+      <span class="hero-controls-divider" aria-hidden="true"></span>
+      <button type="button" class="hero-rotation" data-rotation aria-label="Pause slideshow">
+        <svg class="hero-pause-icon" width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M4 3h2v10H4zm6 0h2v10h-2z" />
+        </svg>
+        <svg class="hero-play-icon" width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="m5 3 8 5-8 5z" />
+        </svg>
+      </button>
+    </div>
+    <p class="sr-only" data-slide-status aria-live="polite" aria-atomic="true"></p>
+  </hero-carousel>
 </section>
 
-<script>
-  function initHeroSlider() {
-    const slider = document.getElementById('hero-slider');
-    if (!slider) return;
-
-    const slides = slider.querySelectorAll<HTMLElement>('.hero-slide');
-    const navBtns = slider.querySelectorAll<HTMLButtonElement>('.slide-nav-btn');
-    if (slides.length === 0 || navBtns.length === 0) return;
-
-    let currentIndex = 0;
-    let autoSlideTimer: number | null = null;
-    const intervalMs = 6000;
-
-    function goToSlide(targetIndex: number) {
-      if (targetIndex === currentIndex) return;
-
-      slides.forEach((slide, idx) => {
-        if (idx === targetIndex) {
-          slide.classList.remove('opacity-0', 'pointer-events-none');
-          slide.classList.add('opacity-100', 'pointer-events-auto', 'z-10');
-        } else {
-          slide.classList.remove('opacity-100', 'pointer-events-auto', 'z-10');
-          slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
-        }
-      });
-
-      navBtns.forEach((btn, idx) => {
-        const numSpan = btn.querySelector('.slide-num');
-        const lineSpan = btn.querySelector('.slide-line');
-
-        if (idx === targetIndex) {
-          btn.setAttribute('aria-selected', 'true');
-          numSpan?.classList.remove('text-[#8E7864]');
-          numSpan?.classList.add('text-[#A77A3F]');
-          lineSpan?.classList.remove('hidden', 'w-0');
-          lineSpan?.classList.add('w-4', 'bg-[#A77A3F]');
-        } else {
-          btn.setAttribute('aria-selected', 'false');
-          numSpan?.classList.remove('text-[#A77A3F]');
-          numSpan?.classList.add('text-[#8E7864]');
-          lineSpan?.classList.add('hidden', 'w-0');
-          lineSpan?.classList.remove('w-4', 'bg-[#A77A3F]');
-        }
-      });
-
-      currentIndex = targetIndex;
-    }
-
-    function nextSlide() {
-      const next = (currentIndex + 1) % slides.length;
-      goToSlide(next);
-    }
-
-    function startAutoSlide() {
-      stopAutoSlide();
-      autoSlideTimer = window.setInterval(nextSlide, intervalMs);
-    }
-
-    function stopAutoSlide() {
-      if (autoSlideTimer !== null) {
-        clearInterval(autoSlideTimer);
-        autoSlideTimer = null;
-      }
-    }
-
-    navBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const target = parseInt(btn.getAttribute('data-target') || '0', 10);
-        goToSlide(target);
-        startAutoSlide();
-      });
-    });
-
-    slider.addEventListener('mouseenter', stopAutoSlide);
-    slider.addEventListener('mouseleave', startAutoSlide);
-
-    startAutoSlide();
+<style>
+  .hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-champagne);
+    background: var(--color-bg-primary) url('/images/hero/hero-bg-reference.webp') left center / cover no-repeat;
   }
+  hero-carousel { display: block; }
+  .hero-stage {
+    display: grid;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: clamp(24px, 4vw, 64px);
+  }
+  /* Overlapping grid items reserve the tallest slide's space, even when hidden. */
+  .hero-slide {
+    grid-area: 1 / 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-width: 0;
+    min-height: clamp(540px, 43vw, 610px);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 650ms ease, visibility 650ms;
+  }
+  .hero-slide[data-active='true'] { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+  .hero-copy {
+    align-self: center;
+    position: relative;
+    z-index: 2;
+    padding-block: 64px 88px;
+    padding-right: 12px;
+    opacity: 0;
+    transform: translateX(-16px);
+    transition: opacity 500ms ease, transform 700ms ease;
+  }
+  .hero-slide[data-active='true'] .hero-copy { opacity: 1; transform: translateX(0); }
+  .hero-eyebrow {
+    margin-bottom: 25px;
+    color: var(--color-gold-dark);
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.8;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+  .hero-eyebrow span { display: block; }
+  .hero-eyebrow::after {
+    content: '';
+    display: block;
+    width: 42px;
+    height: 1px;
+    margin-top: 14px;
+    background: var(--color-gold);
+  }
+  .hero-heading {
+    color: var(--color-text-main);
+    font-size: clamp(48px, 4.7vw, 64px);
+    font-weight: 400;
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+  }
+  .hero-heading strong { font-weight: 600; }
+  .hero-subtitle {
+    margin-top: 12px;
+    color: var(--color-gold-dark);
+    font-size: clamp(23px, 2.1vw, 29px);
+    line-height: 1.2;
+    font-style: italic;
+  }
+  .hero-description {
+    max-width: 385px;
+    margin-top: 20px;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    line-height: 1.85;
+  }
+  .hero-cta {
+    min-height: 46px;
+    margin-top: 28px;
+    gap: 18px;
+    color: var(--color-white);
+    background: var(--color-gold-dark);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    box-shadow: 0 4px 12px rgb(74 50 28 / 8%);
+  }
+  .hero-cta:hover { background: var(--color-brown-deep); }
+  .hero-cta svg { flex-shrink: 0; transition: transform 200ms ease; }
+  .hero-cta:hover svg { transform: translateX(3px); }
+  .hero-visual { position: relative; min-width: 0; align-self: stretch; }
+  .hero-model {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100% - 32px);
+    object-fit: contain;
+    object-position: center bottom;
+    opacity: 0;
+    transform: translateX(22px);
+    transition: opacity 700ms ease, transform 900ms cubic-bezier(0.2, 0.65, 0.3, 1);
+  }
+  .hero-slide[data-active='true'] .hero-model { opacity: 1; transform: translateX(0); }
+  .hero-services {
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    z-index: 2;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    writing-mode: vertical-rl;
+    transform: translateY(-50%);
+    color: var(--color-gold-dark);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .hero-controls {
+    position: absolute;
+    z-index: 3;
+    bottom: 18px;
+    left: max(24px, calc((100% - 1280px) / 2 + 64px));
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+  }
+  [data-ready] .hero-controls { visibility: visible; }
+  .hero-pagination { display: flex; }
+  .hero-indicator, .hero-rotation {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--color-gold-dark);
+    cursor: pointer;
+  }
+  .hero-dot {
+    width: 6px;
+    height: 6px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    transition: background 250ms ease, box-shadow 250ms ease;
+  }
+  .hero-indicator[aria-pressed='true'] .hero-dot {
+    background: currentColor;
+    box-shadow: 0 0 0 5px var(--color-bg-primary), 0 0 0 6px rgb(132 93 43 / 45%);
+  }
+  .hero-indicator:hover, .hero-rotation:hover { background: rgb(232 213 183 / 50%); }
+  .hero-controls-divider { width: 1px; height: 14px; margin-inline: 8px; background: var(--color-gold-light); }
+  .hero-play-icon, [data-paused='true'] .hero-pause-icon { display: none; }
+  [data-paused='true'] .hero-play-icon { display: block; }
+  .hero :is(a, button):focus-visible { outline: 2px solid var(--color-brown-deep); outline-offset: 4px; }
+  @media (min-width: 1280px) {
+    .hero-model { width: calc(100% + 30px); max-width: none; right: -100px; }
+  }
+  @media (max-width: 1023px) {
+    .hero { background-position: center; }
+    .hero-services { display: none; }
+    .hero-heading { font-size: clamp(42px, 5.3vw, 54px); }
+    .hero-copy { padding-block: 56px 88px; }
+  }
+  @media (max-width: 639px) {
+    .hero { background-position: 35% center; }
+    .hero-stage { padding-inline: 24px; }
+    .hero-slide {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: 1fr clamp(280px, 78vw, 390px);
+      min-height: 0;
+    }
+    .hero-copy { align-self: start; padding: 44px 0 16px; }
+    .hero-eyebrow { margin-bottom: 20px; font-size: 9px; }
+    .hero-eyebrow::after { margin-top: 10px; }
+    .hero-heading { font-size: clamp(40px, 10.8vw, 54px); }
+    .hero-subtitle { max-width: 360px; font-size: 24px; }
+    .hero-description { max-width: 360px; margin-top: 16px; font-size: 12px; }
+    .hero-cta { margin-top: 22px; }
+    .hero-model { height: 100%; width: 100%; right: 0; object-position: center bottom; }
+    .hero-controls { bottom: 10px; left: 24px; border-radius: 30px; background: rgb(247 240 228 / 92%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slide, .hero-copy, .hero-model, .hero-dot, .hero-cta, .hero-cta svg { transition: none; transform: none; }
+  }
+</style>
 
-  initHeroSlider();
-  document.addEventListener('astro:page-load', initHeroSlider);
+<script>
+  import '../scripts/hero-carousel';
 </script>
