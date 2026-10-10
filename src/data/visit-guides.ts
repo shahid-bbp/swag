@@ -16,14 +16,14 @@ export const visitGuides: Record<string, VisitGuide> = {
   ], [
     ['Can I combine beauty services?', 'Share the services you are considering when booking. The team can confirm which can be scheduled together and the time to allow.'],
     ['How do I choose between a clean-up and a facial?', 'Use the menu to compare options, then discuss your skin-care goals with the team before deciding.'],
-    ['Are the menu prices final?', 'Prices are starting prices. Your service choice and any additions will be confirmed before the appointment begins.'],
+    ['Can services be customized?', 'Yes. Your service choice, custom preferences, and any additions will be confirmed with your specialist before the appointment begins.'],
   ]),
   'facials': guide('Make room for your skin-care goals.', 'A little context helps make your facial consultation more useful.', [
     ['Describe your priorities', 'Tell the team whether you are looking for a simple clean-up, a relaxing facial or help choosing between the menu options.'],
     ['Bring your routine', 'A list of the products and treatments you currently use can help guide the conversation. Mention any sensitivities.'],
     ['Ask about the next steps', 'Before leaving, ask which aftercare guidance applies to the facial you selected.'],
   ], [
-    ['Can I book without choosing a facial first?', 'Yes. Request a facial consultation and explain what you are looking for. Confirm the service and price with the team before proceeding.'],
+    ['Can I book without choosing a facial first?', 'Yes. Request a facial consultation and explain what you are looking for. Confirm the recommended treatment with the team before proceeding.'],
     ['What should I mention before my appointment?', 'Share your current skin-care routine, recent treatments and any known product sensitivities when you enquire.'],
   ]),
   'grooming': guide('Small details. A considered finish.', 'Plan your brow, threading or detan appointment around your preferences.', [
@@ -40,14 +40,14 @@ export const visitGuides: Record<string, VisitGuide> = {
     ['Confirm preparation', 'Ask the team what preparation and aftercare they recommend for your appointment.'],
   ], [
     ['How do I choose strip or stripless waxing?', 'The menu lists the available options by area. The team can discuss those options with you before booking.'],
-    ['Can I add another area on the day?', 'Ask reception first. Additional services depend on available appointment time and are priced separately.'],
+    ['Can I add another area on the day?', 'Ask reception first. Additional services depend on available appointment time and specialist schedule.'],
   ]),
   'manicure': guide('A little attention for hardworking hands.', 'From a quick tidy to a longer ritual, choose the visit that suits you.', [
     ['Compare the menu', 'Explore Express, Classic Spa, Advanced and Signature manicure options before enquiring.'],
     ['Choose your shape', 'Bring an idea of your preferred length, nail shape and finish to your appointment.'],
     ['Mention existing products', 'Let the team know if you currently wear gel or extensions so removal can be discussed.'],
   ], [
-    ['Is nail art included in a manicure?', 'Nail artistry has a separate menu. Ask the team to confirm the inclusions and any additional cost for your chosen finish.'],
+    ['Is nail art included in a manicure?', 'Nail artistry has a separate menu. Ask the team to confirm the inclusions and options for your chosen finish.'],
     ['Can I pair a manicure with a pedicure?', 'Mention both in your enquiry so reception can confirm a suitable appointment schedule.'],
   ]),
   'pedicure': guide('Give your feet a moment of care.', 'Make your pedicure preferences part of the booking conversation.', [
@@ -55,16 +55,16 @@ export const visitGuides: Record<string, VisitGuide> = {
     ['Discuss your finish', 'Let the team know the nail length, shape and polish finish you have in mind.'],
     ['Plan your visit', 'Ask about timing, what to bring and any existing polish removal when you book.'],
   ], [
-    ['Do you offer gel polish for toes?', 'Gel polish for toes is listed in the Nail Studio menu. Ask about adding it to your appointment and confirm the combined price.'],
+    ['Do you offer gel polish for toes?', 'Gel polish for toes is listed in the Nail Studio menu. Ask about adding it to your appointment when booking.'],
     ['What if I am unsure which pedicure to choose?', 'Explain the experience you would like and ask the team to compare the listed options with you.'],
   ]),
   'hair-artistry-spa': guide('A new chapter for your hair.', 'A clear brief makes room for a more personal consultation.', [
     ['Bring your inspiration', 'Save a few images of the colour, texture or finish you like. Include what you want to keep about your current look.'],
     ['Share your hair history', 'Discuss previous colour, texture services and your everyday styling routine with your stylist.'],
-    ['Plan the upkeep', 'Ask about appointment length, the final quote and the care your chosen service will need afterwards.'],
+    ['Plan the upkeep', 'Ask about appointment length, treatment steps and the care your chosen service will need afterwards.'],
   ], [
     ['Can I enquire before deciding on a treatment?', 'Yes. Tell the team what you would like to change or maintain, and request a consultation to compare the menu options.'],
-    ['Why do some prices have a plus sign?', 'Hair length, density and service complexity may affect the final price. The team will confirm your quote before the service.'],
+    ['Can treatments be tailored to my hair?', 'Hair length, density, texture and service complexity are assessed during consultation to create your customized hair plan.'],
     ['Can I combine colour and a texture service?', 'Ask your stylist to assess and advise on the sequence before scheduling. Do not assume both can be performed in the same visit.'],
   ]),
   'hair-treatment': guide('Start with the care your hair needs.', 'Use your consultation to discuss your routine and compare treatment options.', [
@@ -89,15 +89,15 @@ export const visitGuides: Record<string, VisitGuide> = {
     ['Ask about preparation', 'Confirm any consultation or testing requirements, expected appointment time and maintenance before booking.'],
   ], [
     ['Can you recreate a reference colour exactly?', 'Reference images help communicate a direction. Your starting colour, hair history and the agreed service affect the finish.'],
-    ['Do you offer both root colour and balayage?', 'Yes, root touch-up, global colour, ombré and hand-painted balayage are listed on the menu. Confirm suitability and pricing during consultation.'],
+    ['Do you offer both root colour and balayage?', 'Yes, root touch-up, global colour, ombré and hand-painted balayage are listed on the menu. Confirm suitability and consultation options with your colourist.'],
   ]),
   'nail-studio': guide('Your style, down to the smallest detail.', 'Plan the shape, length and finish before choosing your nail service.', [
     ['Choose your foundation', 'Compare polish, overlays and extensions according to the length and shape you have in mind.'],
     ['Find your finish', 'Save a colour palette or nail-art reference to show the artist. Decide whether you prefer a subtle or expressive look.'],
-    ['Allow for the details', 'Mention existing products, removal and art additions so the team can confirm timing and price.'],
+    ['Allow for the details', 'Mention existing products, removal and art additions so the team can confirm timing and treatment steps.'],
   ], [
     ['Can I bring nail-art inspiration?', 'Yes. Bring a reference and discuss which details can be adapted to your chosen shape, length and appointment time.'],
-    ['Are nail-art add-ons included in extensions?', 'The menu lists base services and add-ons separately. Confirm the full design and quote before your appointment begins.'],
+    ['Are nail-art add-ons included in extensions?', 'The menu lists base services and add-ons separately. Confirm your full design requirements before your appointment begins.'],
     ['Can I book removal or refills?', 'The menu includes gel polish removal and extension refills. Describe what you currently wear when enquiring.'],
   ]),
   'nail-services': guide('Build your look from the base up.', 'Choose the foundation before the finishing details.', [
@@ -106,14 +106,14 @@ export const visitGuides: Record<string, VisitGuide> = {
     ['Mention removal or refills', 'Tell reception about any existing polish or extensions so the appointment can be planned accurately.'],
   ], [
     ['What is the difference between polish and extensions?', 'Polish adds a colour finish; extensions add length. Ask the artist to explain the listed options before choosing your base service.'],
-    ['Can I add a French finish?', 'French tips are listed on the menu. Confirm the finish, base service and combined cost when booking.'],
+    ['Can I add a French finish?', 'French tips are listed on the menu. Confirm the finish and base service when booking.'],
   ]),
   'nail-addons': guide('Make the finishing details your own.', 'A considered palette brings a nail design together.', [
     ['Pick your palette', 'Bring colour ideas, an outfit reference or a saved design to guide the conversation.'],
     ['Choose an accent', 'Explore chrome, cat eye, ombré, glitter and hand-painted details in the artistry menu.'],
-    ['Agree on the design', 'Confirm which nails will carry the detail and ask about the total price and time needed.'],
+    ['Agree on the design', 'Confirm which nails will carry the detail and discuss the design requirements and time needed with your nail artist.'],
   ], [
-    ['Can I choose art for only a few nails?', 'Discuss your preferred accent nails with the artist and ask how the chosen design will be priced.'],
+    ['Can I choose art for only a few nails?', 'Discuss your preferred accent nails with the artist to customize your chosen set.'],
     ['Should I book a base service as well?', 'Tell reception whether you already have a suitable base or need polish, an overlay or extensions alongside the art.'],
   ]),
   'body-wellness-spa': guide('Create a little space in your day.', 'Choose a wellness appointment around your comfort and available time.', [
@@ -128,7 +128,7 @@ export const visitGuides: Record<string, VisitGuide> = {
   'body-massage': guide('A session shaped around your comfort.', 'Let your preferences guide the conversation before your appointment.', [
     ['Compare session types', 'Explore aroma, Swedish, deep tissue and focused massage options in the menu.'],
     ['Explain your preferences', 'Share your preferred pressure and any comfort considerations with the team before the session.'],
-    ['Confirm the details', 'Check the duration and price for your selected service and ask about arrival instructions.'],
+    ['Confirm the details', 'Check the duration for your selected service and ask about arrival instructions.'],
   ], [
     ['Can I change the pressure during a session?', 'Let the therapist know if you would like the pressure adjusted or would prefer to pause.'],
     ['What should I include in my booking enquiry?', 'Include your selected service, preferred date and time, and any preferences you would like to discuss before arriving.'],

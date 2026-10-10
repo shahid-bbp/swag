@@ -8,8 +8,8 @@ import { servicesData } from '../data/services';
 import { siteConfig } from '../data/site';
 
 const seo = {
-  title: "Salon Services & Pricing Menu | S For Swag Kochi",
-  description: "Browse the complete salon service menu of S For Swag on MG Road, Kochi. Verified starting prices for hair treatments, colouring, nail extensions, spa, facials, and bridal packages.",
+  title: "Salon Services & Treatment Menus | S For Swag Kochi",
+  description: "Browse the complete salon service menu of S For Swag on MG Road, Kochi. Expert hair treatments, colouring, nail extensions, spa, facials, and bridal packages.",
   canonical: `${siteConfig.siteUrl}/services/`,
 };
 
@@ -90,7 +90,7 @@ const breadcrumbs = [{ name: 'Services', url: '/services/' }];
 
               <div class="pt-2 flex items-center gap-4">
                 <a href={`/${category.slug}/`} class="luxury-pill-btn luxury-pill-gold">
-                  <span>VIEW OUR PRICING</span>
+                  <span>VIEW OUR SERVICES</span>
                   <span>&rarr;</span>
                 </a>
               </div>
@@ -103,7 +103,7 @@ const breadcrumbs = [{ name: 'Services', url: '/services/' }];
       <!-- Brochure Menu Notes Box -->
       <div class="p-8 rounded-3xl bg-[#F5ECDB]/80 border border-[#eeda9b] space-y-4">
         <h3 class="text-base uppercase tracking-widest font-bold text-[#75451d]">
-          Salon Pricing Policy & Menu Notes
+          Salon Service Policy & Menu Notes
         </h3>
         <p class="text-xs text-[#5C4D3E] leading-relaxed">
           {siteConfig.pricingDisclaimer}
@@ -120,10 +120,10 @@ const breadcrumbs = [{ name: 'Services', url: '/services/' }];
   <JourneySection title="A menu made easier to navigate." eyebrow="Choose with confidence" steps={[
     { title: 'Start with a category', text: 'Choose hair, beauty, nails, wellness or bridal, then open the relevant menu to compare individual services.' },
     { title: 'Keep your priorities in mind', text: 'Consider your occasion, preferred finish and available time. Save a few questions to discuss with the team.' },
-    { title: 'Confirm your selection', text: 'Ask about inclusions, any additions and the final quote before confirming your appointment.' },
+    { title: 'Confirm your selection', text: 'Ask about inclusions, any additions and the treatment plan before confirming your appointment.' },
   ]} tinted />
   <FAQSection title="Understanding your service choices." items={[
-    { question: 'What does a starting price mean?', answer: siteConfig.pricingDisclaimer },
+    { question: 'How is service consultation conducted?', answer: siteConfig.pricingDisclaimer },
     { question: 'Can I book across different departments?', answer: 'Share all the services you are considering. Reception can confirm availability and help plan their sequence.' },
     { question: 'Where can I compare bridal packages?', answer: 'Open Bridal Studio from the directory above to compare Silver, Gold and Platinum packages and review their listed inclusions.' },
   ]} />

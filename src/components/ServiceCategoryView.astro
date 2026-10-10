@@ -114,9 +114,6 @@ const activeSubcategory = category.subcategories.find((sub) => sub.slug === acti
                     <h3 class="text-lg font-serif text-[#28221C] group-hover:text-[#75451d] transition-colors leading-snug">
                       {item.name}
                     </h3>
-                    <span class="text-base font-serif font-bold text-[#b7802c] shrink-0">
-                      {item.price}
-                    </span>
                   </div>
 
                   <p class="text-xs text-[#6C5D4F] leading-relaxed">
@@ -136,11 +133,6 @@ const activeSubcategory = category.subcategories.find((sub) => sub.slug === acti
                     {item.gender && (
                       <span class="bg-[#F7F0E4] px-2.5 py-1 rounded-md capitalize font-medium">
                         {item.gender}
-                      </span>
-                    )}
-                    {item.isPlusPlus && (
-                      <span class="text-[10px] text-[#75451d] bg-[#F5ECDB] px-2 py-0.5 rounded">
-                        Starting Price ++
                       </span>
                     )}
                   </div>
@@ -178,19 +170,19 @@ const activeSubcategory = category.subcategories.find((sub) => sub.slug === acti
             <line x1="12" y1="8" x2="12.01" y2="8"></line>
           </svg>
           <h3 class="text-sm uppercase tracking-[0.16em] font-bold text-[#75451d]">
-            Official Salon Menu Notes & Pricing Policy
+            Official Salon Menu Notes & Service Policy
           </h3>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-[#5C4D3E] leading-relaxed">
           <ul class="space-y-2 list-disc list-inside">
-            <li>All prices are in Indian Rupees (₹).</li>
-            <li>All prices mentioned are starting prices and may vary based on individual requirements, hair length, density, and service complexity.</li>
-            <li>Final pricing will be confirmed prior to the service.</li>
+            <li>All services are tailored to individual requirements, hair length, texture, and service complexity.</li>
+            <li>Consultations are conducted prior to your service to confirm treatment options and personalized care.</li>
+            <li>Appointments are recommended to ensure dedicated time with your specialist.</li>
           </ul>
           <ul class="space-y-2 list-disc list-inside">
-            <li>Bridal packages are customised after consultation and are subject to appointment availability.</li>
-            <li>Makeup, hairstyle, saree draping and accessories can be customised according to the bride's look and functions.</li>
-            <li>Travel expenses will be additional for locations outside city limits. GST, if applicable, may be charged separately.</li>
+            <li>Bridal packages are customized after consultation and are subject to artist availability.</li>
+            <li>Makeup, hairstyle, saree draping and accessories are curated according to the bride's looks and events.</li>
+            <li>On-location bridal services available outside city limits upon prior request.</li>
           </ul>
         </div>
       </div>

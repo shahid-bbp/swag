@@ -70,7 +70,7 @@ export const siteConfig: SiteConfig = {
   openingHoursNote:
     "Operating hours to be confirmed with appointment booking. Early morning bridal appointments available on request.",
   pricingDisclaimer:
-    "All prices are in Indian Rupees (₹). Prices mentioned are starting prices and may vary based on individual requirements, hair length, density, and service complexity. Final pricing will be confirmed prior to service. Travel expenses additional for locations outside city limits. GST, if applicable, may be charged separately.",
+    "Services and treatments are customized based on individual requirements, hair length, texture, and service complexity. Details and care plans are confirmed with our specialists during consultation prior to your service. GST, if applicable, may be charged separately.",
   siteUrl: "https://sforswag.com",
 };
 
