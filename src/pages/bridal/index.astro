@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BridalPackageComparison from '../../components/BridalPackageComparison.astro';
 import EnquiryForm from '../../components/EnquiryForm.astro';
+import ServiceGuides from '../../components/ServiceGuides.astro';
+import EditorialFeature from '../../components/EditorialFeature.astro';
 import { servicesData } from '../../data/services';
 import { siteConfig } from '../../data/site';
 
@@ -57,7 +59,7 @@ const breadcrumbs = [
         <div class="lg:col-span-5">
           <div class="rounded-3xl overflow-hidden border-2 border-[#FFFCF6] shadow-xl relative group">
             <img
-              src="/images/bridal/bridal-main.webp"
+              src="/images/optimized/bridal-main.webp"
               alt="South Indian Kerala bride in temple jewellery at S For Swag Kochi"
               class="w-full h-auto object-cover aspect-[3/4] group-hover:scale-105 transition-transform duration-700"
               width="600"
@@ -128,4 +130,9 @@ const breadcrumbs = [
 
     </div>
   </section>
+  <EditorialFeature eyebrow="A considered bridal brief" title="Begin with the details you love."
+    description="The border of your saree, a favourite piece of jewellery, the atmosphere of your ceremony. Bring these references into your consultation to help shape a look that feels connected."
+    image="/images/editorial/bridal-details.webp" alt="Illustrative bridal still life with ivory kasavu silk, gold jewellery and jasmine"
+    href="/bridal/draping/" link="Explore draping and finishing touches" tinted />
+  <ServiceGuides category={bridalCategory} />
 </BaseLayout>

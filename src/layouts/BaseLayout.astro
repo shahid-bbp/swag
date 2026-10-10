@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import '../styles/global.css';
+import '../styles/sections.css';
 
 export interface Props {
   seo?: SEOProps;
@@ -16,11 +17,16 @@ const { seo = {} } = Astro.props;
 <html lang="en">
   <SEOHead {...seo} />
   <body class="bg-[#F7F0E4] text-[#28221C] min-h-screen flex flex-col font-sans antialiased selection:bg-[#eeda9b] selection:text-[#75451d]">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <Header />
-    <main class="flex-grow pt-[72px] sm:pt-[80px]">
+    <main id="main-content" class="site-main flex-grow" tabindex="-1">
       <slot />
     </main>
     <Footer />
     <WhatsAppButton />
   </body>
 </html>
+
+<script>
+  import '../scripts/site-motion';
+</script>

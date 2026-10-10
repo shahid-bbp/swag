@@ -1,0 +1,19 @@
+---
+import SectionIntro from './SectionIntro.astro';
+export interface Step { title: string; text: string; }
+interface Props { title: string; description?: string; eyebrow?: string; steps: Step[]; tinted?: boolean; }
+const { title, description, eyebrow = 'Make it personal', steps, tinted = false } = Astro.props;
+---
+<section class:list={['editorial-section', { 'editorial-section--tinted': tinted }]} aria-label={title}>
+  <div class="section-shell">
+    <SectionIntro {eyebrow} {title} {description} />
+    <ol class="journey-grid">
+      {steps.map((step, index) => (
+        <li class="journey-card" data-reveal>
+          <span class="journey-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <h3>{step.title}</h3><p>{step.text}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

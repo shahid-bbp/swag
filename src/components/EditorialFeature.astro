@@ -1,0 +1,18 @@
+---
+import SectionIntro from './SectionIntro.astro';
+interface Props { eyebrow: string; title: string; description: string; image: string; alt: string; points?: string[]; href: string; link: string; reverse?: boolean; tinted?: boolean; }
+const { eyebrow, title, description, image, alt, points = [], href, link, reverse = false, tinted = false } = Astro.props;
+---
+<section class:list={['editorial-section', { 'editorial-section--tinted': tinted, 'editorial-feature--reverse': reverse }]} aria-label={title}>
+  <div class="section-shell editorial-split">
+    <figure class="editorial-figure">
+      <img src={image} {alt} width="1200" height="800" loading="lazy" decoding="async" />
+      <figcaption>AI-generated editorial inspiration.</figcaption>
+    </figure>
+    <div data-reveal>
+      <SectionIntro {eyebrow} {title} {description} />
+      {points.length > 0 && <ul class="editorial-points">{points.map((point) => <li>{point}</li>)}</ul>}
+      <a class="section-link" href={href}>{link}<span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>

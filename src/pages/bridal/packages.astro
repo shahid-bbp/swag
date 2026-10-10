@@ -3,6 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BridalPackageComparison from '../../components/BridalPackageComparison.astro';
 import EnquiryForm from '../../components/EnquiryForm.astro';
+import JourneySection from '../../components/JourneySection.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import { visitGuides } from '../../data/visit-guides';
 import { siteConfig } from '../../data/site';
 
 const seo = {
@@ -48,4 +51,6 @@ const breadcrumbs = [
       </div>
     </div>
   </section>
+  <JourneySection title={visitGuides.packages.title} description={visitGuides.packages.description} steps={visitGuides.packages.steps} tinted />
+  <FAQSection title="Before reserving your bridal package." items={visitGuides.packages.faqs} />
 </BaseLayout>

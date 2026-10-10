@@ -1,0 +1,19 @@
+---
+import SectionIntro from './SectionIntro.astro';
+export interface Question { question: string; answer: string; }
+interface Props { title?: string; description?: string; items: Question[]; tinted?: boolean; }
+const { title = 'A little clarity, before you arrive.', description = 'Thoughtful preparation starts with the right questions.', items, tinted = false } = Astro.props;
+---
+<section class:list={['editorial-section', { 'editorial-section--tinted': tinted }]} aria-label={title}>
+  <div class="section-shell faq-layout">
+    <SectionIntro eyebrow="Good to know" title={title} description={description} />
+    <div class="faq-list" data-reveal>
+      {items.map((item) => (
+        <details>
+          <summary>{item.question}</summary>
+          <div class="faq-answer">{item.answer}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

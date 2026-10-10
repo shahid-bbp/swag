@@ -1,0 +1,19 @@
+---
+import SectionIntro from './SectionIntro.astro';
+const experiences = [
+  { title: 'A little everyday polish', description: 'Brow definition, grooming and the details that make you feel put together.', href: '/beauty-lounge/grooming/', link: 'Explore grooming' },
+  { title: 'A fresh hair chapter', description: 'Bring your colour ideas, texture goals and everyday routine to the conversation.', href: '/hair-artistry-spa/', link: 'Find your hair service' },
+  { title: 'Time to slow down', description: 'Explore body wellness and choose a moment of care around your schedule.', href: '/body-wellness-spa/', link: 'Discover wellness' },
+  { title: 'Your celebration look', description: 'Plan makeup, hair and draping around your outfit, occasion and personal style.', href: '/bridal/', link: 'Explore bridal' },
+  { title: 'Details at your fingertips', description: 'From understated colour to expressive nail art, find the finish that feels like you.', href: '/nail-studio/', link: 'Visit the nail studio' },
+  { title: 'A moment for your skin', description: 'Compare facial and clean-up options, then discuss your preferences with the team.', href: '/beauty-lounge/facials/', link: 'Browse skin care' },
+];
+---
+<section class="editorial-section editorial-section--tinted" aria-label="Find your experience">
+  <div class="section-shell">
+    <SectionIntro eyebrow="Start with you" title="What brings you in today?" description="A refresh, a celebration, or simply a little time for yourself. Find a starting point that suits your day." />
+    <div class="finder-grid">
+      {experiences.map((item) => <a class="finder-card" href={item.href} data-reveal><h3>{item.title}</h3><p>{item.description}</p><span class="finder-link">{item.link}<span class="finder-arrow" aria-hidden="true">↗</span></span></a>)}
+    </div>
+  </div>
+</section>

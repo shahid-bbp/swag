@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import JourneySection from '../components/JourneySection.astro';
+import RelatedServices from '../components/RelatedServices.astro';
 import { siteConfig } from '../data/site';
 
 const seo = {
@@ -23,14 +25,14 @@ const galleryItems = [
     title: "Kerala Bridal Elegance",
     category: "Bridal",
     categorySlug: "bridal",
-    image: "/images/bridal/bridal-main.webp",
+    image: "/images/optimized/bridal-main.webp",
     alt: "South Indian bride wearing temple jewellery and silk saree with traditional bridal makeup",
   },
   {
     title: "Silk Waves & Hair Artistry",
     category: "Hair Artistry",
     categorySlug: "hair",
-    image: "/images/hair/hair-care.webp",
+    image: "/images/optimized/hair-care.webp",
     alt: "Glossy brunette silk waves and hair transformation",
   },
   {
@@ -44,7 +46,7 @@ const galleryItems = [
     title: "Champagne Glitter Nail Couture",
     category: "Nails",
     categorySlug: "nails",
-    image: "/images/nails/nail-care.webp",
+    image: "/images/optimized/nail-care.webp",
     alt: "Luxury manicure with champagne gold glitter accents",
   },
   {
@@ -65,215 +67,100 @@ const galleryItems = [
     title: "Editorial Beauty Portrait",
     category: "Beauty",
     categorySlug: "beauty",
-    image: "/images/hero/hero-beauty.webp",
+    image: "/images/hero/model-3-hero.webp",
     alt: "Editorial luxury beauty portrait with champagne silk wrap",
   },
 ];
+galleryItems.push(
+  { title: 'The Art of a Little Care', category: 'Editorial inspiration', categorySlug: 'editorial', image: '/images/editorial/ritual.webp', alt: 'AI-generated still life of beauty ritual objects in warm light' },
+  { title: 'The Bridal Details', category: 'Editorial inspiration', categorySlug: 'editorial', image: '/images/editorial/bridal-details.webp', alt: 'AI-generated still life of kasavu silk, jasmine and gold jewellery' },
+);
+const filters = [['all', 'All images'], ['bridal', 'Bridal'], ['hair', 'Hair'], ['nails', 'Nails'], ['beauty', 'Beauty'], ['spa', 'Wellness'], ['salon', 'The salon'], ['editorial', 'Inspiration']];
 ---
 
 <BaseLayout seo={seo}>
-  <!-- Hero Banner -->
-  <section class="py-12 sm:py-18 bg-[#F5ECDB] border-b border-[#eeda9b] relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8">
-      <Breadcrumbs items={breadcrumbs} class="mb-5 sm:mb-6" />
-      <div class="max-w-3xl space-y-4">
-        <span class="text-xs uppercase tracking-[0.24em] text-[#75451d] font-semibold">Visual Portfolio</span>
-        <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.1]">
-          Artistry in Every Detail
-        </h1>
-        <p class="text-sm sm:text-base text-[#5C4D3E] leading-relaxed">
-          A glimpse into the S For Swag experience — where modern luxury design meets precision hair care, nail couture, rejuvenating spa wellness, and timeless bridal glamour.
-        </p>
-      </div>
+  <section class="editorial-section editorial-section--tinted">
+    <div class="section-shell">
+      <Breadcrumbs items={breadcrumbs} class="mb-6" />
+      <span class="section-kicker">Visual portfolio</span>
+      <h1 class="section-title">Artistry in Every Detail</h1>
+      <p class="section-description">Explore beauty, hair, nails and bridal ideas, then bring your favourite details into your consultation.</p>
     </div>
   </section>
-
-  <!-- Gallery Grid Section -->
-  <section class="py-20 bg-[#F7F0E4]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8">
-      
-      <!-- Category Filter Tabs -->
-      <div class="flex flex-wrap items-center justify-center gap-2.5 mb-12">
-        <button
-          type="button"
-          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#b7802c] text-[#FFFCF6] shadow-sm cursor-pointer"
-          data-filter="all"
-        >
-          All Works
-        </button>
-        <button
-          type="button"
-          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#75451d] border border-[#eeda9b] hover:border-[#b7802c] cursor-pointer"
-          data-filter="bridal"
-        >
-          Bridal
-        </button>
-        <button
-          type="button"
-          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#75451d] border border-[#eeda9b] hover:border-[#b7802c] cursor-pointer"
-          data-filter="hair"
-        >
-          Hair Artistry
-        </button>
-        <button
-          type="button"
-          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#75451d] border border-[#eeda9b] hover:border-[#b7802c] cursor-pointer"
-          data-filter="nails"
-        >
-          Nail Studio
-        </button>
-        <button
-          type="button"
-          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#75451d] border border-[#eeda9b] hover:border-[#b7802c] cursor-pointer"
-          data-filter="beauty"
-        >
-          Skincare & Beauty
-        </button>
-        <button
-          type="button"
-          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#75451d] border border-[#eeda9b] hover:border-[#b7802c] cursor-pointer"
-          data-filter="salon"
-        >
-          Salon Interiors
-        </button>
-      </div>
-
-      <!-- Asymmetric Editorial Grid -->
-      <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        {galleryItems.map((item, idx) => (
-          <div
-            class="gallery-item group relative rounded-3xl overflow-hidden border border-[#eeda9b] bg-[#FFFCF6] shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer"
-            data-category={item.categorySlug}
-            data-src={item.image}
-            data-title={item.title}
-            data-desc={item.alt}
-          >
-            <div class="aspect-[4/3] sm:aspect-[3/4] overflow-hidden relative">
-              <img
-                src={item.image}
-                alt={item.alt}
-                class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
-                width="600"
-                height="800"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#28221C]/70 via-[#28221C]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-[#FFFCF6]">
-                <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#eeda9b]">
-                  {item.category}
-                </span>
-                <h3 class="text-xl font-serif font-bold mt-1">
-                  {item.title}
-                </h3>
-                <span class="text-xs text-[#eeda9b] mt-2 inline-flex items-center gap-1 font-sans">
-                  <span>View Full Photo</span> &rarr;
-                </span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <!-- Lightbox Modal -->
-      <div
-        id="lightbox-modal"
-        class="fixed inset-0 z-50 bg-[#28221C]/90 backdrop-blur-md hidden flex items-center justify-center p-4 sm:p-8"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Image Lightbox"
-      >
-        <button
-          id="lightbox-close"
-          type="button"
-          class="absolute top-6 right-6 text-white hover:text-[#eeda9b] p-2 focus:outline-none"
-          aria-label="Close Lightbox"
-        >
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <line x1="18" y1="6" x2="6" y2="18" stroke-width="2"></line>
-            <line x1="6" y1="6" x2="18" y2="18" stroke-width="2"></line>
-          </svg>
-        </button>
-
-        <div class="max-w-4xl max-h-[85vh] flex flex-col items-center">
-          <img
-            id="lightbox-img"
-            src=""
-            alt=""
-            class="max-w-full max-h-[72vh] object-contain rounded-2xl shadow-2xl border-2 border-[#FFFCF6]"
-          />
-          <div class="mt-4 text-center text-[#FFFCF6]">
-            <h4 id="lightbox-title" class="text-xl font-serif font-bold"></h4>
-            <p id="lightbox-caption" class="text-xs text-[#eeda9b] mt-1 max-w-lg"></p>
-          </div>
+  <section class="editorial-section" aria-label="Image gallery">
+    <div class="section-shell">
+      <salon-gallery>
+        <div class="gallery-filters" role="group" aria-label="Filter images">
+          {filters.map(([value, label]) => <button type="button" data-filter={value} aria-pressed={value === 'all' ? 'true' : 'false'}>{label}</button>)}
         </div>
-      </div>
-
+        <p class="gallery-count" data-gallery-count role="status" aria-live="polite">{galleryItems.length} images</p>
+        <div class="gallery-grid">
+          {galleryItems.map((item) => (
+            <a class="gallery-item" href={item.image} data-gallery-item data-category={item.categorySlug} data-title={item.title} data-description={item.alt} aria-label={`View ${item.title}`}>
+              <figure>
+                <div class="gallery-image"><img src={item.image} alt={item.alt} width="600" height="450" loading="lazy" decoding="async" /></div>
+                <figcaption><span>{item.category}</span><h2>{item.title}</h2><span class="gallery-open" aria-hidden="true">↗</span></figcaption>
+              </figure>
+            </a>
+          ))}
+        </div>
+        <p class="gallery-note">The two editorial still-life images are AI-generated inspiration, rather than photographs of salon products or customer results.</p>
+        <dialog class="gallery-dialog" aria-labelledby="gallery-view-title">
+          <div class="gallery-dialog-inner">
+            <button type="button" data-gallery-close class="gallery-close" aria-label="Close image viewer">×</button>
+            <img data-gallery-full alt="" width="1200" height="900" />
+            <div class="gallery-view-caption"><h2 id="gallery-view-title"></h2><p data-gallery-caption></p></div>
+            <div class="gallery-view-controls"><button type="button" data-gallery-prev aria-label="Previous image">← Previous</button><span data-gallery-position></span><button type="button" data-gallery-next aria-label="Next image">Next →</button></div>
+          </div>
+        </dialog>
+      </salon-gallery>
     </div>
   </section>
+  <JourneySection eyebrow="From inspiration to appointment" title="Find a detail that feels like you." steps={[
+    { title: 'Notice what you love', text: 'Look for a colour, shape, texture or finish that catches your eye. A small detail can be a helpful starting point.' },
+    { title: 'Bring your references', text: 'Save a few images and share what you like about them, alongside your outfit or occasion if relevant.' },
+    { title: 'Make it your own', text: 'Discuss how the direction could be adapted to your preferences. Reference images are inspiration, not a promise of an identical result.' },
+  ]} tinted />
+  <RelatedServices title="Take the next step from inspiration." links={[
+    { title: 'Hair artistry', href: '/hair-artistry-spa/' }, { title: 'Nail design', href: '/nail-studio/nail-addons/' },
+    { title: 'Bridal looks', href: '/bridal/makeup-and-hair/' }, { title: 'Start a consultation', href: '/contact/#appointment' },
+  ]} />
 </BaseLayout>
 
+<style>
+  salon-gallery { display: block; }
+  .gallery-filters { display: none; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  [data-ready] .gallery-filters { display: flex; }
+  .gallery-filters button { min-height: 44px; padding: 10px 20px; border: 1px solid var(--color-gold-light); border-radius: 28px; font-size: 11px; color: var(--color-brown-deep); cursor: pointer; transition: background .25s; }
+  .gallery-filters [aria-pressed='true'] { background: var(--color-brown-deep); color: var(--color-white); border-color: var(--color-brown-deep); }
+  .gallery-count, .gallery-note { color: var(--color-text-muted); font-size: 11px; line-height: 1.8; margin-bottom: 24px; }
+  .gallery-note { margin-top: 28px; max-width: 600px; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 24px; }
+  .gallery-item { min-width: 0; }
+  .gallery-item[hidden] { display: none; }
+  .gallery-image { overflow: hidden; border-radius: 120px 120px 6px 6px; background: var(--color-bg-secondary); }
+  .gallery-image img { aspect-ratio: 3 / 4; width: 100%; height: auto; object-fit: cover; transition: transform .5s; }
+  .gallery-item:hover img { transform: scale(1.025); }
+  figcaption { padding: 18px 28px 0 0; position: relative; }
+  figcaption > span { font-size: 9px; text-transform: uppercase; letter-spacing: .15em; color: var(--color-gold-dark); }
+  figcaption h2 { font-size: 22px; line-height: 1.2; margin-top: 8px; }
+  figcaption .gallery-open { position: absolute; right: 0; top: 28px; font-size: 22px; }
+  .gallery-dialog { margin: auto; width: min(94vw, 1040px); max-height: 94dvh; border: 0; padding: 0; color: var(--color-white); background: #28221c; border-radius: 12px; }
+  .gallery-dialog::backdrop { background: rgb(40 34 28 / 85%); backdrop-filter: blur(6px); }
+  .gallery-dialog-inner { padding: 52px 24px 24px; }
+  .gallery-dialog img { width: 100%; height: min(64dvh, 700px); object-fit: contain; }
+  .gallery-close { position: absolute; right: 12px; top: 6px; width: 44px; height: 44px; font-size: 32px; cursor: pointer; }
+  .gallery-view-caption { margin-top: 18px; text-align: center; }
+  .gallery-view-caption h2 { font-size: 26px; }
+  .gallery-view-caption p { font-size: 12px; color: var(--color-gold-light); margin-top: 8px; }
+  .gallery-view-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; font-size: 12px; }
+  .gallery-view-controls button { min-height: 44px; padding: 10px; cursor: pointer; }
+  .gallery-view-controls button:disabled { opacity: .4; cursor: default; }
+  .gallery-dialog :is(button):focus-visible { outline-color: var(--color-gold-light); }
+  @media(max-width: 767px) { .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media(max-width: 479px) { .gallery-grid { grid-template-columns: 1fr; } }
+  @media(prefers-reduced-motion: reduce) { .gallery-item:hover img { transform: none; } }
+</style>
 <script>
-  // Filter functionality
-  const filterBtns = document.querySelectorAll('.gallery-filter-btn');
-  const galleryItems = document.querySelectorAll('.gallery-item');
-
-  filterBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach((b) => {
-        b.classList.remove('bg-[#b7802c]', 'text-[#FFFCF6]');
-        b.classList.add('bg-[#FFFCF6]', 'text-[#75451d]');
-      });
-      btn.classList.add('bg-[#b7802c]', 'text-[#FFFCF6]');
-      btn.classList.remove('bg-[#FFFCF6]', 'text-[#75451d]');
-
-      const filter = btn.getAttribute('data-filter');
-      galleryItems.forEach((item) => {
-        const itemCat = item.getAttribute('data-category');
-        if (filter === 'all' || itemCat === filter) {
-          (item as HTMLElement).style.display = 'block';
-        } else {
-          (item as HTMLElement).style.display = 'none';
-        }
-      });
-    });
-  });
-
-  // Lightbox functionality
-  const modal = document.getElementById('lightbox-modal');
-  const modalImg = document.getElementById('lightbox-img') as HTMLImageElement;
-  const modalTitle = document.getElementById('lightbox-title');
-  const modalCaption = document.getElementById('lightbox-caption');
-  const closeBtn = document.getElementById('lightbox-close');
-
-  if (modal && modalImg && modalTitle && modalCaption && closeBtn) {
-    galleryItems.forEach((item) => {
-      item.addEventListener('click', () => {
-        const src = item.getAttribute('data-src') || '';
-        const title = item.getAttribute('data-title') || '';
-        const desc = item.getAttribute('data-desc') || '';
-
-        modalImg.src = src;
-        modalImg.alt = title;
-        modalTitle.textContent = title;
-        modalCaption.textContent = desc;
-        modal.classList.remove('hidden');
-        document.body.classList.add('overflow-hidden');
-      });
-    });
-
-    const closeModal = () => {
-      modal.classList.add('hidden');
-      modalImg.src = '';
-      document.body.classList.remove('overflow-hidden');
-    };
-
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        closeModal();
-      }
-    });
-  }
+  import '../scripts/gallery';
 </script>

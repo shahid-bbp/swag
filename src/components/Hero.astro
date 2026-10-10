@@ -5,8 +5,8 @@ const slides = [
   {
     id: 'hero-slide-1',
     image: '/images/hero/model-3-hero.webp',
-    width: 721, height: 673,
-    alt: 'Beauty model with eyes closed, an elegant updo and champagne satin draping',
+    width: 846, height: 989,
+    alt: 'Editorial beauty model with an elegant updo and champagne satin draping',
     eyebrow: 'Premium unisex salon',
     title: 'More Than Just a Salon',
     titleLine: 'More Than', titleEnd: 'Just a', titleAccent: 'Salon',
@@ -17,7 +17,7 @@ const slides = [
   {
     id: 'hero-slide-2',
     image: '/images/hero/model-3-hero.webp',
-    width: 673, height: 1022,
+    width: 846, height: 989,
     alt: 'Beauty model facing the camera with a softly styled updo and gold satin wrap',
     eyebrow: 'Hair artistry & spa',
     title: 'Couture Hair Artistry & Care',
@@ -127,14 +127,8 @@ const slides = [
     overflow: hidden;
     border-bottom: 1px solid var(--color-champagne);
     background: var(--color-bg-primary) url('/images/hero/hero-bg-reference.webp') center center / cover no-repeat;
-    margin-top: -72px;
-    padding-top: 72px;
-  }
-  @media (min-width: 640px) {
-    .hero {
-      margin-top: -80px;
-      padding-top: 80px;
-    }
+    margin-top: calc(-1 * (var(--site-header-height, 73px) + var(--header-gap, 16px)));
+    padding-top: calc(var(--site-header-height, 73px) + var(--header-gap, 16px));
   }
   hero-carousel { display: block; }
   .hero-stage {

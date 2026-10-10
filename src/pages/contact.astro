@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import JourneySection from '../components/JourneySection.astro';
+import FAQSection from '../components/FAQSection.astro';
 import EnquiryForm from '../components/EnquiryForm.astro';
 import { siteConfig } from '../data/site';
 
@@ -145,4 +147,17 @@ const breadcrumbs = [{ name: 'Contact', url: '/contact/' }];
       </div>
     </div>
   </section>
+  <JourneySection eyebrow="Finding your way" title="Your visit to MG Road, made simpler."
+    description="Keep the salon address and reception number handy as you plan your arrival."
+    steps={[
+      { title: 'Head to Kacheripady', text: `${siteConfig.address.building} is on ${siteConfig.address.street}, opposite Seematti in ${siteConfig.address.area}, ${siteConfig.address.city}.` },
+      { title: 'Find us on the first floor', text: `The salon is on the ${siteConfig.address.floor.toLowerCase()}. Use the directions link above, or call reception if you need help finding the entrance.` },
+      { title: 'Confirm your arrival time', text: 'Check your appointment details with the team before travelling. Allow time for the journey and your consultation.' },
+    ]} tinted />
+  <FAQSection title="A few practical details." items={[
+    { question: 'How do I know my appointment is confirmed?', answer: 'The team will confirm availability and your appointment details directly. Submitting an enquiry alone does not reserve a slot.' },
+    { question: 'What are the opening hours?', answer: siteConfig.openingHoursNote },
+    { question: 'Can I ask about parking or access?', answer: 'Please call reception before your visit to confirm current parking and building access arrangements.' },
+    { question: 'How can I change an appointment?', answer: 'Contact reception by phone or WhatsApp with your name and existing appointment details so the team can discuss an alternative.' },
+  ]} />
 </BaseLayout>

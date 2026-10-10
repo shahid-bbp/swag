@@ -1,6 +1,7 @@
 ---
 import Breadcrumbs from './Breadcrumbs.astro';
 import EnquiryForm from './EnquiryForm.astro';
+import ServiceGuides from './ServiceGuides.astro';
 import { siteConfig } from '../data/site';
 import type { ServiceCategory } from '../data/services';
 
@@ -29,6 +30,7 @@ if (activeSubcategorySlug) {
 const displaySubcategories = activeSubcategorySlug
   ? category.subcategories.filter((s) => s.slug === activeSubcategorySlug)
   : category.subcategories;
+const activeSubcategory = category.subcategories.find((sub) => sub.slug === activeSubcategorySlug);
 ---
 
 <div>
@@ -47,13 +49,13 @@ const displaySubcategories = activeSubcategorySlug
           <span class="w-12 h-[1px] bg-[#b7802c]"></span>
         </div>
         <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.1]">
-          {category.title}
+          {activeSubcategory?.title || category.title}
         </h1>
         <p class="text-xl sm:text-2xl font-serif italic text-[#75451d]">
           {category.tagline}
         </p>
         <p class="text-sm sm:text-base text-[#5C4D3E] leading-relaxed max-w-2xl pt-2">
-          {category.fullDesc}
+          {activeSubcategory?.description || category.fullDesc}
         </p>
       </div>
 
@@ -193,6 +195,10 @@ const displaySubcategories = activeSubcategorySlug
         </div>
       </div>
 
+    </div>
+  </section>
+  <ServiceGuides {category} activeSlug={activeSubcategorySlug} />
+  <section class="editorial-section editorial-section--tinted" aria-label="Appointment enquiry"><div class="section-shell">
       <!-- Booking Section -->
       <div id="book-appointment" class="pt-8">
         <EnquiryForm
@@ -202,6 +208,6 @@ const displaySubcategories = activeSubcategorySlug
         />
       </div>
 
-    </div>
-  </section>
+
+  </div></section>
 </div>

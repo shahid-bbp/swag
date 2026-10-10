@@ -1,0 +1,17 @@
+---
+import JourneySection from './JourneySection.astro';
+import FAQSection from './FAQSection.astro';
+import RelatedServices from './RelatedServices.astro';
+import { visitGuides } from '../data/visit-guides';
+import type { ServiceCategory } from '../data/services';
+interface Props { category: ServiceCategory; activeSlug?: string; }
+const { category, activeSlug } = Astro.props;
+const guide = visitGuides[activeSlug || category.slug];
+const related = category.subcategories.filter((sub) => sub.slug !== activeSlug).map((sub) => ({ title: sub.title, href: `/${category.slug}/${sub.slug}/` }));
+if (activeSlug && related.length === 0) related.push({ title: `All ${category.title}`, href: `/${category.slug}/` });
+---
+{guide && <>
+  <JourneySection title={guide.title} description={guide.description} steps={guide.steps} tinted />
+  <FAQSection title={`Before your ${activeSlug ? 'appointment' : category.title.toLowerCase() + ' visit'}.`} items={guide.faqs} />
+  {activeSlug && related.length > 0 && <RelatedServices links={related} title="Explore the rest of the menu." />}
+</>}

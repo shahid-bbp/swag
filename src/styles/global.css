@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
   --color-gold: #b7802c;
   --color-gold-hover: #9c6c23;
   --color-champagne: #eeda9b;
@@ -11,6 +12,8 @@
 
 @layer base {
   :root {
+    --site-header-height: 73px;
+    --header-gap: 16px;
     --color-bg-primary: #F7F0E4;
     --color-bg-secondary: #F5ECDB;
     --color-champagne: #eeda9b;
@@ -42,6 +45,18 @@
     letter-spacing: -0.01em;
   }
 }
+
+@media (min-width: 640px) {
+  :root { --site-header-height: 97px; --header-gap: 24px; }
+}
+
+.site-main { padding-top: calc(var(--site-header-height) + var(--header-gap)); }
+html { scroll-padding-top: calc(var(--site-header-height) + 24px); }
+main [id] { scroll-margin-top: 12px; }
+button, input, select, textarea { font: inherit; }
+:is(a, button, input, select, textarea, summary):focus-visible { outline: 2px solid var(--color-gold-dark); outline-offset: 4px; }
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; padding: 12px 20px; background: var(--color-white); color: var(--color-brown-deep); transform: translateY(-150%); }
+.skip-link:focus { transform: none; }
 
 /* Custom Luxury Utility Classes */
 .bg-cream-primary { background-color: #F7F0E4; }

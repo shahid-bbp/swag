@@ -13,7 +13,7 @@ const {
   subtitle = "Reserve your personalized beauty and styling session with our master artists.",
 } = Astro.props;
 
-const formspreeEndpoint = import.meta.env.FORMSPREE_ENDPOINT || '';
+const formspreeEndpoint = (import.meta.env.FORMSPREE_ENDPOINT || '').trim();
 const isEndpointConfigured = Boolean(formspreeEndpoint && formspreeEndpoint.trim() !== '');
 
 const serviceOptions = [
@@ -38,6 +38,7 @@ const serviceOptions = [
   "Body Wellness — Reflexology & Indian Head Massage",
   "General Consultation / Custom Package",
 ];
+if (preselectedService && !serviceOptions.includes(preselectedService)) serviceOptions.unshift(preselectedService);
 ---
 
 <div id="appointment-form-wrapper" class="bg-[#FFFCF6] border border-[#eeda9b] rounded-3xl p-6 sm:p-10 shadow-sm relative overflow-hidden">
@@ -60,9 +61,9 @@ const serviceOptions = [
           <line x1="12" y1="16" x2="12.01" y2="16"></line>
         </svg>
         <div>
-          <p class="font-semibold text-[#75451d]">Development Notice (Form Provider Configuration)</p>
+          <p class="font-semibold text-[#75451d]">Send your enquiry on WhatsApp</p>
           <p class="mt-1 leading-relaxed">
-            Formspree endpoint is currently awaiting production API keys (<code class="bg-[#F5ECDB] px-1 py-0.5 rounded text-[11px]">FORMSPREE_ENDPOINT</code>). You can submit enquiries directly, or connect instantly with our reception via WhatsApp or call at <a href={`tel:${siteConfig.phone}`} class="font-semibold text-[#b7802c] underline">{siteConfig.phoneFormatted}</a>.
+            Fill in your preferences below to prepare a message, then open WhatsApp to send it. Reception will confirm availability. You can also call <a href={`tel:${siteConfig.phone}`} class="font-semibold text-[#75451d] underline">{siteConfig.phoneFormatted}</a>.
           </p>
         </div>
       </div>
@@ -76,18 +77,19 @@ const serviceOptions = [
         <polyline points="20 6 9 17 4 12"></polyline>
       </svg>
     </div>
-    <h3 class="text-xl font-serif text-[#24522B] mb-1 font-semibold">Appointment Request Received</h3>
+    <h3 class="text-xl font-serif text-[#24522B] mb-1 font-semibold">{isEndpointConfigured ? 'Appointment request received' : 'Your enquiry is ready to send'}</h3>
     <p class="text-sm text-[#46694C] leading-relaxed max-w-md mx-auto">
-      Thank you for choosing S For Swag. Our guest concierge will contact you shortly to confirm your scheduled slot and service details.
+      {isEndpointConfigured ? 'The team will contact you to confirm availability and appointment details.' : 'Your request has not been sent yet. Open WhatsApp below, review your message and send it to reception.'}
     </p>
     <div class="mt-5">
       <a
+        id="enquiry-whatsapp-link"
         href={siteConfig.whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#24522B] underline hover:text-[#18391D]"
       >
-        <span>Expedite via WhatsApp Concierge</span>
+        <span>{isEndpointConfigured ? 'Chat with reception' : 'Open WhatsApp to send'}</span>
         <span>&rarr;</span>
       </a>
     </div>
@@ -105,7 +107,8 @@ const serviceOptions = [
     </div>
   </div>
 
-  <form id="appointment-form" data-endpoint={formspreeEndpoint} class="space-y-5" novalidate>
+  <noscript><p class="mb-6 text-sm">Please <a href={siteConfig.whatsappUrl} class="underline">contact us on WhatsApp</a> or <a href={`tel:${siteConfig.phone}`} class="underline">call reception</a> to enquire.</p><style is:inline>#appointment-form { display: none; }</style></noscript>
+  <form id="appointment-form" data-endpoint={formspreeEndpoint} data-whatsapp={siteConfig.whatsappNumber} class="space-y-5" novalidate>
     <!-- Spam Honeypot -->
     <div class="hidden" aria-hidden="true">
       <label for="gotcha-field">Leave this empty</label>
@@ -121,7 +124,7 @@ const serviceOptions = [
         <input
           type="text"
           id="client-name"
-          name="name"
+          name="name" autocomplete="name"
           required
           placeholder="e.g. Anjali Menon"
           class="w-full px-4 py-3 rounded-xl bg-[#F7F0E4]/60 border border-[#eeda9b] text-[#28221C] text-sm focus:outline-none focus:ring-2 focus:ring-[#b7802c] focus:border-transparent transition-all placeholder-[#A39485]"
@@ -137,7 +140,7 @@ const serviceOptions = [
         <input
           type="tel"
           id="client-phone"
-          name="phone"
+          name="phone" autocomplete="tel"
           required
           placeholder="e.g. +91 98765 43210"
           class="w-full px-4 py-3 rounded-xl bg-[#F7F0E4]/60 border border-[#eeda9b] text-[#28221C] text-sm focus:outline-none focus:ring-2 focus:ring-[#b7802c] focus:border-transparent transition-all placeholder-[#A39485]"
@@ -155,7 +158,7 @@ const serviceOptions = [
         <input
           type="email"
           id="client-email"
-          name="email"
+          name="email" autocomplete="email"
           placeholder="e.g. anjali@example.com"
           class="w-full px-4 py-3 rounded-xl bg-[#F7F0E4]/60 border border-[#eeda9b] text-[#28221C] text-sm focus:outline-none focus:ring-2 focus:ring-[#b7802c] focus:border-transparent transition-all placeholder-[#A39485]"
         />
@@ -175,7 +178,7 @@ const serviceOptions = [
         >
           <option value="" disabled selected={!preselectedService}>Select a service or package</option>
           {serviceOptions.map((opt) => (
-            <option value={opt} selected={preselectedService.toLowerCase().includes(opt.slice(0, 15).toLowerCase())}>
+            <option value={opt} selected={preselectedService === opt}>
               {opt}
             </option>
           ))}
@@ -255,7 +258,7 @@ const serviceOptions = [
         id="submit-btn"
         class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#b7802c] hover:bg-[#75451d] text-[#FFFCF6] text-xs uppercase tracking-[0.18em] font-medium transition-all shadow-sm flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        <span id="btn-text">Confirm Appointment Request</span>
+        <span id="btn-text">{isEndpointConfigured ? 'Send appointment enquiry' : 'Prepare WhatsApp enquiry'}</span>
         <svg id="btn-spinner" class="w-4 h-4 animate-spin hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <circle cx="12" cy="12" r="10" stroke-width="4" stroke="currentColor" stroke-opacity="0.25"></circle>
           <path d="M4 12a8 8 0 018-8" stroke-width="4" stroke="currentColor"></path>
@@ -274,116 +277,5 @@ const serviceOptions = [
 </div>
 
 <script>
-  const form = document.getElementById('appointment-form') as HTMLFormElement | null;
-  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
-  const btnText = document.getElementById('btn-text');
-  const btnSpinner = document.getElementById('btn-spinner');
-  const btnArrow = document.getElementById('btn-arrow');
-  const successBox = document.getElementById('form-success-message');
-  const errorBox = document.getElementById('form-error-message');
-  const errorText = document.getElementById('form-error-text');
-
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      // Reset errors
-      document.querySelectorAll('.client-error').forEach((el) => el.classList.add('hidden'));
-      if (errorBox) errorBox.classList.add('hidden');
-
-      // Validate
-      const name = (form.elements.namedItem('name') as HTMLInputElement).value.trim();
-      const phone = (form.elements.namedItem('phone') as HTMLInputElement).value.trim();
-      const email = (form.elements.namedItem('email') as HTMLInputElement).value.trim();
-      const service = (form.elements.namedItem('service') as HTMLSelectElement).value;
-      const consent = (form.elements.namedItem('consent') as HTMLInputElement).checked;
-      const honeypot = (form.elements.namedItem('_gotcha') as HTMLInputElement).value;
-
-      let hasError = false;
-
-      // Spam check
-      if (honeypot) {
-        return;
-      }
-
-      if (!name) {
-        document.getElementById('error-name')?.classList.remove('hidden');
-        hasError = true;
-      }
-
-      const phoneRegex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
-      if (!phone || phone.length < 8) {
-        document.getElementById('error-phone')?.classList.remove('hidden');
-        hasError = true;
-      }
-
-      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        document.getElementById('error-email')?.classList.remove('hidden');
-        hasError = true;
-      }
-
-      if (!service) {
-        document.getElementById('error-service')?.classList.remove('hidden');
-        hasError = true;
-      }
-
-      if (!consent) {
-        document.getElementById('error-consent')?.classList.remove('hidden');
-        hasError = true;
-      }
-
-      if (hasError) {
-        return;
-      }
-
-      // Submission UI state
-      if (submitBtn) submitBtn.disabled = true;
-      if (btnSpinner) btnSpinner.classList.remove('hidden');
-      if (btnArrow) btnArrow.classList.add('hidden');
-      if (btnText) btnText.textContent = 'Submitting Request...';
-
-      const endpoint = form.dataset.endpoint;
-
-      try {
-        if (!endpoint) {
-          // Development simulated submission with graceful client experience
-          await new Promise((res) => setTimeout(res, 900));
-          if (successBox) successBox.classList.remove('hidden');
-          form.reset();
-          successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-          // Real submission to Formspree endpoint
-          const formData = new FormData(form);
-          const response = await fetch(endpoint, {
-            method: 'POST',
-            body: formData,
-            headers: {
-              Accept: 'application/json',
-            },
-          });
-
-          if (response.ok) {
-            if (successBox) successBox.classList.remove('hidden');
-            form.reset();
-            successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          } else {
-            const data = await response.json();
-            throw new Error(data?.error || 'Form submission failed');
-          }
-        }
-      } catch (err: any) {
-        if (errorBox) {
-          errorBox.classList.remove('hidden');
-          if (errorText) {
-            errorText.textContent = err.message || 'Submission error. Please call +91 90610 77722 to book directly.';
-          }
-        }
-      } finally {
-        if (submitBtn) submitBtn.disabled = false;
-        if (btnSpinner) btnSpinner.classList.add('hidden');
-        if (btnArrow) btnArrow.classList.remove('hidden');
-        if (btnText) btnText.textContent = 'Confirm Appointment Request';
-      }
-    });
-  }
+  import '../scripts/enquiry-form';
 </script>

@@ -1,0 +1,11 @@
+---
+import SectionIntro from './SectionIntro.astro';
+interface Props { links: { title: string; href: string }[]; title?: string; }
+const { links, title = 'Continue your discovery.' } = Astro.props;
+---
+<section class="editorial-section" aria-label={title}>
+  <div class="section-shell">
+    <SectionIntro eyebrow="Explore a little more" {title} />
+    <nav class="related-links" aria-label="Related services">{links.map((link) => <a href={link.href}>{link.title} <span aria-hidden="true">↗</span></a>)}</nav>
+  </div>
+</section>
