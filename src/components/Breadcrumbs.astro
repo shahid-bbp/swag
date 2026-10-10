@@ -6,31 +6,29 @@ export interface BreadcrumbItem {
 
 export interface Props {
   items: BreadcrumbItem[];
+  class?: string;
 }
 
-const { items } = Astro.props;
+const { items, class: className = "" } = Astro.props;
 ---
 
-<nav aria-label="Breadcrumb" class="py-3 px-4 sm:px-8 text-xs text-[#8E7864] bg-[#F7F0E4]/60 border-b border-[#E8D5B7]/40">
-  <div class="max-w-7xl mx-auto flex items-center gap-2 flex-wrap">
-    <a href="/" class="hover:text-[#A77A3F] transition-colors flex items-center gap-1">
-      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-      </svg>
-      <span>Home</span>
+<nav aria-label="Breadcrumb" class={`text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#8E7864] bg-transparent ${className}`}>
+  <div class="flex items-center gap-2 flex-wrap">
+    <a href="/" class="hover:text-[#A77A3F] transition-colors font-medium">
+      Home
     </a>
 
     {items.map((item, index) => {
       const isLast = index === items.length - 1;
       return (
         <div class="flex items-center gap-2">
-          <span class="text-[#C5A059] opacity-60">/</span>
+          <span class="text-[#A77A3F]/50 select-none">/</span>
           {isLast ? (
             <span class="text-[#4A321C] font-semibold" aria-current="page">
               {item.name}
             </span>
           ) : (
-            <a href={item.url} class="hover:text-[#A77A3F] transition-colors">
+            <a href={item.url} class="hover:text-[#A77A3F] transition-colors font-medium">
               {item.name}
             </a>
           )}

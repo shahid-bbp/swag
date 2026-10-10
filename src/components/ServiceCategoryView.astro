@@ -32,16 +32,15 @@ const displaySubcategories = activeSubcategorySlug
 ---
 
 <div>
-  <!-- Breadcrumbs -->
-  <Breadcrumbs items={breadcrumbs} />
-
   <!-- Hero Header -->
-  <section class="relative py-16 sm:py-24 bg-[#EFE2CE] border-b border-[#E8D5B7] overflow-hidden">
+  <section class="relative py-12 sm:py-18 bg-[#EFE2CE] border-b border-[#E8D5B7] overflow-hidden">
     <div class="absolute inset-0 opacity-15 pointer-events-none">
       <img src={category.image} alt="" class="w-full h-full object-cover filter blur-xs" />
     </div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+      <Breadcrumbs items={breadcrumbs} class="mb-5 sm:mb-6" />
+
       <div class="max-w-3xl space-y-4">
         <div class="flex items-center gap-3">
           <span class="text-xs uppercase tracking-[0.24em] text-[#8E652E] font-semibold">S For Swag &bull; Kochi</span>

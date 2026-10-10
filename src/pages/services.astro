@@ -15,11 +15,10 @@ const breadcrumbs = [{ name: 'Services', url: '/services/' }];
 ---
 
 <BaseLayout seo={seo}>
-  <Breadcrumbs items={breadcrumbs} />
-
   <!-- Hero Banner -->
-  <section class="py-16 sm:py-24 bg-[#EFE2CE] border-b border-[#E8D5B7] relative overflow-hidden">
+  <section class="py-12 sm:py-18 bg-[#EFE2CE] border-b border-[#E8D5B7] relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <Breadcrumbs items={breadcrumbs} class="mb-5 sm:mb-6" />
       <div class="max-w-3xl space-y-4">
         <span class="text-xs uppercase tracking-[0.24em] text-[#8E652E] font-semibold">Service Directory</span>
         <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.1]">
