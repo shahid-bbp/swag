@@ -46,15 +46,15 @@ const serviceCards: ServiceCardItem[] = [
 ];
 ---
 
-<section class="py-20 lg:py-28 bg-[#F7F0E4] border-t border-[#E8D5B7]/60">
+<section class="py-20 lg:py-28 bg-[#F7F0E4] border-t border-[#eeda9b]/60">
   <div class="max-w-7xl mx-auto px-4 sm:px-8">
     
     <!-- Header Block -->
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
       <div class="space-y-3 max-w-xl">
         <div class="flex items-center gap-3">
-          <span class="text-xs uppercase tracking-[0.24em] text-[#8E652E] font-semibold">Our Services</span>
-          <span class="w-12 h-[1px] bg-[#A77A3F]"></span>
+          <span class="text-xs uppercase tracking-[0.24em] text-[#75451d] font-semibold">Our Services</span>
+          <span class="w-12 h-[1px] bg-[#b7802c]"></span>
         </div>
         <h2 class="text-3xl sm:text-5xl font-serif text-[#28221C]">Care for Every You</h2>
         <p class="text-sm sm:text-base text-[#5C4D3E] leading-relaxed">
@@ -65,7 +65,7 @@ const serviceCards: ServiceCardItem[] = [
       <div>
         <a
           href="/services/"
-          class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] font-semibold text-[#8E652E] hover:text-[#4A321C] transition-colors group"
+          class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] font-semibold text-[#75451d] hover:text-[#75451d] transition-colors group"
         >
           <span>View All Services</span>
           <svg class="w-4 h-4 transition-transform group-hover:translate-x-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -81,7 +81,7 @@ const serviceCards: ServiceCardItem[] = [
       {serviceCards.map((card) => (
         <a
           href={card.href}
-          class="group flex flex-col bg-[#FFFCF6] rounded-t-full rounded-b-2xl overflow-hidden border border-[#E8D5B7] hover:border-[#A77A3F] transition-all duration-500 hover:-translate-y-2 hover:shadow-xl p-2 sm:p-2.5"
+          class="group flex flex-col bg-[#FFFCF6] rounded-t-full rounded-b-2xl overflow-hidden border border-[#eeda9b] hover:border-[#b7802c] transition-all duration-500 hover:-translate-y-2 hover:shadow-xl p-2 sm:p-2.5"
         >
           <!-- Arched Photo Container -->
           <div class="w-full aspect-[4/5] rounded-t-full rounded-b-xl overflow-hidden relative">
@@ -99,7 +99,7 @@ const serviceCards: ServiceCardItem[] = [
           <!-- Bottom Icon & Label Card Area -->
           <div class="pt-4 pb-3 px-2 text-center flex flex-col items-center justify-center">
             <!-- Delicate Gold Outline Icon -->
-            <div class="w-8 h-8 rounded-full border border-[#A77A3F]/40 flex items-center justify-center text-[#A77A3F] mb-2 group-hover:border-[#A77A3F] group-hover:bg-[#A77A3F] group-hover:text-[#FFFCF6] transition-all">
+            <div class="w-8 h-8 rounded-full border border-[#b7802c]/40 flex items-center justify-center text-[#b7802c] mb-2 group-hover:border-[#b7802c] group-hover:bg-[#b7802c] group-hover:text-[#FFFCF6] transition-all">
               {card.icon === 'hair' && (
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                   <circle cx="6" cy="6" r="3"></circle>
@@ -132,7 +132,7 @@ const serviceCards: ServiceCardItem[] = [
             </div>
 
             <!-- Title -->
-            <span class="text-[0.6875rem] sm:text-xs font-semibold uppercase tracking-[0.16em] text-[#4A321C] group-hover:text-[#A77A3F] transition-colors">
+            <span class="text-[0.6875rem] sm:text-xs font-semibold uppercase tracking-[0.16em] text-[#75451d] group-hover:text-[#b7802c] transition-colors">
               {card.title}
             </span>
           </div>

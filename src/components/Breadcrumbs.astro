@@ -14,7 +14,7 @@ const { items, class: className = "" } = Astro.props;
 
 <nav aria-label="Breadcrumb" class={`text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#8E7864] bg-transparent ${className}`}>
   <div class="flex items-center gap-2 flex-wrap">
-    <a href="/" class="hover:text-[#A77A3F] transition-colors font-medium">
+    <a href="/" class="hover:text-[#b7802c] transition-colors font-medium">
       Home
     </a>
 
@@ -22,13 +22,13 @@ const { items, class: className = "" } = Astro.props;
       const isLast = index === items.length - 1;
       return (
         <div class="flex items-center gap-2">
-          <span class="text-[#A77A3F]/50 select-none">/</span>
+          <span class="text-[#b7802c]/50 select-none">/</span>
           {isLast ? (
-            <span class="text-[#4A321C] font-semibold" aria-current="page">
+            <span class="text-[#75451d] font-semibold" aria-current="page">
               {item.name}
             </span>
           ) : (
-            <a href={item.url} class="hover:text-[#A77A3F] transition-colors font-medium">
+            <a href={item.url} class="hover:text-[#b7802c] transition-colors font-medium">
               {item.name}
             </a>
           )}

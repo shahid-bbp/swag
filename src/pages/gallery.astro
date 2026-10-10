@@ -73,11 +73,11 @@ const galleryItems = [
 
 <BaseLayout seo={seo}>
   <!-- Hero Banner -->
-  <section class="py-12 sm:py-18 bg-[#EFE2CE] border-b border-[#E8D5B7] relative overflow-hidden">
+  <section class="py-12 sm:py-18 bg-[#F5ECDB] border-b border-[#eeda9b] relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       <Breadcrumbs items={breadcrumbs} class="mb-5 sm:mb-6" />
       <div class="max-w-3xl space-y-4">
-        <span class="text-xs uppercase tracking-[0.24em] text-[#8E652E] font-semibold">Visual Portfolio</span>
+        <span class="text-xs uppercase tracking-[0.24em] text-[#75451d] font-semibold">Visual Portfolio</span>
         <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.1]">
           Artistry in Every Detail
         </h1>
@@ -96,42 +96,42 @@ const galleryItems = [
       <div class="flex flex-wrap items-center justify-center gap-2.5 mb-12">
         <button
           type="button"
-          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#A77A3F] text-[#FFFCF6] shadow-sm cursor-pointer"
+          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#b7802c] text-[#FFFCF6] shadow-sm cursor-pointer"
           data-filter="all"
         >
           All Works
         </button>
         <button
           type="button"
-          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#4A321C] border border-[#E8D5B7] hover:border-[#A77A3F] cursor-pointer"
+          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#75451d] border border-[#eeda9b] hover:border-[#b7802c] cursor-pointer"
           data-filter="bridal"
         >
           Bridal
         </button>
         <button
           type="button"
-          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#4A321C] border border-[#E8D5B7] hover:border-[#A77A3F] cursor-pointer"
+          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#75451d] border border-[#eeda9b] hover:border-[#b7802c] cursor-pointer"
           data-filter="hair"
         >
           Hair Artistry
         </button>
         <button
           type="button"
-          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#4A321C] border border-[#E8D5B7] hover:border-[#A77A3F] cursor-pointer"
+          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#75451d] border border-[#eeda9b] hover:border-[#b7802c] cursor-pointer"
           data-filter="nails"
         >
           Nail Studio
         </button>
         <button
           type="button"
-          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#4A321C] border border-[#E8D5B7] hover:border-[#A77A3F] cursor-pointer"
+          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#75451d] border border-[#eeda9b] hover:border-[#b7802c] cursor-pointer"
           data-filter="beauty"
         >
           Skincare & Beauty
         </button>
         <button
           type="button"
-          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#4A321C] border border-[#E8D5B7] hover:border-[#A77A3F] cursor-pointer"
+          class="gallery-filter-btn px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all bg-[#FFFCF6] text-[#75451d] border border-[#eeda9b] hover:border-[#b7802c] cursor-pointer"
           data-filter="salon"
         >
           Salon Interiors
@@ -142,7 +142,7 @@ const galleryItems = [
       <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {galleryItems.map((item, idx) => (
           <div
-            class="gallery-item group relative rounded-3xl overflow-hidden border border-[#E8D5B7] bg-[#FFFCF6] shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer"
+            class="gallery-item group relative rounded-3xl overflow-hidden border border-[#eeda9b] bg-[#FFFCF6] shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer"
             data-category={item.categorySlug}
             data-src={item.image}
             data-title={item.title}
@@ -158,13 +158,13 @@ const galleryItems = [
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-[#28221C]/70 via-[#28221C]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-[#FFFCF6]">
-                <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#E8D5B7]">
+                <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#eeda9b]">
                   {item.category}
                 </span>
                 <h3 class="text-xl font-serif font-bold mt-1">
                   {item.title}
                 </h3>
-                <span class="text-xs text-[#E8D5B7] mt-2 inline-flex items-center gap-1 font-sans">
+                <span class="text-xs text-[#eeda9b] mt-2 inline-flex items-center gap-1 font-sans">
                   <span>View Full Photo</span> &rarr;
                 </span>
               </div>
@@ -184,7 +184,7 @@ const galleryItems = [
         <button
           id="lightbox-close"
           type="button"
-          class="absolute top-6 right-6 text-white hover:text-[#E8D5B7] p-2 focus:outline-none"
+          class="absolute top-6 right-6 text-white hover:text-[#eeda9b] p-2 focus:outline-none"
           aria-label="Close Lightbox"
         >
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -202,7 +202,7 @@ const galleryItems = [
           />
           <div class="mt-4 text-center text-[#FFFCF6]">
             <h4 id="lightbox-title" class="text-xl font-serif font-bold"></h4>
-            <p id="lightbox-caption" class="text-xs text-[#E8D5B7] mt-1 max-w-lg"></p>
+            <p id="lightbox-caption" class="text-xs text-[#eeda9b] mt-1 max-w-lg"></p>
           </div>
         </div>
       </div>
@@ -219,11 +219,11 @@ const galleryItems = [
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       filterBtns.forEach((b) => {
-        b.classList.remove('bg-[#A77A3F]', 'text-[#FFFCF6]');
-        b.classList.add('bg-[#FFFCF6]', 'text-[#4A321C]');
+        b.classList.remove('bg-[#b7802c]', 'text-[#FFFCF6]');
+        b.classList.add('bg-[#FFFCF6]', 'text-[#75451d]');
       });
-      btn.classList.add('bg-[#A77A3F]', 'text-[#FFFCF6]');
-      btn.classList.remove('bg-[#FFFCF6]', 'text-[#4A321C]');
+      btn.classList.add('bg-[#b7802c]', 'text-[#FFFCF6]');
+      btn.classList.remove('bg-[#FFFCF6]', 'text-[#75451d]');
 
       const filter = btn.getAttribute('data-filter');
       galleryItems.forEach((item) => {

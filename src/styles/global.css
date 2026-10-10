@@ -1,14 +1,23 @@
 @import "tailwindcss";
 
+@theme {
+  --color-gold: #b7802c;
+  --color-gold-hover: #9c6c23;
+  --color-champagne: #eeda9b;
+  --color-brown-deep: #75451d;
+  --color-bg-primary: #F7F0E4;
+  --color-bg-secondary: #F5ECDB;
+}
+
 @layer base {
   :root {
     --color-bg-primary: #F7F0E4;
-    --color-bg-secondary: #EFE2CE;
-    --color-champagne: #E8D5B7;
-    --color-gold: #A77A3F;
-    --color-gold-light: #D5B888;
-    --color-gold-dark: #845D2B;
-    --color-brown-deep: #4A321C;
+    --color-bg-secondary: #F5ECDB;
+    --color-champagne: #eeda9b;
+    --color-gold: #b7802c;
+    --color-gold-light: #eeda9b;
+    --color-gold-dark: #75451d;
+    --color-brown-deep: #75451d;
     --color-text-main: #28221C;
     --color-text-muted: #6C5D4F;
     --color-white: #FFFCF6;
@@ -24,8 +33,8 @@
   }
 
   ::selection {
-    background-color: #E8D5B7;
-    color: #4A321C;
+    background-color: #eeda9b;
+    color: #75451d;
   }
 
   h1, h2, h3, h4, .font-serif {
@@ -36,21 +45,21 @@
 
 /* Custom Luxury Utility Classes */
 .bg-cream-primary { background-color: #F7F0E4; }
-.bg-cream-secondary { background-color: #EFE2CE; }
-.bg-champagne { background-color: #E8D5B7; }
-.bg-gold { background-color: #A77A3F; }
-.bg-brown-deep { background-color: #4A321C; }
+.bg-cream-secondary { background-color: #F5ECDB; }
+.bg-champagne { background-color: #eeda9b; }
+.bg-gold { background-color: #b7802c; }
+.bg-brown-deep { background-color: #75451d; }
 .bg-white-cream { background-color: #FFFCF6; }
 
-.text-gold { color: #A77A3F; }
-.text-gold-dark { color: #845D2B; }
-.text-brown-deep { color: #4A321C; }
+.text-gold { color: #b7802c; }
+.text-gold-dark { color: #75451d; }
+.text-brown-deep { color: #75451d; }
 .text-dark { color: #28221C; }
 .text-muted { color: #6C5D4F; }
 
-.border-gold { border-color: #A77A3F; }
-.border-gold-light { border-color: #D5B888; }
-.border-champagne { border-color: #E8D5B7; }
+.border-gold { border-color: #b7802c; }
+.border-gold-light { border-color: #eeda9b; }
+.border-champagne { border-color: #eeda9b; }
 
 /* Elegant Arch Borders & Masking */
 .arch-card-top {
@@ -77,24 +86,24 @@
 }
 
 .luxury-pill-gold {
-  background-color: #A77A3F;
+  background-color: #b7802c;
   color: #FFFCF6;
-  border: 1px solid #A77A3F;
+  border: 1px solid #b7802c;
 }
 .luxury-pill-gold:hover {
-  background-color: #8E652E;
-  border-color: #8E652E;
+  background-color: #75451d;
+  border-color: #75451d;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(167, 122, 63, 0.25);
+  box-shadow: 0 4px 14px rgba(183, 128, 44, 0.25);
 }
 
 .luxury-pill-outline {
   background-color: transparent;
-  color: #4A321C;
-  border: 1px solid #A77A3F;
+  color: #75451d;
+  border: 1px solid #b7802c;
 }
 .luxury-pill-outline:hover {
-  background-color: #A77A3F;
+  background-color: #b7802c;
   color: #FFFCF6;
   transform: translateY(-1px);
 }

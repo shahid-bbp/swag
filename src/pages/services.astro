@@ -16,11 +16,11 @@ const breadcrumbs = [{ name: 'Services', url: '/services/' }];
 
 <BaseLayout seo={seo}>
   <!-- Hero Banner -->
-  <section class="py-12 sm:py-18 bg-[#EFE2CE] border-b border-[#E8D5B7] relative overflow-hidden">
+  <section class="py-12 sm:py-18 bg-[#F5ECDB] border-b border-[#eeda9b] relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       <Breadcrumbs items={breadcrumbs} class="mb-5 sm:mb-6" />
       <div class="max-w-3xl space-y-4">
-        <span class="text-xs uppercase tracking-[0.24em] text-[#8E652E] font-semibold">Service Directory</span>
+        <span class="text-xs uppercase tracking-[0.24em] text-[#75451d] font-semibold">Service Directory</span>
         <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.1]">
           Signature Services <br />
           <span class="italic font-normal">& Treatment Menus</span>
@@ -54,7 +54,7 @@ const breadcrumbs = [{ name: 'Services', url: '/services/' }];
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-[#28221C]/40 via-transparent to-transparent"></div>
                 <div class="absolute bottom-5 left-6 text-[#FFFCF6]">
-                  <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#E8D5B7] block">S For Swag</span>
+                  <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#eeda9b] block">S For Swag</span>
                   <span class="text-xl font-serif font-bold">{category.title}</span>
                 </div>
               </div>
@@ -63,7 +63,7 @@ const breadcrumbs = [{ name: 'Services', url: '/services/' }];
             <!-- Content Details (Span 7) -->
             <div class={`lg:col-span-7 space-y-6 ${isReversed ? 'lg:order-1' : ''}`}>
               <div class="space-y-2">
-                <span class="text-xs uppercase tracking-[0.2em] font-semibold text-[#A77A3F]">{category.tagline}</span>
+                <span class="text-xs uppercase tracking-[0.2em] font-semibold text-[#b7802c]">{category.tagline}</span>
                 <h2 class="text-3xl sm:text-4xl font-serif text-[#28221C]">{category.title}</h2>
               </div>
               
@@ -78,7 +78,7 @@ const breadcrumbs = [{ name: 'Services', url: '/services/' }];
                   {category.subcategories.map((sub) => (
                     <a
                       href={`/${category.slug}/${sub.slug}/`}
-                      class="text-xs bg-[#FFFCF6] hover:bg-[#A77A3F] hover:text-[#FFFCF6] text-[#4A321C] border border-[#E8D5B7] px-3.5 py-1.5 rounded-full transition-all"
+                      class="text-xs bg-[#FFFCF6] hover:bg-[#b7802c] hover:text-[#FFFCF6] text-[#75451d] border border-[#eeda9b] px-3.5 py-1.5 rounded-full transition-all"
                     >
                       {sub.title} &rarr;
                     </a>
@@ -99,8 +99,8 @@ const breadcrumbs = [{ name: 'Services', url: '/services/' }];
       })}
 
       <!-- Brochure Menu Notes Box -->
-      <div class="p-8 rounded-3xl bg-[#EFE2CE]/80 border border-[#E8D5B7] space-y-4">
-        <h3 class="text-base uppercase tracking-widest font-bold text-[#4A321C]">
+      <div class="p-8 rounded-3xl bg-[#F5ECDB]/80 border border-[#eeda9b] space-y-4">
+        <h3 class="text-base uppercase tracking-widest font-bold text-[#75451d]">
           Salon Pricing Policy & Menu Notes
         </h3>
         <p class="text-xs text-[#5C4D3E] leading-relaxed">

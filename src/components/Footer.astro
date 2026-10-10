@@ -4,7 +4,7 @@ import { siteConfig, navLinks, serviceCategoryLinks } from '../data/site';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-[#EFE2CE] text-[#28221C] border-t border-[#E8D5B7] pt-16 pb-12 px-4 sm:px-8">
+<footer class="bg-[#F5ECDB] text-[#28221C] border-t border-[#eeda9b] pt-16 pb-12 px-4 sm:px-8">
   <div class="max-w-7xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-[#D5C2A5]/50">
       
@@ -13,7 +13,7 @@ const currentYear = new Date().getFullYear();
         <a href="/" class="inline-block" aria-label="S For Swag Home">
           <img src="/images/brand/logo.png" alt="S For Swag The Salon Logo" class="h-16 sm:h-20 w-auto object-contain" width="160" height="180" />
         </a>
-        <p class="text-xs uppercase tracking-[0.2em] text-[#8E652E] font-semibold">
+        <p class="text-xs uppercase tracking-[0.2em] text-[#75451d] font-semibold">
           Premium Unisex Salon by Seematti
         </p>
         <p class="text-sm text-[#5C4D3E] max-w-md leading-relaxed">
@@ -26,7 +26,7 @@ const currentYear = new Date().getFullYear();
             href={siteConfig.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-9 h-9 rounded-full border border-[#A77A3F]/50 flex items-center justify-center text-[#4A321C] hover:bg-[#A77A3F] hover:text-[#FFFCF6] hover:border-[#A77A3F] transition-all"
+            class="w-9 h-9 rounded-full border border-[#b7802c]/50 flex items-center justify-center text-[#75451d] hover:bg-[#b7802c] hover:text-[#FFFCF6] hover:border-[#b7802c] transition-all"
             aria-label="Follow S For Swag on Instagram"
           >
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -37,7 +37,7 @@ const currentYear = new Date().getFullYear();
             href={siteConfig.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-9 h-9 rounded-full border border-[#A77A3F]/50 flex items-center justify-center text-[#4A321C] hover:bg-[#A77A3F] hover:text-[#FFFCF6] hover:border-[#A77A3F] transition-all"
+            class="w-9 h-9 rounded-full border border-[#b7802c]/50 flex items-center justify-center text-[#75451d] hover:bg-[#b7802c] hover:text-[#FFFCF6] hover:border-[#b7802c] transition-all"
             aria-label="Enquire via WhatsApp"
           >
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -49,17 +49,17 @@ const currentYear = new Date().getFullYear();
 
       <!-- Quick Links -->
       <div class="space-y-3">
-        <h3 class="text-xs uppercase tracking-[0.2em] font-semibold text-[#4A321C]">Explore</h3>
+        <h3 class="text-xs uppercase tracking-[0.2em] font-semibold text-[#75451d]">Explore</h3>
         <ul class="space-y-2 text-sm">
           {navLinks.map((link) => (
             <li>
-              <a href={link.href} class="text-[#5C4D3E] hover:text-[#A77A3F] transition-colors">
+              <a href={link.href} class="text-[#5C4D3E] hover:text-[#b7802c] transition-colors">
                 {link.label}
               </a>
             </li>
           ))}
           <li>
-            <a href="/privacy-policy/" class="text-[#5C4D3E] hover:text-[#A77A3F] transition-colors">
+            <a href="/privacy-policy/" class="text-[#5C4D3E] hover:text-[#b7802c] transition-colors">
               Privacy Policy
             </a>
           </li>
@@ -68,11 +68,11 @@ const currentYear = new Date().getFullYear();
 
       <!-- Service Categories -->
       <div class="space-y-3">
-        <h3 class="text-xs uppercase tracking-[0.2em] font-semibold text-[#4A321C]">Services</h3>
+        <h3 class="text-xs uppercase tracking-[0.2em] font-semibold text-[#75451d]">Services</h3>
         <ul class="space-y-2 text-sm">
           {serviceCategoryLinks.map((item) => (
             <li>
-              <a href={item.href} class="text-[#5C4D3E] hover:text-[#A77A3F] transition-colors">
+              <a href={item.href} class="text-[#5C4D3E] hover:text-[#b7802c] transition-colors">
                 {item.label}
               </a>
             </li>
@@ -82,7 +82,7 @@ const currentYear = new Date().getFullYear();
 
       <!-- Visit Us / Contact -->
       <div class="space-y-3">
-        <h3 class="text-xs uppercase tracking-[0.2em] font-semibold text-[#4A321C]">Salon Studio</h3>
+        <h3 class="text-xs uppercase tracking-[0.2em] font-semibold text-[#75451d]">Salon Studio</h3>
         <address class="not-italic text-sm text-[#5C4D3E] space-y-2">
           <p class="leading-relaxed">
             {siteConfig.address.floor}, {siteConfig.address.building}<br />
@@ -95,7 +95,7 @@ const currentYear = new Date().getFullYear();
               href={siteConfig.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#A77A3F] hover:text-[#8E652E]"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#b7802c] hover:text-[#75451d]"
             >
               <span>Get Directions on Google Maps</span>
               <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -106,12 +106,12 @@ const currentYear = new Date().getFullYear();
             </a>
           </div>
           <p class="pt-2 text-xs">
-            <span class="font-medium text-[#4A321C]">Phone:</span>{' '}
-            <a href={`tel:${siteConfig.phone}`} class="hover:text-[#A77A3F]">{siteConfig.phoneFormatted}</a>
+            <span class="font-medium text-[#75451d]">Phone:</span>{' '}
+            <a href={`tel:${siteConfig.phone}`} class="hover:text-[#b7802c]">{siteConfig.phoneFormatted}</a>
           </p>
           <p class="text-xs">
-            <span class="font-medium text-[#4A321C]">Email:</span>{' '}
-            <a href={`mailto:${siteConfig.email}`} class="hover:text-[#A77A3F]">{siteConfig.email}</a>
+            <span class="font-medium text-[#75451d]">Email:</span>{' '}
+            <a href={`mailto:${siteConfig.email}`} class="hover:text-[#b7802c]">{siteConfig.email}</a>
           </p>
         </address>
       </div>
