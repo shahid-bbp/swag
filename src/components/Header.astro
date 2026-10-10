@@ -4,7 +4,7 @@ import { navLinks, siteConfig } from '../data/site';
 const currentPath = Astro.url.pathname;
 ---
 
-<header id="site-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-4 sm:px-8 bg-[#F7F0E4]/90 backdrop-blur-md border-b border-[#eeda9b]/60">
+<header id="site-header" class="fixed top-0 left-0 w-full z-50 py-3 sm:py-4 px-4 sm:px-8">
   <div class="max-w-7xl mx-auto flex items-center justify-between">
     <!-- Brand Logo -->
     <a href="/" class="group flex items-center gap-3 transition-transform hover:opacity-95 pl-10" aria-label="S For Swag Home">
@@ -35,7 +35,7 @@ const currentPath = Astro.url.pathname;
     <div class="hidden md:flex items-center gap-4">
       <a
         href="/contact/#appointment"
-        class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#b7802c] text-[#75451d] hover:bg-[#b7802c] hover:text-[#FFFCF6] text-[0.8125rem] tracking-[0.14em] uppercase font-medium transition-all duration-300 shadow-xs"
+        class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#b7802c] text-[#75451d] bg-[#FFFCF6]/80 hover:bg-[#b7802c] hover:text-[#FFFCF6] text-[0.8125rem] tracking-[0.14em] uppercase font-medium transition-all duration-300 shadow-xs"
       >
         <span>Book Appointment</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -49,7 +49,7 @@ const currentPath = Astro.url.pathname;
     <button
       id="mobile-menu-btn"
       type="button"
-      class="md:hidden p-2 text-[#75451d] hover:text-[#b7802c] focus:outline-none focus:ring-2 focus:ring-[#b7802c] rounded-lg"
+      class="md:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#75451d] hover:text-[#b7802c] focus:outline-none focus:ring-2 focus:ring-[#b7802c] rounded-lg"
       aria-label="Toggle mobile menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
@@ -109,43 +109,175 @@ const currentPath = Astro.url.pathname;
   </div>
 </header>
 
-<script>
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const hamburgerIcon = document.getElementById('hamburger-icon');
-  const closeIcon = document.getElementById('close-icon');
-
-  if (menuBtn && mobileMenu && hamburgerIcon && closeIcon) {
-    menuBtn.addEventListener('click', () => {
-      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', String(!isExpanded));
-      mobileMenu.classList.toggle('hidden');
-      hamburgerIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
-      document.body.classList.toggle('overflow-hidden', !isExpanded);
-    });
-
-    // Close when a link inside mobile menu is clicked
-    const links = mobileMenu.querySelectorAll('a');
-    links.forEach(l => {
-      l.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        hamburgerIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('overflow-hidden');
-      });
-    });
+<style>
+  #site-header {
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 4px 20px -2px transparent, 0 2px 6px -1px transparent;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition:
+      border-color 400ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1),
+      backdrop-filter 400ms cubic-bezier(0.16, 1, 0.3, 1),
+      -webkit-backdrop-filter 400ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  // Header scroll shadow and blur adjustment
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    if (!header) return;
-    if (window.scrollY > 20) {
-      header.classList.add('shadow-xs', 'bg-[#F7F0E4]/95');
-    } else {
-      header.classList.remove('shadow-xs');
+  /* GPU-accelerated gradient layer for buttery smooth fade-in */
+  #site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      135deg,
+      rgba(248, 240, 227, 0.95) 0%,
+      rgba(234, 214, 184, 0.88) 50%,
+      rgba(246, 232, 212, 0.96) 100%
+    );
+    opacity: 0;
+    transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+
+  /* Scrolled header state */
+  #site-header.header--scrolled {
+    border-bottom-color: rgba(238, 218, 155, 0.6);
+    box-shadow: 0 4px 20px -2px rgba(117, 69, 29, 0.07), 0 2px 6px -1px rgba(183, 128, 44, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  #site-header.header--scrolled::before {
+    opacity: 1;
+  }
+
+  /* Opened mobile drawer state ensures consistent solid surface */
+  #site-header.header--menu-open {
+    border-bottom-color: rgba(238, 218, 155, 0.6);
+    background-color: #F7F0E4;
+  }
+
+  #site-header.header--menu-open::before {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #site-header,
+    #site-header::before {
+      transition: none !important;
     }
-  }, { passive: true });
+  }
+</style>
+
+<script>
+  const SCROLL_THRESHOLD = 50;
+
+  function setupHeader() {
+    const header = document.getElementById('site-header');
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    if (!header) return;
+
+    let isScrolled = false;
+    let ticking = false;
+
+    const updateScrollState = () => {
+      const currentScrollY = window.scrollY || window.pageYOffset || 0;
+      const shouldBeScrolled = currentScrollY > SCROLL_THRESHOLD;
+
+      if (shouldBeScrolled !== isScrolled) {
+        isScrolled = shouldBeScrolled;
+        if (isScrolled) {
+          header.classList.add('header--scrolled');
+        } else {
+          header.classList.remove('header--scrolled');
+        }
+      }
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollState);
+        ticking = true;
+      }
+    };
+
+    // Evaluate scroll position immediately on initialization
+    updateScrollState();
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Mobile menu handlers
+    const closeMenu = () => {
+      if (!mobileMenu || !menuBtn || !hamburgerIcon || !closeIcon) return;
+      mobileMenu.classList.add('hidden');
+      hamburgerIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('overflow-hidden');
+      header.classList.remove('header--menu-open');
+    };
+
+    const toggleMenu = () => {
+      if (!mobileMenu || !menuBtn || !hamburgerIcon || !closeIcon) return;
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      const nextState = !isExpanded;
+      menuBtn.setAttribute('aria-expanded', String(nextState));
+      mobileMenu.classList.toggle('hidden', !nextState);
+      hamburgerIcon.classList.toggle('hidden', nextState);
+      closeIcon.classList.toggle('hidden', !nextState);
+      document.body.classList.toggle('overflow-hidden', nextState);
+      header.classList.toggle('header--menu-open', nextState);
+    };
+
+    const linkListeners: Array<{ element: Element; handler: () => void }> = [];
+
+    if (menuBtn && mobileMenu && hamburgerIcon && closeIcon) {
+      menuBtn.addEventListener('click', toggleMenu);
+
+      const links = mobileMenu.querySelectorAll('a');
+      links.forEach(l => {
+        l.addEventListener('click', closeMenu);
+        linkListeners.push({ element: l, handler: closeMenu });
+      });
+    }
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (menuBtn) {
+        menuBtn.removeEventListener('click', toggleMenu);
+      }
+      linkListeners.forEach(({ element, handler }) => {
+        element.removeEventListener('click', handler);
+      });
+    };
+  }
+
+  let cleanup: (() => void) | void;
+
+  const init = () => {
+    if (typeof cleanup === 'function') {
+      cleanup();
+    }
+    cleanup = setupHeader();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+
+  document.addEventListener('astro:page-load', init);
+  document.addEventListener('astro:before-swap', () => {
+    if (typeof cleanup === 'function') {
+      cleanup();
+      cleanup = undefined;
+    }
+  });
 </script>
