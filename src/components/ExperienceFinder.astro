@@ -1,19 +1,283 @@
 ---
 import SectionIntro from './SectionIntro.astro';
+
 const experiences = [
-  { title: 'A little everyday polish', description: 'Brow definition, grooming and the details that make you feel put together.', href: '/beauty-lounge/grooming/', link: 'Explore grooming' },
-  { title: 'A fresh hair chapter', description: 'Bring your colour ideas, texture goals and everyday routine to the conversation.', href: '/hair-artistry-spa/', link: 'Find your hair service' },
-  { title: 'Time to slow down', description: 'Explore body wellness and choose a moment of care around your schedule.', href: '/body-wellness-spa/', link: 'Discover wellness' },
-  { title: 'Your celebration look', description: 'Plan makeup, hair and draping around your outfit, occasion and personal style.', href: '/bridal/', link: 'Explore bridal' },
-  { title: 'Details at your fingertips', description: 'From understated colour to expressive nail art, find the finish that feels like you.', href: '/nail-studio/', link: 'Visit the nail studio' },
-  { title: 'A moment for your skin', description: 'Compare facial and clean-up options, then discuss your preferences with the team.', href: '/beauty-lounge/facials/', link: 'Browse skin care' },
+  {
+    num: '01',
+    category: 'Grooming & Brows',
+    title: 'A little everyday polish',
+    description: 'Brow definition, grooming and the details that make you feel put together.',
+    href: '/beauty-lounge/grooming/',
+    link: 'Explore grooming'
+  },
+  {
+    num: '02',
+    category: 'Hair Artistry',
+    title: 'A fresh hair chapter',
+    description: 'Bring your colour ideas, texture goals and everyday routine to the conversation.',
+    href: '/hair-artistry-spa/',
+    link: 'Find your hair service'
+  },
+  {
+    num: '03',
+    category: 'Spa & Wellness',
+    title: 'Time to slow down',
+    description: 'Explore body wellness and choose a moment of care around your schedule.',
+    href: '/body-wellness-spa/',
+    link: 'Discover wellness'
+  },
+  {
+    num: '04',
+    category: 'Bridal Couture',
+    title: 'Your celebration look',
+    description: 'Plan makeup, hair and draping around your outfit, occasion and personal style.',
+    href: '/bridal/',
+    link: 'Explore bridal'
+  },
+  {
+    num: '05',
+    category: 'Nail Studio',
+    title: 'Details at your fingertips',
+    description: 'From understated colour to expressive nail art, find the finish that feels like you.',
+    href: '/nail-studio/',
+    link: 'Visit the nail studio'
+  },
+  {
+    num: '06',
+    category: 'Skin Rituals',
+    title: 'A moment for your skin',
+    description: 'Compare facial and clean-up options, then discuss your preferences with the team.',
+    href: '/beauty-lounge/facials/',
+    link: 'Browse skin care'
+  },
 ];
 ---
-<section class="editorial-section editorial-section--tinted" aria-label="Find your experience">
-  <div class="section-shell">
-    <SectionIntro eyebrow="Start with you" title="What brings you in today?" description="A refresh, a celebration, or simply a little time for yourself. Find a starting point that suits your day." />
-    <div class="finder-grid">
-      {experiences.map((item) => <a class="finder-card" href={item.href} data-reveal><h3>{item.title}</h3><p>{item.description}</p><span class="finder-link">{item.link}<span class="finder-arrow" aria-hidden="true">↗</span></span></a>)}
+
+<section
+  class="editorial-section editorial-section--tinted experience-finder-section relative overflow-hidden"
+  aria-label="Find your experience"
+>
+  <!-- Background Gradient Image Layer -->
+  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90 pointer-events-none transition-opacity duration-1000 experience-bg-image"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-[#F5ECDB]/60 via-transparent to-[#F7F0E4]/70 pointer-events-none"></div>
+
+  <!-- Decorative Animated Botanical Leaves (WebP < 25KB each) -->
+  <div class="decorative-leaf decorative-leaf--top-right" aria-hidden="true">
+    <img
+      src="/images/decorative/luxury-leaf.webp"
+      alt=""
+      class="leaf-img leaf-img--primary"
+      width="376"
+      height="1024"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  <div class="decorative-leaf decorative-leaf--bottom-left" aria-hidden="true">
+    <img
+      src="/images/decorative/luxury-leaf-flipped.webp"
+      alt=""
+      class="leaf-img leaf-img--secondary"
+      width="376"
+      height="1024"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  <div class="decorative-leaf decorative-leaf--ambient" aria-hidden="true">
+    <img
+      src="/images/decorative/luxury-leaf.webp"
+      alt=""
+      class="leaf-img leaf-img--ambient"
+      width="376"
+      height="1024"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  <div class="section-shell relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+      <div class="inline-flex items-center gap-3 mb-4">
+        <span class="w-8 h-[1px] bg-[#b7802c]/60"></span>
+        <span class="text-[11px] uppercase tracking-[0.24em] font-semibold text-[#75451d]">
+          Start with you
+        </span>
+        <span class="w-8 h-[1px] bg-[#b7802c]/60"></span>
+      </div>
+
+      <h2 class="text-4xl sm:text-5xl lg:text-[54px] font-serif text-[#28221C] leading-[1.08] tracking-tight">
+        What brings you in today?
+      </h2>
+
+      <p class="text-sm sm:text-base text-[#6C5D4F] leading-relaxed mt-4 max-w-xl mx-auto">
+        A refresh, a celebration, or simply a little time for yourself. Find a starting point that suits your day.
+      </p>
+    </div>
+
+    <!-- Elevated Luxury Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+      {experiences.map((item) => (
+        <a
+          class="finder-card-luxury group relative flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-[#FAF3E7]/85 hover:bg-[#FFFDF9] backdrop-blur-sm border border-[#eeda9b]/80 hover:border-[#b7802c] shadow-[0_4px_24px_-4px_rgba(117,69,29,0.05)] hover:shadow-[0_16px_36px_-6px_rgba(183,128,44,0.15)] transition-all duration-300 hover:-translate-y-1.5 overflow-hidden"
+          href={item.href}
+          data-reveal
+        >
+          <!-- Subtle Top Gold Accent Line on Hover -->
+          <span class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#b7802c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+
+          <div>
+            <!-- Card Header: Category Tag & Number -->
+            <div class="flex items-center justify-between gap-3 mb-5">
+              <span class="text-[10px] sm:text-[11px] font-medium tracking-[0.12em] uppercase text-[#75451d] bg-[#F5ECDB] px-3 py-1 rounded-full border border-[#eeda9b]/60">
+                {item.category}
+              </span>
+              <span class="font-serif italic text-lg sm:text-xl text-[#b7802c]/70 group-hover:text-[#b7802c] transition-colors">
+                {item.num}
+              </span>
+            </div>
+
+            <!-- Card Title in Crawling Display Font -->
+            <h3 class="text-2xl sm:text-[26px] font-serif text-[#28221C] group-hover:text-[#75451d] transition-colors leading-[1.2] mb-3">
+              {item.title}
+            </h3>
+
+            <!-- Card Description -->
+            <p class="text-xs sm:text-[13px] text-[#6C5D4F] leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+
+          <!-- Card Footer with Refined CTA -->
+          <div class="mt-8 pt-5 border-t border-[#eeda9b]/50 group-hover:border-[#b7802c]/40 flex items-center justify-between transition-colors">
+            <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#75451d] group-hover:text-[#b7802c] transition-colors">
+              {item.link}
+            </span>
+            <span class="w-8 h-8 rounded-full bg-[#F5ECDB] group-hover:bg-[#b7802c] text-[#75451d] group-hover:text-[#FFFDF9] flex items-center justify-center text-sm transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5 shadow-xs" aria-hidden="true">
+              ↗
+            </span>
+          </div>
+        </a>
+      ))}
     </div>
   </div>
 </section>
+
+<style>
+  .experience-finder-section {
+    position: relative;
+    padding-block: clamp(72px, 8vw, 120px);
+    background-color: var(--color-bg-secondary, #F5ECDB);
+  }
+
+  .experience-bg-image {
+    background-image: url('/images/decorative/experience-gradient-bg.webp');
+    background-blend-mode: overlay;
+  }
+
+  /* Decorative Leaf Animations */
+  .decorative-leaf {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    overflow: visible;
+  }
+
+  .decorative-leaf--top-right {
+    top: -60px;
+    right: -60px;
+    width: clamp(220px, 24vw, 380px);
+    opacity: 0.55;
+    animation: leaf-sway-primary 14s ease-in-out infinite alternate;
+  }
+
+  .decorative-leaf--bottom-left {
+    bottom: -80px;
+    left: -70px;
+    width: clamp(240px, 26vw, 400px);
+    opacity: 0.5;
+    animation: leaf-sway-secondary 16s ease-in-out infinite alternate;
+  }
+
+  .decorative-leaf--ambient {
+    top: 35%;
+    left: 2%;
+    width: clamp(140px, 14vw, 220px);
+    opacity: 0.22;
+    filter: blur(2px);
+    animation: leaf-drift-ambient 18s ease-in-out infinite alternate;
+  }
+
+  .leaf-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transform-origin: center bottom;
+    will-change: transform;
+    filter: drop-shadow(0 12px 24px rgba(183, 128, 44, 0.08));
+  }
+
+  @keyframes leaf-sway-primary {
+    0% {
+      transform: translateY(0px) rotate(0deg) scale(1);
+    }
+    50% {
+      transform: translateY(-16px) rotate(2.8deg) scale(1.02);
+    }
+    100% {
+      transform: translateY(-6px) rotate(-1.5deg) scale(0.99);
+    }
+  }
+
+  @keyframes leaf-sway-secondary {
+    0% {
+      transform: translateY(0px) rotate(0deg) scale(1);
+    }
+    50% {
+      transform: translateY(18px) rotate(-3.2deg) scale(1.03);
+    }
+    100% {
+      transform: translateY(8px) rotate(2deg) scale(0.98);
+    }
+  }
+
+  @keyframes leaf-drift-ambient {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(14px, -18px) rotate(3deg);
+    }
+    100% {
+      transform: translate(-10px, 10px) rotate(-2deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .decorative-leaf--top-right,
+    .decorative-leaf--bottom-left,
+    .decorative-leaf--ambient {
+      animation: none !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .decorative-leaf--top-right {
+      top: -30px;
+      right: -50px;
+      width: 200px;
+      opacity: 0.35;
+    }
+    .decorative-leaf--bottom-left {
+      bottom: -40px;
+      left: -60px;
+      width: 220px;
+      opacity: 0.35;
+    }
+    .decorative-leaf--ambient {
+      display: none;
+    }
+  }
+</style>
