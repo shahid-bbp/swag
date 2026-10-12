@@ -125,7 +125,7 @@
     --font-luxury-accent: 'CS Boris', 'CSBoris-Regular', 'Crawling', 'CrawlingPersonalUsed', 'Cormorant Garamond', Georgia, serif;
 
     --site-header-height: 73px;
-    --header-gap: 16px;
+    --header-gap: 0px;
     --color-bg-primary: #F7F0E4;
     --color-bg-secondary: #F5ECDB;
     --color-champagne: #eeda9b;
@@ -163,11 +163,18 @@
 }
 
 @media (min-width: 640px) {
-  :root { --site-header-height: 97px; --header-gap: 24px; }
+  :root { --site-header-height: 97px; --header-gap: 0px; }
 }
 
-.site-main { padding-top: calc(var(--site-header-height) + var(--header-gap)); }
-html { scroll-padding-top: calc(var(--site-header-height) + 24px); }
+.site-main { padding-top: var(--site-header-height); }
+html { scroll-padding-top: calc(var(--site-header-height) + 12px); }
+
+/* Page Hero Banner: seamless full-bleed behind transparent fixed header */
+.page-hero-banner {
+  margin-top: calc(-1 * var(--site-header-height));
+  padding-top: calc(var(--site-header-height) + clamp(20px, 3vw, 36px));
+  padding-bottom: clamp(40px, 5vw, 68px);
+}
 main [id] { scroll-margin-top: 12px; }
 button, input, select, textarea { font: inherit; }
 :is(a, button, input, select, textarea, summary):focus-visible { outline: 2px solid var(--color-gold-dark); outline-offset: 4px; }
