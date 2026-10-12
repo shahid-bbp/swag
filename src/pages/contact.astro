@@ -17,20 +17,20 @@ const breadcrumbs = [{ name: 'Contact', url: '/contact/' }];
 
 <BaseLayout seo={seo}>
   <!-- Hero Header -->
-  <section class="py-14 sm:py-20 lg:py-24 bg-[#F5ECDB] border-b border-[#eeda9b] relative overflow-hidden">
-    <!-- Background Image Layer (91KB WebP) -->
+  <section class="page-hero-banner bg-[#F5ECDB] border-b border-[#eeda9b] relative overflow-hidden">
+    <!-- Background Image Layer (Sunlit plaster with botanical shadows) -->
     <div class="absolute inset-0 pointer-events-none">
       <img
-        src="/images/salon/contact-hero-bg.webp"
-        alt="S For Swag luxury salon reception and concierge"
-        class="w-full h-full object-cover object-right md:object-center opacity-85"
-        width="1920"
-        height="1080"
+        src="/images/salon/page-hero-bg.webp"
+        alt="S For Swag luxury salon ambiance"
+        class="w-full h-full object-cover object-center"
+        width="1024"
+        height="438"
         loading="eager"
         decoding="async"
       />
-      <!-- Subtle warm gradient: ensures text is purely visible while preserving image beauty -->
-      <div class="absolute inset-0 bg-gradient-to-r from-[#F5ECDB]/85 via-[#F5ECDB]/55 to-transparent"></div>
+      <!-- Subtle warm gradient: ensures text is purely readable over botanical shadows -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#F5ECDB]/65 via-[#F5ECDB]/35 to-transparent"></div>
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
