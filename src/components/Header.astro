@@ -76,8 +76,8 @@ const currentPath = Astro.url.pathname;
         return (
           <a
             href={link.href}
-            class={`text-xl font-serif py-1 transition-colors ${
-              isActive ? 'text-[#b7802c] font-bold' : 'text-[#28221C] hover:text-[#b7802c]'
+            class={`text-lg font-medium py-1 transition-colors tracking-wide ${
+              isActive ? 'text-[#b7802c] font-semibold' : 'text-[#28221C] hover:text-[#b7802c]'
             }`}
           >
             {link.label}

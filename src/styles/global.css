@@ -1,7 +1,117 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   Typography System — S For Swag The Salon (Official Brochure Specification)
+   1. Crawling (CrawlingPersonalUsed) — Primary Display Font
+   2. Poppins (300, 400, 500, 600, 700) — Body & Interface Font
+   3. CS Boris (CSBoris-Regular) — Decorative Luxury Accent Font
+   ========================================================================== */
+
+/* 1. Crawling — Primary Display Font */
+@font-face {
+  font-family: 'Crawling';
+  src: local('CrawlingPersonalUsed'),
+       local('Crawling'),
+       url('/fonts/CrawlingPersonalUsed.woff2') format('woff2'),
+       url('/fonts/CrawlingPersonalUsed.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CrawlingPersonalUsed';
+  src: local('CrawlingPersonalUsed'),
+       local('Crawling'),
+       url('/fonts/CrawlingPersonalUsed.woff2') format('woff2'),
+       url('/fonts/CrawlingPersonalUsed.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. CS Boris — Decorative Luxury Accent Font */
+@font-face {
+  font-family: 'CS Boris';
+  src: local('CSBoris-Regular'),
+       local('CS Boris'),
+       local('CSBoris'),
+       url('/fonts/CSBoris-Regular.woff2') format('woff2'),
+       url('/fonts/CSBoris-Regular.woff') format('woff'),
+       url('/fonts/CSBoris-Regular.ttf') format('truetype'),
+       url('/fonts/CSBoris.woff2') format('woff2'),
+       url('/fonts/CSBoris.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CSBoris-Regular';
+  src: local('CSBoris-Regular'),
+       local('CS Boris'),
+       local('CSBoris'),
+       url('/fonts/CSBoris-Regular.woff2') format('woff2'),
+       url('/fonts/CSBoris-Regular.woff') format('woff'),
+       url('/fonts/CSBoris-Regular.ttf') format('truetype'),
+       url('/fonts/CSBoris.woff2') format('woff2'),
+       url('/fonts/CSBoris.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 3. Poppins — Body & Interface Font (Self-Hosted WOFF2) */
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins Light'), local('Poppins-Light'),
+       url('/fonts/poppins/poppins-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins Regular'), local('Poppins-Regular'), local('Poppins'),
+       url('/fonts/poppins/poppins-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins Medium'), local('Poppins-Medium'),
+       url('/fonts/poppins/poppins-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins SemiBold'), local('Poppins-SemiBold'),
+       url('/fonts/poppins/poppins-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins Bold'), local('Poppins-Bold'),
+       url('/fonts/poppins/poppins-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Crawling', 'CrawlingPersonalUsed', 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Crawling', 'CrawlingPersonalUsed', 'Cormorant Garamond', Georgia, serif;
+  --font-accent: 'CS Boris', 'CSBoris-Regular', 'Crawling', 'CrawlingPersonalUsed', 'Cormorant Garamond', Georgia, serif;
   --color-gold: #b7802c;
   --color-gold-hover: #9c6c23;
   --color-champagne: #eeda9b;
@@ -12,6 +122,10 @@
 
 @layer base {
   :root {
+    --font-primary-display: 'Crawling', 'CrawlingPersonalUsed', 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-luxury-accent: 'CS Boris', 'CSBoris-Regular', 'Crawling', 'CrawlingPersonalUsed', 'Cormorant Garamond', Georgia, serif;
+
     --site-header-height: 73px;
     --header-gap: 16px;
     --color-bg-primary: #F7F0E4;
@@ -30,7 +144,7 @@
     scroll-behavior: smooth;
     background-color: var(--color-bg-primary);
     color: var(--color-text-main);
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -40,9 +154,13 @@
     color: #75451d;
   }
 
-  h1, h2, h3, h4, .font-serif {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+  h1, h2, h3, h4, .font-serif, .font-display {
+    font-family: var(--font-primary-display);
     letter-spacing: -0.01em;
+  }
+
+  p, span, a, button, input, select, textarea, li, figcaption, label {
+    font-family: inherit;
   }
 }
 
@@ -57,6 +175,20 @@ button, input, select, textarea { font: inherit; }
 :is(a, button, input, select, textarea, summary):focus-visible { outline: 2px solid var(--color-gold-dark); outline-offset: 4px; }
 .skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; padding: 12px 20px; background: var(--color-white); color: var(--color-brown-deep); transform: translateY(-150%); }
 .skip-link:focus { transform: none; }
+
+/* Custom Luxury Typography Utilities */
+.font-display {
+  font-family: var(--font-primary-display);
+}
+
+.font-body, .font-sans {
+  font-family: var(--font-body);
+}
+
+.font-accent, .ampersand-accent, .luxury-ampersand {
+  font-family: var(--font-luxury-accent);
+  font-weight: 400;
+}
 
 /* Custom Luxury Utility Classes */
 .bg-cream-primary { background-color: #F7F0E4; }
@@ -93,10 +225,11 @@ button, input, select, textarea { font: inherit; }
   gap: 0.5rem;
   padding: 0.625rem 1.75rem;
   border-radius: 9999px;
+  font-family: var(--font-body);
   font-size: 0.8125rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

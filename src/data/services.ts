@@ -576,8 +576,8 @@ export const servicesData: ServiceCategory[] = [
   {
     id: "hair-artistry-spa",
     slug: "hair-artistry-spa",
-    title: "Hair Artistry & Spa",
-    tagline: "Signature Cuts, Couture Colour & Restorative Rituals",
+    title: "Hair Artistry and Spa",
+    tagline: "Signature Cuts, Couture Colour and Restorative Rituals",
     shortDesc:
       "Keratin & Botox transformations, Fusio Dose rituals, caviar infusions, Balayage, root touch-ups, and L'Oréal spa for men and women.",
     fullDesc:
