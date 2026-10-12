@@ -1,0 +1,554 @@
+---
+// Premium Horizontal Scroll Storytelling Section: The Art of Beauty
+// Faithfully matches S for Swag warm luxury brand color theme:
+// Warm Ivory (#F7F0E4), Warm Cream (#F5ECDB), Champagne (#eeda9b), Gold (#b7802c), Deep Brown (#75451d, #28221C).
+// No stark white used. All card content is 100% visible and well-proportioned.
+
+const panels = [
+  {
+    step: "01",
+    category: "Hair Artistry",
+    heading: "The art of beautiful hair.",
+    description: "Refined styling, beautiful finishes and looks that feel uniquely yours.",
+    cta: "Discover Hair Care",
+    href: "/hair-artistry-spa/",
+    image: "/images/beauty/hair-artistry.webp",
+    alt: "Refined hair styling and bridal hair updo at S for Swag luxury salon Kochi",
+    loading: "eager" as const,
+  },
+  {
+    step: "02",
+    category: "Skin Rituals",
+    heading: "Your moment of radiance.",
+    description: "Thoughtful skincare rituals designed around your natural glow.",
+    cta: "Explore Skin Care",
+    href: "/beauty-lounge/facials/",
+    image: "/images/beauty/skin-rituals.webp",
+    alt: "Gentle facial skincare ritual and radiant skin therapy at S for Swag Kochi",
+    loading: "eager" as const,
+  },
+  {
+    step: "03",
+    category: "Bridal Elegance",
+    heading: "Made for your unforgettable day.",
+    description: "Personalised bridal artistry, crafted with precision and care.",
+    cta: "Explore Bridal Beauty",
+    href: "/bridal/",
+    image: "/images/beauty/bridal-elegance.webp",
+    alt: "South Indian bride adorned in gold jewelry and floral hair accessories at S for Swag Kochi",
+    loading: "lazy" as const,
+  },
+  {
+    step: "04",
+    category: "Signature Looks",
+    heading: "A look that feels like you.",
+    description: "Discover the details that bring your personal style to life.",
+    cta: "Explore Our Services",
+    href: "/services/",
+    image: "/images/beauty/signature-looks.webp",
+    alt: "Signature salon beauty look and personalized makeup artistry at S for Swag Kochi",
+    loading: "lazy" as const,
+  },
+];
+---
+
+<section
+  id="art-of-beauty"
+  class="art-of-beauty-section relative bg-[#F5ECDB] border-t border-b border-[#eeda9b] overflow-hidden py-14 sm:py-16 lg:py-20"
+  aria-label="The Art of Beauty"
+>
+  <!-- Ambient warm gold texture matching salon aesthetic -->
+  <div class="absolute inset-0 opacity-40 pointer-events-none bg-[radial-gradient(#C5A059_0.75px,transparent_0.75px)] [background-size:24px_24px]"></div>
+  <div class="absolute -top-24 right-1/4 w-80 h-80 bg-[#eeda9b]/35 rounded-full blur-3xl pointer-events-none"></div>
+
+  <!-- Content Wrapper -->
+  <div class="art-pin-wrapper max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+    
+    <!-- Editorial Header: Eyebrow, Heading, Description & Progress Stepper -->
+    <div class="art-header-block mb-8 sm:mb-10 lg:mb-12">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-10">
+        
+        <!-- Left: Editorial Typography -->
+        <div class="space-y-2.5 max-w-2xl art-header-text">
+          <div class="flex items-center gap-3">
+            <span class="text-[0.6875rem] uppercase tracking-[0.24em] text-[#75451d] font-semibold">
+              THE ART OF BEAUTY
+            </span>
+            <span class="inline-block w-12 sm:w-20 h-px bg-[#b7802c]/50" aria-hidden="true"></span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-serif text-[#28221C] leading-[1.12]">
+            Every detail tells your story.
+          </h2>
+
+          <p class="text-xs sm:text-sm text-[#6C5D4F] leading-relaxed max-w-xl">
+            Discover the artistry, rituals and signature looks that make every visit feel extraordinary.
+          </p>
+        </div>
+
+        <!-- Right: Champagne-Gold Progress Indicator and Controls -->
+        <div class="art-controls-block flex flex-col items-start lg:items-end gap-3">
+          
+          <!-- Step Tab Buttons (01 - 04) in warm champagne styling -->
+          <div class="flex items-center gap-4 sm:gap-6 text-xs tracking-widest font-mono text-[#75451d]/70 px-1" role="tablist" aria-label="Story steps">
+            {panels.map((p, index) => (
+              <button
+                type="button"
+                class="art-step-btn hover:text-[#75451d] transition-all cursor-pointer py-1 text-[0.8125rem]"
+                data-step-index={index}
+                aria-label={`Jump to panel ${p.step}: ${p.category}`}
+              >
+                {p.step}
+              </button>
+            ))}
+          </div>
+
+          <!-- Fine champagne-gold progress bar & side arrow buttons -->
+          <div class="flex items-center gap-4 w-full justify-between lg:justify-end">
+            
+            <!-- Progress bar -->
+            <div class="w-36 sm:w-48 h-[2px] bg-[#eeda9b] relative rounded-full overflow-hidden" aria-hidden="true">
+              <div
+                id="art-progress-bar"
+                class="h-full bg-[#b7802c] rounded-full transition-transform duration-200 origin-left scale-x-[0.25] w-full"
+              ></div>
+            </div>
+
+            <!-- Arrow buttons in warm cream/gold theme -->
+            <div class="flex items-center gap-2">
+              <button
+                type="button"
+                id="art-prev-btn"
+                class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#b7802c]/40 text-[#75451d] bg-[#F7F0E4] flex items-center justify-center hover:bg-[#b7802c] hover:text-[#F7F0E4] hover:border-[#b7802c] transition-all duration-300 shadow-xs disabled:opacity-25 disabled:pointer-events-none cursor-pointer focus-visible:outline-2 focus-visible:outline-[#75451d]"
+                aria-label="Previous story panel"
+              >
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                id="art-next-btn"
+                class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#b7802c]/40 text-[#75451d] bg-[#F7F0E4] flex items-center justify-center hover:bg-[#b7802c] hover:text-[#F7F0E4] hover:border-[#b7802c] transition-all duration-300 shadow-xs disabled:opacity-25 disabled:pointer-events-none cursor-pointer focus-visible:outline-2 focus-visible:outline-[#75451d]"
+                aria-label="Next story panel"
+              >
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Horizontal Panels Track Area -->
+    <div class="art-track-container relative w-full overflow-hidden">
+      
+      <!-- Scrollable Viewport -->
+      <div
+        id="art-viewport"
+        class="art-viewport w-full overflow-x-auto no-scrollbar scroll-smooth"
+        tabindex="0"
+        aria-label="Story panels collection"
+      >
+        <div
+          id="art-track"
+          class="art-track flex gap-5 sm:gap-6 lg:gap-7 items-stretch will-change-transform pb-2"
+        >
+          {panels.map((panel, idx) => (
+            <article
+              class="art-card group relative flex-shrink-0 w-[280px] sm:w-[320px] md:w-[340px] lg:w-[360px] xl:w-[380px] h-[440px] sm:h-[470px] lg:h-[490px] rounded-2xl sm:rounded-3xl overflow-hidden border border-[#eeda9b] bg-[#28221C] shadow-[0_10px_28px_rgba(40,34,28,0.12)] transition-all duration-500 hover:shadow-[0_16px_36px_rgba(183,128,44,0.22)]"
+              data-card-index={idx}
+            >
+              <!-- Full Portrait Photography -->
+              <div class="art-card-media absolute inset-0 w-full h-full overflow-hidden">
+                <img
+                  src={panel.image}
+                  alt={panel.alt}
+                  width="941"
+                  height="1672"
+                  loading={panel.loading}
+                  decoding="async"
+                  class="art-card-img w-full h-full object-cover object-center will-change-transform transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+              </div>
+
+              <!-- Warm Espresso Vignette Gradient for high contrast -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#1b1510]/95 via-[#1b1510]/50 to-transparent pointer-events-none"
+                aria-hidden="true"
+              ></div>
+
+              <!-- Subtle gold border glow on hover -->
+              <div
+                class="absolute inset-0 border border-transparent group-hover:border-[#b7802c]/50 rounded-2xl sm:rounded-3xl transition-colors duration-500 pointer-events-none"
+                aria-hidden="true"
+              ></div>
+
+              <!-- Panel Content: Always 100% visible, fully readable -->
+              <div class="art-card-content absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end text-left z-10">
+                
+                <!-- Step & Category in champagne gold -->
+                <div class="flex items-center gap-2 text-[0.6875rem] uppercase tracking-[0.22em] text-[#eeda9b] font-medium mb-2">
+                  <span class="opacity-80 font-mono">{panel.step}</span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#b7802c]" aria-hidden="true"></span>
+                  <span class="text-[#F7F0E4] font-semibold">{panel.category}</span>
+                </div>
+
+                <!-- Main Panel Heading in warm ivory serif -->
+                <h3 class="font-serif text-xl sm:text-2xl text-[#F7F0E4] font-normal leading-[1.2] mb-2 drop-shadow-xs">
+                  {panel.heading}
+                </h3>
+
+                <!-- Description in muted warm ivory -->
+                <p class="text-xs text-[#F7F0E4]/85 leading-relaxed font-normal mb-4">
+                  {panel.description}
+                </p>
+
+                <!-- Premium Pill CTA Button in warm champagne glass style -->
+                <div>
+                  <a
+                    href={panel.href}
+                    class="art-card-cta group/btn inline-flex items-center gap-2 px-4.5 py-2 rounded-full text-[0.75rem] uppercase tracking-[0.14em] font-medium text-[#F7F0E4] bg-[#28221C]/60 hover:bg-[#b7802c] border border-[#eeda9b]/50 hover:border-[#b7802c] transition-all duration-300 backdrop-blur-xs focus-visible:outline-2 focus-visible:outline-[#eeda9b]"
+                  >
+                    <span>{panel.cta}</span>
+                    <svg
+                      class="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-1"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+
+              </div>
+            </article>
+          ))}
+
+          <!-- Spacing buffer at track end -->
+          <div class="w-2 sm:w-4 flex-shrink-0" aria-hidden="true"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Mobile swipe indicator hint -->
+    <div class="w-full mt-6 flex items-center justify-between text-xs text-[#75451d]/70 lg:hidden">
+      <span>Swipe to explore rituals</span>
+      <span class="font-mono">01 — 04</span>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Clean horizontal scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Focus ring accessibility */
+  .art-viewport:focus-visible {
+    outline: 2px solid #b7802c;
+    outline-offset: 4px;
+    border-radius: 1rem;
+  }
+
+  /* Active step button style */
+  .art-step-btn.is-active {
+    color: #75451d;
+    font-weight: 700;
+  }
+
+  /* Touch snapping for mobile */
+  @media (max-width: 1023px) {
+    .art-viewport {
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .art-card {
+      scroll-snap-align: start;
+    }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .art-track {
+      transform: none !important;
+    }
+    .art-card-img {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  let mm: gsap.MatchMedia | null = null;
+  let activeIndex = 0;
+
+  function initArtOfBeauty() {
+    const section = document.getElementById('art-of-beauty');
+    if (!section) return;
+
+    if (mm) {
+      mm.revert();
+      mm = null;
+    }
+
+    const pinWrapper = section.querySelector('.art-pin-wrapper') as HTMLElement;
+    const viewport = section.querySelector('#art-viewport') as HTMLElement;
+    const track = section.querySelector('#art-track') as HTMLElement;
+    const cards = section.querySelectorAll<HTMLElement>('.art-card');
+    const progressBar = section.querySelector('#art-progress-bar') as HTMLElement;
+    const stepBtns = section.querySelectorAll<HTMLButtonElement>('.art-step-btn');
+    const prevBtn = section.querySelector('#art-prev-btn') as HTMLButtonElement;
+    const nextBtn = section.querySelector('#art-next-btn') as HTMLButtonElement;
+    const headerText = section.querySelector('.art-header-text') as HTMLElement;
+
+    if (!pinWrapper || !viewport || !track || !cards.length) return;
+
+    // Helper to update active step number and progress bar
+    const updateActiveState = (progress: number) => {
+      if (progressBar) {
+        const scale = 0.25 + progress * 0.75;
+        progressBar.style.transform = `scaleX(${Math.min(1, Math.max(0.25, scale))})`;
+      }
+
+      const newIndex = Math.min(cards.length - 1, Math.floor(progress * cards.length + 0.1));
+      if (newIndex !== activeIndex) {
+        activeIndex = newIndex;
+        stepBtns.forEach((btn, i) => {
+          if (i === activeIndex) {
+            btn.classList.add('is-active');
+            btn.setAttribute('aria-selected', 'true');
+          } else {
+            btn.classList.remove('is-active');
+            btn.setAttribute('aria-selected', 'false');
+          }
+        });
+      }
+
+      if (prevBtn) prevBtn.disabled = progress <= 0.02;
+      if (nextBtn) nextBtn.disabled = progress >= 0.98;
+    };
+
+    updateActiveState(0);
+
+    mm = gsap.matchMedia();
+
+    // DESKTOP PINNED HORIZONTAL SCROLL (>= 1024px and standard viewport height)
+    mm.add('(min-width: 1024px) and (min-height: 700px)', () => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) return;
+
+      // Header entrance animation
+      if (headerText) {
+        gsap.from(headerText.children, {
+          y: 20,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        });
+      }
+
+      // Card entrance reveal
+      gsap.from(cards, {
+        y: 28,
+        opacity: 0.85,
+        stagger: 0.08,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 75%',
+          toggleActions: 'play none none none',
+        },
+      });
+
+      // Calculate travel distance dynamically
+      const calculateTravel = () => {
+        const trackWidth = track.scrollWidth;
+        const viewportWidth = viewport.clientWidth;
+        return Math.max(0, trackWidth - viewportWidth);
+      };
+
+      const travel = calculateTravel();
+
+      if (travel > 10) {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            pin: true,
+            start: 'top 10%',
+            end: () => `+=${Math.max(window.innerHeight * 1.2, travel * 1.3 + 120)}`,
+            scrub: 1,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            onUpdate: (self) => {
+              updateActiveState(self.progress);
+            },
+          },
+        });
+
+        tl.to(track, {
+          x: () => -calculateTravel(),
+          ease: 'none',
+        });
+
+        // Subtle parallax on card images
+        const cardImgs = section.querySelectorAll('.art-card-img');
+        cardImgs.forEach((img) => {
+          tl.to(
+            img,
+            {
+              xPercent: -6,
+              ease: 'none',
+            },
+            0
+          );
+        });
+
+        // Navigation controls in pinned desktop state
+        const stepForward = () => {
+          const st = tl.scrollTrigger;
+          if (!st) return;
+          const currentProgress = st.progress;
+          const nextProgress = Math.min(1, currentProgress + 1 / (cards.length - 1));
+          const targetScroll = st.start + nextProgress * (st.end - st.start);
+          window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+        };
+
+        const stepBackward = () => {
+          const st = tl.scrollTrigger;
+          if (!st) return;
+          const currentProgress = st.progress;
+          const prevProgress = Math.max(0, currentProgress - 1 / (cards.length - 1));
+          const targetScroll = st.start + prevProgress * (st.end - st.start);
+          window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+        };
+
+        if (nextBtn) nextBtn.onclick = stepForward;
+        if (prevBtn) prevBtn.onclick = stepBackward;
+
+        stepBtns.forEach((btn, idx) => {
+          btn.onclick = () => {
+            const st = tl.scrollTrigger;
+            if (!st) return;
+            const targetProgress = idx / (cards.length - 1);
+            const targetScroll = st.start + targetProgress * (st.end - st.start);
+            window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+          };
+        });
+
+        return () => {
+          tl.kill();
+        };
+      }
+    });
+
+    // ADAPTIVE VIEWPORTS: TABLET, MOBILE, OR SHORT LAPTOP SCREENS
+    mm.add('(max-width: 1023px), (max-height: 699px)', () => {
+      // Natural horizontal swipe with synchronized controls
+      const onScroll = () => {
+        const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+        if (maxScroll <= 0) return;
+        const progress = Math.min(1, Math.max(0, viewport.scrollLeft / maxScroll));
+        updateActiveState(progress);
+      };
+
+      viewport.addEventListener('scroll', onScroll, { passive: true });
+
+      const getCardWidth = () => {
+        const card = cards[0];
+        return card ? card.getBoundingClientRect().width + 24 : 320;
+      };
+
+      if (nextBtn) {
+        nextBtn.onclick = () => {
+          viewport.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+        };
+      }
+
+      if (prevBtn) {
+        prevBtn.onclick = () => {
+          viewport.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+        };
+      }
+
+      stepBtns.forEach((btn, idx) => {
+        btn.onclick = () => {
+          const targetCard = cards[idx];
+          if (targetCard) {
+            targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+          }
+        };
+      });
+
+      return () => {
+        viewport.removeEventListener('scroll', onScroll);
+      };
+    });
+
+    // Refresh on image load
+    const images = section.querySelectorAll('img');
+    images.forEach((img) => {
+      if (!img.complete) {
+        img.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
+      }
+    });
+  }
+
+  // Lifecycle listeners
+  if (typeof window !== 'undefined') {
+    initArtOfBeauty();
+    document.addEventListener('astro:page-load', initArtOfBeauty);
+    document.addEventListener('astro:before-swap', () => {
+      if (mm) {
+        mm.revert();
+        mm = null;
+      }
+    });
+    window.addEventListener('pagehide', () => {
+      if (mm) {
+        mm.revert();
+        mm = null;
+      }
+    });
+
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 200);
+    });
+  }
+</script>
