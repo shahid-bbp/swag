@@ -79,12 +79,32 @@ const filters = [['all', 'All images'], ['bridal', 'Bridal'], ['hair', 'Hair'], 
 ---
 
 <BaseLayout seo={seo}>
-  <section class="editorial-section editorial-section--tinted">
-    <div class="section-shell">
-      <Breadcrumbs items={breadcrumbs} class="mb-6" />
-      <span class="section-kicker">Visual portfolio</span>
-      <h1 class="section-title">Artistry in Every Detail</h1>
-      <p class="section-description">Explore beauty, hair, nails and bridal ideas, then bring your favourite details into your consultation.</p>
+  <section class="py-14 sm:py-20 lg:py-24 bg-[#F5ECDB] border-b border-[#eeda9b] relative overflow-hidden">
+    <!-- Background Image Layer (51KB WebP) -->
+    <div class="absolute inset-0 pointer-events-none">
+      <img
+        src="/images/salon/gallery-hero-bg.webp"
+        alt="S For Swag luxury atelier and beauty gallery"
+        class="w-full h-full object-cover object-right md:object-center opacity-85"
+        width="1920"
+        height="1080"
+        loading="eager"
+        decoding="async"
+      />
+      <!-- Subtle warm gradient: ensures text is purely visible while preserving image beauty -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#F5ECDB]/85 via-[#F5ECDB]/55 to-transparent"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+      <Breadcrumbs items={breadcrumbs} class="mb-5 sm:mb-6" />
+      <div class="max-w-3xl space-y-4">
+        <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.1]">
+          Artistry in Every Detail
+        </h1>
+        <p class="text-base sm:text-lg text-[#5C4D3E] font-serif italic max-w-2xl leading-relaxed">
+          "Explore beauty, hair, nails and bridal ideas, then bring your favourite details into your consultation."
+        </p>
+      </div>
     </div>
   </section>
   <section class="editorial-section" aria-label="Image gallery">

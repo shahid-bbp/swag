@@ -17,16 +17,30 @@ const breadcrumbs = [{ name: 'Contact', url: '/contact/' }];
 
 <BaseLayout seo={seo}>
   <!-- Hero Header -->
-  <section class="py-12 sm:py-18 bg-[#F5ECDB] border-b border-[#eeda9b] relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+  <section class="py-14 sm:py-20 lg:py-24 bg-[#F5ECDB] border-b border-[#eeda9b] relative overflow-hidden">
+    <!-- Background Image Layer (91KB WebP) -->
+    <div class="absolute inset-0 pointer-events-none">
+      <img
+        src="/images/salon/contact-hero-bg.webp"
+        alt="S For Swag luxury salon reception and concierge"
+        class="w-full h-full object-cover object-right md:object-center opacity-85"
+        width="1920"
+        height="1080"
+        loading="eager"
+        decoding="async"
+      />
+      <!-- Subtle warm gradient: ensures text is purely visible while preserving image beauty -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#F5ECDB]/85 via-[#F5ECDB]/55 to-transparent"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
       <Breadcrumbs items={breadcrumbs} class="mb-5 sm:mb-6" />
       <div class="max-w-3xl space-y-4">
-        <span class="text-xs uppercase tracking-[0.24em] text-[#75451d] font-semibold">Guest Concierge</span>
         <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.1]">
           We Look Forward to <br />
           <span class="italic font-normal">Welcoming You</span>
         </h1>
-        <p class="text-sm sm:text-base text-[#5C4D3E] leading-relaxed">
+        <p class="text-sm sm:text-base text-[#5C4D3E] max-w-2xl leading-relaxed">
           Whether planning your signature bridal look, seeking a revitalizing hair spa treatment, or scheduling your regular grooming, our concierge team is at your service.
         </p>
       </div>
