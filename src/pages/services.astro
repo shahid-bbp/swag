@@ -60,13 +60,13 @@ const breadcrumbs = [{ name: 'Services', url: '/services/' }];
             
             <!-- Visual Card (Span 5) -->
             <div class={`lg:col-span-5 ${isReversed ? 'lg:order-2' : ''}`}>
-              <div class="relative overflow-hidden rounded-3xl border-2 border-[#FFFCF6] shadow-xl group">
+              <div class="relative overflow-hidden rounded-3xl border-2 border-[#FFFCF6] shadow-xl group max-w-md mx-auto lg:max-w-none">
                 <img
                   src={category.image}
                   alt={category.imageAlt}
                   class="w-full h-auto object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700"
-                  width="600"
-                  height="450"
+                  width="800"
+                  height="600"
                   loading="lazy"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-[#28221C]/40 via-transparent to-transparent"></div>

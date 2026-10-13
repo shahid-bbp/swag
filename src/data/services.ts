@@ -42,7 +42,7 @@ export const servicesData: ServiceCategory[] = [
       "From bespoke deep clean-ups and luxury facials to gentle waxing and precision threading, experience personalized rejuvenation.",
     fullDesc:
       "Our Beauty Lounge is a peaceful sanctuary where holistic skincare meets botanical elegance. Designed for both men and women, each treatment begins with a careful skin analysis followed by customized cleansers, steam, extractions, massage, and therapeutic masks.",
-    image: "/images/beauty/beauty-care.webp",
+    image: "/images/services/beauty-lounge.webp",
     imageAlt: "Woman enjoying glowing skin facial at S For Swag Beauty Lounge Kochi",
     accentIcon: "sparkles",
     subcategories: [
@@ -409,7 +409,7 @@ export const servicesData: ServiceCategory[] = [
       "Gel polish, French tips, hard gel sculptures, extensions, chrome, ombré, and bespoke 3D nail art.",
     fullDesc:
       "At S For Swag Nail Studio, nails are treated as miniature canvases of fine art. From subtle minimalist French tips to high-glamour chrome and intricate bridal themes, our master technicians use premium non-damaging gel formulations that guarantee mirror shine and lasting durability.",
-    image: "/images/optimized/nail-care.webp",
+    image: "/images/services/nail-studio.webp",
     imageAlt: "Luxury champagne and chrome manicured nails at S For Swag Nail Studio Kochi",
     accentIcon: "gem",
     subcategories: [
@@ -584,7 +584,7 @@ export const servicesData: ServiceCategory[] = [
       "Keratin & Botox transformations, Fusio Dose services, caviar infusions, Balayage, root touch-ups, and L'Oréal spa for men and women.",
     fullDesc:
       "Hair is your crowning glory. At S For Swag on MG Road Kochi, our senior hair artists masterfully combine precision cutting, tailored formulation chemistry, and scalp wellness. Whether revitalising dry ends with a caviar ritual or transforming curls with Botox and Nanoplasty, every service is an art form.",
-    image: "/images/optimized/hair-care.webp",
+    image: "/images/services/hair-artistry.webp",
     imageAlt: "Glossy flowing brunette hair treatment at S For Swag Hair Artistry & Spa Kochi",
     accentIcon: "scissors",
     subcategories: [
@@ -856,7 +856,7 @@ export const servicesData: ServiceCategory[] = [
         slug: "mens-hair-care",
         description:
           "Targeted grooming treatments, restorative scalp therapies, and natural colour restoration curated specifically for men.",
-        image: "/images/hero/mens-model-hero.webp",
+        image: "/images/services/mens-grooming.webp",
         imageAlt: "Executive men's grooming and hair care styling at S For Swag Salon Kochi",
         items: [
           {
@@ -944,7 +944,7 @@ export const servicesData: ServiceCategory[] = [
       "Aroma Bliss, Swedish massage, Deep Tissue, Foot reflexology, and Indian Head massage.",
     fullDesc:
       "Step away from the bustle of MG Road into a haven of aromatic tranquility. Our trained therapists utilize pure therapeutic essential oils, rhythmic kneading, and targeted acupressure to dissolve stress, restore muscle mobility, and calm the nervous system.",
-    image: "/images/spa/spa-wellness.webp",
+    image: "/images/services/spa-wellness.webp",
     imageAlt: "Serene client receiving relaxing therapy at S For Swag Body Wellness Spa Kochi",
     accentIcon: "flower",
     subcategories: [
@@ -1015,7 +1015,7 @@ export const servicesData: ServiceCategory[] = [
       "Bespoke bridal beauty packages (Silver, Gold, Platinum), HD & Airbrush makeup, Kerala set saree draping, and pre-bridal journeys.",
     fullDesc:
       "Every bride deserves to look and feel effortlessly magnificent. By combining heritage elegance with modern artistry, S For Swag bridal artists craft bespoke looks tailored to your unique features, wedding attire, and ceremony lighting. From pre-bridal skin prep to wedding-day hair accessories and saree pleating, we are with you every step of the way.",
-    image: "/images/optimized/bridal-main.webp?v=2",
+    image: "/images/services/bridal-studio.webp",
     imageAlt: "Radiant Kerala bride in temple jewellery and silk saree at S For Swag Bridal Studio Kochi",
     accentIcon: "crown",
     subcategories: [
