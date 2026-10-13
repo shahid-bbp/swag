@@ -34,29 +34,50 @@ const activeSubcategory = category.subcategories.find((sub) => sub.slug === acti
 ---
 
 <div>
-  <!-- Hero Header -->
-  <section class="relative py-12 sm:py-18 bg-[#F5ECDB] border-b border-[#eeda9b] overflow-hidden">
-    <div class="absolute inset-0 opacity-15 pointer-events-none">
-      <img src={category.image} alt="" class="w-full h-full object-cover filter blur-xs" />
-    </div>
-    
+  <!-- Hero Header (Editorial Split Layout) -->
+  <section class="relative py-12 sm:py-16 bg-[#F5ECDB] border-b border-[#eeda9b] overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
       <Breadcrumbs items={breadcrumbs} class="mb-5 sm:mb-6" />
 
-      <div class="max-w-3xl space-y-4">
-        <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.1]">
-          {activeSubcategory?.title || category.title}
-        </h1>
-        <p class="text-xl sm:text-2xl font-serif italic text-[#75451d]">
-          {category.tagline}
-        </p>
-        <p class="text-sm sm:text-base text-[#5C4D3E] leading-relaxed max-w-2xl pt-2">
-          {activeSubcategory?.description || category.fullDesc}
-        </p>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Left: Category Narrative (Span 7) -->
+        <div class="lg:col-span-7 space-y-4">
+          <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.1]">
+            {activeSubcategory?.title || category.title}
+          </h1>
+          <p class="text-xl sm:text-2xl font-serif italic text-[#75451d]">
+            {category.tagline}
+          </p>
+          <p class="text-sm sm:text-base text-[#5C4D3E] leading-relaxed max-w-2xl pt-1">
+            {activeSubcategory?.description || category.fullDesc}
+          </p>
+        </div>
+
+        <!-- Right: Crisp Luxury Editorial Image Card (Span 5) -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-3xl overflow-hidden border-2 border-[#FFFCF6] shadow-xl group">
+            <img
+              src={category.image}
+              alt={category.imageAlt || category.title}
+              class="w-full h-auto object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700"
+              width="600"
+              height="450"
+              loading="eager"
+              decoding="async"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#28221C]/40 via-transparent to-transparent pointer-events-none"></div>
+            <div class="absolute bottom-4 left-5 text-[#FFFCF6]">
+              <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#eeda9b] block">Signature Care</span>
+              <span class="text-lg font-serif font-medium">{activeSubcategory?.title || category.title}</span>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <!-- Subcategory Tabs Navigation -->
-      <div class="pt-8 flex flex-wrap gap-2.5">
+      <div class="pt-8 sm:pt-10 flex flex-wrap gap-2.5 border-t border-[#eeda9b]/60 mt-8">
         <a
           href={`/${category.slug}/`}
           class={`px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all ${
