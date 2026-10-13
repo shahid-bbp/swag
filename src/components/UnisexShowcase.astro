@@ -1,0 +1,255 @@
+---
+interface DepartmentCard {
+  title: string;
+  category: string;
+  href: string;
+  description: string;
+  icon: string;
+}
+
+const departments: DepartmentCard[] = [
+  {
+    title: "Hair Artistry",
+    category: "Couture Styling",
+    href: "/hair-artistry-spa/",
+    description: "Botox, Balayage, smoothing & restorative therapies",
+    icon: "hair",
+  },
+  {
+    title: "Skin Care",
+    category: "Botanical Lounge",
+    href: "/beauty-lounge/",
+    description: "Deep clean-ups, radiant facials & de-tan care",
+    icon: "skin",
+  },
+  {
+    title: "Nails & Spa",
+    category: "Studio & Wellness",
+    href: "/nail-studio/",
+    description: "Gel extensions, chrome art & Swedish massage",
+    icon: "spa",
+  },
+  {
+    title: "Men's Grooming",
+    category: "Executive Atelier",
+    href: "/hair-artistry-spa/mens-hair-care/",
+    description: "Hot oil massage, L'Oréal spa, scalp detox & colouring",
+    icon: "grooming",
+  },
+];
+---
+
+<section class="py-20 lg:py-28 bg-[#F5ECDB] border-t border-[#eeda9b]/60 relative overflow-hidden" aria-label="Unisex Salon Experience">
+  <!-- Subtle decorative ambient radial glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#b7802c]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-12 sm:mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFFCF6] border border-[#eeda9b] text-[11px] uppercase tracking-[0.24em] font-semibold text-[#75451d]">
+        <span>A Luxury Unisex Destination</span>
+        <span class="w-1 h-1 rounded-full bg-[#b7802c]"></span>
+        <span>MG Road, Kochi</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-5xl font-serif text-[#28221C] leading-[1.15]">
+        Own Your Swag <br />
+        <span class="italic font-normal">For Her & For Him</span>
+      </h2>
+
+      <p class="text-sm sm:text-base text-[#5C4D3E] font-serif italic max-w-2xl mx-auto leading-relaxed">
+        "Beauty is not about changing who you are. It is about bringing out what feels right for you."
+      </p>
+    </div>
+
+    <!-- Master Unisex Visual Feature Banner -->
+    <div class="relative rounded-3xl overflow-hidden border border-[#eeda9b] bg-[#FFFCF6] shadow-xl mb-12 sm:mb-14 group">
+      <img
+        src="/images/hero/unisex-banner-master.webp"
+        alt="Own Your Swag — For Her & For Him luxury unisex salon showcase at S For Swag Kochi"
+        class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700"
+        width="1024"
+        height="480"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- 4 Featured Department Quick-Access Cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-20">
+      {departments.map((dept) => (
+        <a
+          href={dept.href}
+          class="bg-[#FFFCF6] border border-[#eeda9b] rounded-2xl p-5 flex flex-col justify-between hover:border-[#b7802c] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+        >
+          <div class="space-y-2">
+            <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#8E7864] block">
+              {dept.category}
+            </span>
+            <h3 class="text-base sm:text-lg font-serif font-semibold text-[#28221C] group-hover:text-[#b7802c] transition-colors flex items-center justify-between">
+              <span>{dept.title}</span>
+              <span class="text-xs text-[#b7802c] group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </h3>
+            <p class="text-xs text-[#5C4D3E] leading-relaxed pt-1">
+              {dept.description}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Split Visual Grid (In-Depth Men & Women Showcase) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+      
+      <!-- FOR HER CARD -->
+      <div class="bg-gradient-to-b from-[#FFFDF9] via-[#FAF4E8] to-[#FFFDF9] border border-[#eeda9b] rounded-3xl p-6 sm:p-10 flex flex-col justify-between hover:border-[#b7802c] hover:shadow-xl transition-all duration-300 group">
+        <div class="space-y-6">
+          
+          <!-- Image Frame -->
+          <div class="relative rounded-2xl overflow-hidden border-2 border-[#FFFCF6] shadow-md group-hover:shadow-lg transition-all aspect-[16/10] bg-[#FAF4E8]">
+            <img
+              src="/images/optimized/hair-care.webp"
+              alt="Couture hair artistry and styling for women at S For Swag Salon Kochi"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              width="600"
+              height="375"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#28221C]/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-5 text-[#FFFCF6]">
+              <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#eeda9b] block">Atelier Women</span>
+              <span class="text-xl font-serif font-medium">Couture Artistry & Hair Care</span>
+            </div>
+          </div>
+
+          <!-- Narrative -->
+          <div class="space-y-3">
+            <h3 class="text-2xl font-serif text-[#28221C]">
+              For Her
+            </h3>
+            <p class="text-xs sm:text-sm text-[#5C4D3E] leading-relaxed">
+              Bespoke transformations, luminous botanical skin therapies, couture bridal makeup, and advanced restorative hair treatments designed to elevate your natural beauty.
+            </p>
+          </div>
+
+          <!-- Feature Highlights List -->
+          <ul class="space-y-2.5 text-xs text-[#75451d] border-t border-[#eeda9b]/60 pt-4">
+            <li class="flex items-center gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#b7802c] shrink-0"></span>
+              <span>Botox, Cysteine, Smoothing & Nanoplasty Transformations</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#b7802c] shrink-0"></span>
+              <span>L'Oréal Hair Spa, Fusio Dose & Caviar Infusion Services</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#b7802c] shrink-0"></span>
+              <span>Hand-Painted Balayage, Ombré & Root Touch-Up Artistry</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#b7802c] shrink-0"></span>
+              <span>Signature Botanical Clean-ups, Facials & Nail Couture</span>
+            </li>
+          </ul>
+
+        </div>
+
+        <!-- Action Links -->
+        <div class="pt-8 mt-6 border-t border-[#eeda9b]/60 flex flex-wrap items-center gap-3">
+          <a
+            href="/services/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#b7802c] hover:bg-[#75451d] text-[#FFFCF6] text-xs font-semibold uppercase tracking-wider transition-all shadow-xs"
+          >
+            <span>Explore Women's Services</span>
+            <span class="text-[11px]">&rarr;</span>
+          </a>
+          <a
+            href="/contact/#appointment"
+            class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#FFFCF6] hover:bg-[#F5ECDB] text-[#75451d] border border-[#eeda9b] text-xs font-semibold uppercase tracking-wider transition-all"
+          >
+            <span>Book Visit</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- FOR HIM CARD -->
+      <div class="bg-gradient-to-b from-[#FFFDF9] via-[#FAF4E8] to-[#FFFDF9] border border-[#eeda9b] rounded-3xl p-6 sm:p-10 flex flex-col justify-between hover:border-[#b7802c] hover:shadow-xl transition-all duration-300 group">
+        <div class="space-y-6">
+          
+          <!-- Image Frame -->
+          <div class="relative rounded-2xl overflow-hidden border-2 border-[#FFFCF6] shadow-md group-hover:shadow-lg transition-all aspect-[16/10] bg-gradient-to-t from-[#28221C] via-[#3a2d20] to-[#544131]">
+            <img
+              src="/images/hero/mens-model-sidepart.webp"
+              alt="Executive men's grooming and hair styling at S For Swag Salon Kochi"
+              class="w-full h-full object-contain object-bottom group-hover:scale-105 transition-transform duration-700"
+              width="600"
+              height="375"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#28221C]/80 via-transparent to-transparent pointer-events-none"></div>
+            <div class="absolute bottom-4 left-5 text-[#FFFCF6]">
+              <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#eeda9b] block">Executive Men</span>
+              <span class="text-xl font-serif font-medium">Precision Grooming & Care</span>
+            </div>
+          </div>
+
+          <!-- Narrative -->
+          <div class="space-y-3">
+            <h3 class="text-2xl font-serif text-[#28221C]">
+              For Him
+            </h3>
+            <p class="text-xs sm:text-sm text-[#5C4D3E] leading-relaxed">
+              Targeted scalp therapies, restorative hair spas, subtle tone re-pigmentation, and precision grooming tailored specifically for the modern gentleman.
+            </p>
+          </div>
+
+          <!-- Feature Highlights List -->
+          <ul class="space-y-2.5 text-xs text-[#75451d] border-t border-[#eeda9b]/60 pt-4">
+            <li class="flex items-center gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#b7802c] shrink-0"></span>
+              <span>Invigorating Warm Botanical Hot Oil Massage</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#b7802c] shrink-0"></span>
+              <span>L'Oréal Men's Hair Spa & Deep Scalp De-Stressing</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#b7802c] shrink-0"></span>
+              <span>Anti-Dandruff Scalp Detox & Anti-Hair Loss Treatments</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#b7802c] shrink-0"></span>
+              <span>Bond Strengthening & Fibre Filler Therapy</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#b7802c] shrink-0"></span>
+              <span>Men's Root Touch-up & Natural Global Colouring</span>
+            </li>
+          </ul>
+
+        </div>
+
+        <!-- Action Links -->
+        <div class="pt-8 mt-6 border-t border-[#eeda9b]/60 flex flex-wrap items-center gap-3">
+          <a
+            href="/hair-artistry-spa/mens-hair-care/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#b7802c] hover:bg-[#75451d] text-[#FFFCF6] text-xs font-semibold uppercase tracking-wider transition-all shadow-xs"
+          >
+            <span>Explore Men's Hair Menu</span>
+            <span class="text-[11px]">&rarr;</span>
+          </a>
+          <a
+            href="/contact/#appointment"
+            class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#FFFCF6] hover:bg-[#F5ECDB] text-[#75451d] border border-[#eeda9b] text-xs font-semibold uppercase tracking-wider transition-all"
+          >
+            <span>Book Visit</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

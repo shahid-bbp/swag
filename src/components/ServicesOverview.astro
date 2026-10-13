@@ -16,6 +16,13 @@ const serviceCards: ServiceCardItem[] = [
     icon: "hair",
   },
   {
+    title: "Men's Grooming",
+    href: "/hair-artistry-spa/mens-hair-care/",
+    image: "/images/hero/mens-model-sidepart.webp",
+    alt: "Precision hair styling and grooming for men at S For Swag",
+    icon: "mens",
+  },
+  {
     title: "Nail Care",
     href: "/nail-studio/",
     image: "/images/optimized/nail-care.webp",
@@ -76,15 +83,15 @@ const serviceCards: ServiceCardItem[] = [
       </div>
     </div>
 
-    <!-- 5 Arched Cards Grid -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+    <!-- 6 Arched Cards Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
       {serviceCards.map((card) => (
         <a
           href={card.href}
           class="group flex flex-col bg-[#FFFCF6] rounded-t-full rounded-b-2xl overflow-hidden border border-[#eeda9b] hover:border-[#b7802c] transition-all duration-500 hover:-translate-y-2 hover:shadow-xl p-2 sm:p-2.5"
         >
           <!-- Arched Photo Container -->
-          <div class="w-full aspect-[4/5] rounded-t-full rounded-b-xl overflow-hidden relative">
+          <div class="w-full aspect-[4/5] rounded-t-full rounded-b-xl overflow-hidden relative bg-[#F5ECDB]">
             <img
               src={card.image}
               alt={card.alt}
@@ -107,6 +114,12 @@ const serviceCards: ServiceCardItem[] = [
                   <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
                   <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
                   <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                </svg>
+              )}
+              {card.icon === 'mens' && (
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"></path>
+                  <path d="M6 21v-2a6 6 0 0 1 12 0v2"></path>
                 </svg>
               )}
               {card.icon === 'nail' && (

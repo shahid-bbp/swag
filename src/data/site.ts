@@ -94,6 +94,7 @@ export const serviceCategoryLinks = [
   { label: "Beauty Lounge", href: "/beauty-lounge/" },
   { label: "Nail Studio", href: "/nail-studio/" },
   { label: "Hair Artistry & Spa", href: "/hair-artistry-spa/" },
+  { label: "Men's Grooming", href: "/hair-artistry-spa/mens-hair-care/" },
   { label: "Body Wellness Spa", href: "/body-wellness-spa/" },
   { label: "Bridal Studio & Packages", href: "/bridal/" },
 ];

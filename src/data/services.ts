@@ -26,6 +26,8 @@ export interface ServiceCategory {
     title: string;
     slug: string;
     description: string;
+    image?: string;
+    imageAlt?: string;
     items: ServiceItem[];
   }[];
 }
@@ -577,9 +579,9 @@ export const servicesData: ServiceCategory[] = [
     id: "hair-artistry-spa",
     slug: "hair-artistry-spa",
     title: "Hair Artistry and Spa",
-    tagline: "Signature Cuts, Couture Colour and Restorative Rituals",
+    tagline: "Signature Cuts, Couture Colour and Restorative Services",
     shortDesc:
-      "Keratin & Botox transformations, Fusio Dose rituals, caviar infusions, Balayage, root touch-ups, and L'Oréal spa for men and women.",
+      "Keratin & Botox transformations, Fusio Dose services, caviar infusions, Balayage, root touch-ups, and L'Oréal spa for men and women.",
     fullDesc:
       "Hair is your crowning glory. At S For Swag on MG Road Kochi, our senior hair artists masterfully combine precision cutting, tailored formulation chemistry, and scalp wellness. Whether revitalising dry ends with a caviar ritual or transforming curls with Botox and Nanoplasty, every service is an art form.",
     image: "/images/optimized/hair-care.webp",
@@ -846,6 +848,88 @@ export const servicesData: ServiceCategory[] = [
             category: "Hair Colour",
             isPlusPlus: true,
             description: "Couture freehand French painting creating sun-kissed, dimensional multi-tonal ribbons.",
+          },
+        ],
+      },
+      {
+        title: "Men's Hair Care & Colouring",
+        slug: "mens-hair-care",
+        description:
+          "Targeted grooming treatments, restorative scalp therapies, and natural colour restoration curated specifically for men.",
+        image: "/images/hero/mens-model-hero.webp",
+        imageAlt: "Executive men's grooming and hair care styling at S For Swag Salon Kochi",
+        items: [
+          {
+            id: "hot-oil-massage-men-tab",
+            name: "Hot Oil Massage (Men)",
+            price: "₹1,000",
+            category: "Men's Hair Care",
+            gender: "men",
+            duration: "30-45 mins",
+            description: "Invigorating warm oil scalp therapy easing tension and boosting hair vitality.",
+          },
+          {
+            id: "loreal-hair-spa-men-tab",
+            name: "L'Oréal Hair Spa (Men)",
+            price: "₹1,200",
+            category: "Men's Hair Care",
+            gender: "men",
+            duration: "45-60 mins",
+            description: "Intense conditioning therapy replenishing moisture and combating stress damage.",
+          },
+          {
+            id: "anti-dandruff-scalp-men-tab",
+            name: "Anti-Dandruff Scalp Treatment (Men)",
+            price: "₹1,300",
+            category: "Men's Hair Care",
+            gender: "men",
+            duration: "45 mins",
+            description: "Deep scalp detox eliminating persistent flaking and balancing scalp microbiome.",
+          },
+          {
+            id: "bond-strengthening-men-tab",
+            name: "Bond Strengthening (Men)",
+            price: "₹2,500",
+            category: "Men's Hair Care",
+            gender: "men",
+            duration: "45 mins",
+            description: "Protein restructuring strengthening brittle strands against breakage.",
+          },
+          {
+            id: "filler-therapy-men-tab",
+            name: "Filler Therapy (Men)",
+            price: "₹2,500",
+            category: "Men's Hair Care",
+            gender: "men",
+            duration: "45 mins",
+            description: "Volumising fibre filler delivering thicker appearance and resilient structure.",
+          },
+          {
+            id: "anti-hair-loss-men-tab",
+            name: "Anti-Hair Loss Treatment (Men)",
+            price: "₹2,000",
+            category: "Men's Hair Care",
+            gender: "men",
+            duration: "45-60 mins",
+            description: "Root-strengthening anti-hairfall cocktail promoting thicker density.",
+          },
+          {
+            id: "root-touchup-men-tab",
+            name: "Men's Root Touch-up",
+            price: "₹1,300",
+            category: "Men's Hair Colour",
+            gender: "men",
+            duration: "30-45 mins",
+            description: "Precision grey coverage and hairline re-pigmentation designed for subtle, natural finish.",
+          },
+          {
+            id: "global-men-tab",
+            name: "Global Hair Colouring (Men)",
+            price: "₹2,500 ++",
+            category: "Men's Hair Colour",
+            gender: "men",
+            duration: "60 mins",
+            description: "Complete all-over tone enhancement delivering rich, natural, dimensional shade.",
           },
         ],
       },
