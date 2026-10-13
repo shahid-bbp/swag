@@ -44,10 +44,6 @@ const activeSubcategory = category.subcategories.find((sub) => sub.slug === acti
       <Breadcrumbs items={breadcrumbs} class="mb-5 sm:mb-6" />
 
       <div class="max-w-3xl space-y-4">
-        <div class="flex items-center gap-3">
-          <span class="text-xs uppercase tracking-[0.24em] text-[#75451d] font-semibold">S For Swag &bull; Kochi</span>
-          <span class="w-12 h-[1px] bg-[#b7802c]"></span>
-        </div>
         <h1 class="text-4xl sm:text-6xl font-serif text-[#28221C] leading-[1.1]">
           {activeSubcategory?.title || category.title}
         </h1>
