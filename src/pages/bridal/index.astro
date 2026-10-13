@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BridalPackageComparison from '../../components/BridalPackageComparison.astro';
+import BrochureCTA from '../../components/BrochureCTA.astro';
 import EnquiryForm from '../../components/EnquiryForm.astro';
 import ServiceGuides from '../../components/ServiceGuides.astro';
 import EditorialFeature from '../../components/EditorialFeature.astro';
@@ -119,10 +120,17 @@ const breadcrumbs = [
         </ul>
       </div>
 
+      <!-- Bridal Brochure Download CTA -->
+      <BrochureCTA
+        title="Download Our Complete Bridal & Salon Brochure"
+        eyebrow="Bridal Collections & Inclusions"
+        description="Review our full bridal service guide, customized pre-wedding countdown roadmap, and bridal party draping rituals in the official brochure."
+      />
+
       <!-- Booking Form -->
       <div id="book-appointment">
         <EnquiryForm
-          preselectedService="Bridal Studio — Gold Bride Package (₹45,999)"
+          preselectedService="Bridal Studio — Gold Bride Package"
           title="Reserve Your Bridal Consultation"
           subtitle="Speak with our bridal art directors to secure your dates and schedule trials."
         />

@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BridalPackageComparison from '../../components/BridalPackageComparison.astro';
+import BrochureCTA from '../../components/BrochureCTA.astro';
 import EnquiryForm from '../../components/EnquiryForm.astro';
 import JourneySection from '../../components/JourneySection.astro';
 import FAQSection from '../../components/FAQSection.astro';
@@ -41,6 +42,13 @@ const breadcrumbs = [
   <section class="py-20 bg-[#F7F0E4]">
     <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
       <BridalPackageComparison />
+
+      <!-- Bridal Brochure Download CTA -->
+      <BrochureCTA
+        title="Download the Complete Bridal & Salon Brochure"
+        eyebrow="Bridal Collections & Inclusions"
+        description="Review our full bridal service guide, customized pre-wedding countdown roadmap, and bridal party draping rituals in the official brochure."
+      />
 
       <div id="book-appointment">
         <EnquiryForm

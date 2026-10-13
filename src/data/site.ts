@@ -30,6 +30,8 @@ export interface SiteConfig {
   openingHoursNote: string;
   pricingDisclaimer: string;
   siteUrl: string;
+  brochureUrl: string;
+  whatsappBrochureUrl: string;
 }
 
 export const siteConfig: SiteConfig = {
@@ -65,6 +67,12 @@ export const siteConfig: SiteConfig = {
   get whatsappUrl() {
     return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(
       this.whatsappMessage
+    )}`;
+  },
+  brochureUrl: "/brochure/s-for-swag-salon-brochure.pdf",
+  get whatsappBrochureUrl() {
+    return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(
+      "Hello S For Swag, I would like to request the full salon brochure and service details."
     )}`;
   },
   openingHoursNote:

@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import EnquiryForm from '../components/EnquiryForm.astro';
+import BrochureCTA from '../components/BrochureCTA.astro';
 import JourneySection from '../components/JourneySection.astro';
 import FAQSection from '../components/FAQSection.astro';
 import { servicesData } from '../data/services';
@@ -123,6 +124,13 @@ const breadcrumbs = [{ name: 'Services', url: '/services/' }];
           {siteConfig.pricingDisclaimer}
         </p>
       </div>
+
+      <!-- Official Brochure Download CTA -->
+      <BrochureCTA
+        title="Download the Complete Salon Service Guide"
+        eyebrow="Official Company Brochure"
+        description="Explore our full collection of hair artistry, skin rituals, nail couture, wellness therapies, and bridal packages in a single convenient document."
+      />
 
       <!-- Booking Form -->
       <div>

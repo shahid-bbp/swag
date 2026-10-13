@@ -2,17 +2,223 @@
 import { siteConfig } from '../data/site';
 ---
 
-<aside aria-label="Quick WhatsApp Contact" class="fixed bottom-6 right-6 z-40 group">
+<!-- Floating Quick Actions Bar (Bottom-Right) -->
+<aside aria-label="Quick Contact & Brochure" class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2.5 pointer-events-none">
+  
+  <!-- Brochure Download Modal Trigger -->
+  <button
+    type="button"
+    data-open-brochure-modal
+    class="pointer-events-auto flex items-center gap-2.5 bg-[#b7802c] hover:bg-[#75451d] text-[#FFFCF6] px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-3 focus:ring-[#b7802c]/50 group cursor-pointer"
+    aria-label="Download Official Salon Brochure"
+    title="Download Salon Brochure (PDF)"
+  >
+    <svg class="w-5 h-5 text-white transition-transform group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+    </svg>
+    <span class="hidden sm:inline-block text-xs font-semibold tracking-wider uppercase">Brochure</span>
+    <!-- Subtle notification dot -->
+    <span class="relative flex h-2 w-2 sm:hidden">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-200 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-300"></span>
+    </span>
+  </button>
+
+  <!-- Quick WhatsApp Contact Button -->
   <a
     href={siteConfig.whatsappUrl}
     target="_blank"
     rel="noopener noreferrer"
-    class="flex items-center gap-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-3 focus:ring-[#25D366]/50"
+    class="pointer-events-auto flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-3 focus:ring-[#25D366]/50"
     aria-label="Enquire with S For Swag on WhatsApp"
+    title="Chat with S For Swag on WhatsApp"
   >
-    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
     </svg>
     <span class="hidden sm:inline-block text-xs font-semibold tracking-wider uppercase">WhatsApp Us</span>
   </a>
+
 </aside>
+
+<!-- High-End Luxury Brochure & Quick Contact Modal Popup -->
+<dialog
+  id="brochure-modal"
+  class="fixed inset-0 m-auto p-0 bg-transparent max-w-lg w-[calc(100%-2rem)] rounded-3xl border-0 shadow-2xl focus:outline-none z-50 overflow-hidden backdrop:bg-[#1a140f]/80 backdrop:backdrop-blur-sm [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+  aria-labelledby="brochure-modal-title"
+>
+  <div class="relative bg-gradient-to-b from-[#FFFDF9] via-[#FAF3E6] to-[#F5ECDB] rounded-3xl border-2 border-[#eeda9b] p-6 sm:p-7 text-[#28221C] shadow-2xl max-h-[90vh] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+    
+    <!-- Close Button -->
+    <button
+      type="button"
+      data-close-brochure-modal
+      class="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 rounded-full bg-[#F5ECDB] hover:bg-[#b7802c] text-[#75451d] hover:text-[#FFFCF6] border border-[#eeda9b] flex items-center justify-center transition-all cursor-pointer z-10"
+      aria-label="Close modal"
+    >
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Modal Header -->
+    <div class="text-center space-y-2 pb-6 border-b border-[#eeda9b]">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5ECDB] border border-[#eeda9b] text-[10px] uppercase tracking-[0.24em] font-bold text-[#75451d]">
+        <span>S For Swag • The Salon</span>
+      </div>
+      <h2 id="brochure-modal-title" class="text-2xl sm:text-3xl font-serif text-[#28221C] leading-snug">
+        Official Salon Brochure
+      </h2>
+      <p class="text-xs text-[#6C5D4F] max-w-sm mx-auto leading-relaxed">
+        Own Your Swag — Complete 12-page guide to hair artistry, skincare, nail couture, body wellness & bespoke bridal journeys.
+      </p>
+    </div>
+
+    <!-- Brochure Highlights Card -->
+    <div class="my-5 p-4 rounded-2xl bg-[#FFFCF6] border border-[#eeda9b] space-y-2.5">
+      <div class="flex items-center justify-between text-[11px] font-semibold text-[#75451d]">
+        <span class="uppercase tracking-wider">What's Inside</span>
+        <span class="bg-[#F5ECDB] px-2 py-0.5 rounded text-[10px] text-[#b7802c]">12-Page PDF</span>
+      </div>
+      <ul class="text-xs text-[#5C4D3E] space-y-1.5">
+        <li class="flex items-center gap-2">
+          <span class="text-[#b7802c] font-bold">✓</span>
+          <span>Signature Clean-ups & Facials Menu</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="text-[#b7802c] font-bold">✓</span>
+          <span>Stripless & Strip Waxing Treatments</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="text-[#b7802c] font-bold">✓</span>
+          <span>Manicure, Pedicure & Nail Art Add-ons</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="text-[#b7802c] font-bold">✓</span>
+          <span>Women & Men Hair Treatments & Texture Care</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="text-[#b7802c] font-bold">✓</span>
+          <span>Silver, Gold & Platinum Bridal Packages Matrix</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="text-[#b7802c] font-bold">✓</span>
+          <span>Recommended 5-Step Pre-Bridal Journey</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="space-y-3 pt-2">
+      <!-- Direct Download Button -->
+      <a
+        href={siteConfig.brochureUrl}
+        download="S-For-Swag-The-Salon-Brochure.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full flex items-center justify-center gap-3 py-3.5 px-6 rounded-full bg-[#b7802c] hover:bg-[#75451d] text-[#FFFCF6] font-semibold text-xs uppercase tracking-[0.16em] shadow-md hover:shadow-lg transition-all text-center group"
+      >
+        <svg class="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        <span>Download Brochure (PDF • 1.7 MB)</span>
+      </a>
+
+      <!-- Quick WhatsApp Request Button -->
+      <a
+        href={siteConfig.whatsappBrochureUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full flex items-center justify-center gap-3 py-3.5 px-6 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-semibold text-xs uppercase tracking-[0.16em] shadow-md hover:shadow-lg transition-all text-center group"
+      >
+        <svg class="w-4 h-4 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span>Send to My WhatsApp</span>
+      </a>
+    </div>
+
+    <!-- Direct Call Help -->
+    <div class="pt-4 text-center">
+      <p class="text-[11px] text-[#8E7864]">
+        Prefer to speak directly?{' '}
+        <a href={`tel:${siteConfig.phone}`} class="text-[#75451d] font-semibold hover:underline">
+          Call {siteConfig.phoneFormatted}
+        </a>
+      </p>
+    </div>
+
+  </div>
+</dialog>
+
+<script>
+  function setupBrochureModal() {
+    const modal = document.getElementById('brochure-modal') as HTMLDialogElement | null;
+    if (!modal) return;
+
+    // Connect all buttons/links that have [data-open-brochure-modal]
+    const openButtons = document.querySelectorAll('[data-open-brochure-modal]');
+    const closeButtons = document.querySelectorAll('[data-close-brochure-modal]');
+
+    openButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (typeof modal.showModal === 'function') {
+          modal.showModal();
+        } else {
+          modal.setAttribute('open', '');
+        }
+        document.body.classList.add('overflow-hidden');
+      });
+    });
+
+    closeButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (typeof modal.close === 'function') {
+          modal.close();
+        } else {
+          modal.removeAttribute('open');
+        }
+        document.body.classList.remove('overflow-hidden');
+      });
+    });
+
+    // Close on backdrop click
+    modal.addEventListener('click', (e) => {
+      const rect = modal.getBoundingClientRect();
+      const isInDialog =
+        rect.top <= e.clientY &&
+        e.clientY <= rect.top + rect.height &&
+        rect.left <= e.clientX &&
+        e.clientX <= rect.left + rect.width;
+      
+      // If clicked on backdrop outside dialog content
+      if (e.target === modal) {
+        modal.close();
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    modal.addEventListener('close', () => {
+      document.body.classList.remove('overflow-hidden');
+    });
+  }
+
+  // Setup on page load and on client-side navigations
+  setupBrochureModal();
+  document.addEventListener('astro:page-load', setupBrochureModal);
+</script>
+
+<style>
+  #brochure-modal,
+  #brochure-modal div {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  #brochure-modal::-webkit-scrollbar,
+  #brochure-modal div::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+</style>
