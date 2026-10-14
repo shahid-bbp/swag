@@ -4,9 +4,9 @@ import { siteConfig } from '../data/site';
 const slides = [
   {
     id: 'hero-slide-1',
-    image: '/images/hero/model-3-hero.webp',
-    width: 846, height: 989,
-    alt: 'Editorial beauty model with radiant skin and champagne satin draping',
+    image: '/images/hero/hero-duo-profile.webp',
+    width: 750, height: 1000,
+    alt: 'S For Swag couture unisex salon models in profile with glowing skin and precision styling',
     eyebrow: 'Premium unisex salon',
     title: 'More Than Just a Salon',
     titleLine: 'More Than', titleEnd: 'Just a', titleAccent: 'Salon',
@@ -285,6 +285,7 @@ const slides = [
   .hero :is(a, button):focus-visible { outline: 2px solid var(--color-brown-deep); outline-offset: 4px; }
   @media (min-width: 1280px) {
     .hero-model { width: calc(100% + 30px); max-width: none; right: -100px; }
+    .hero-slide-1 .hero-model { right: -40px; }
   }
   @media (max-width: 1023px) {
     .hero { background-position: center; }
