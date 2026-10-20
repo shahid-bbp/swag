@@ -78,7 +78,7 @@ export const siteConfig: SiteConfig = {
   openingHoursNote:
     "Operating hours to be confirmed with appointment booking. Early morning bridal appointments available on request.",
   pricingDisclaimer:
-    "Services and treatments are customized based on individual requirements, hair length, texture, and service complexity. Details and care plans are confirmed with our specialists during consultation prior to your service. GST, if applicable, may be charged separately.",
+    "Services and treatments are customised based on individual requirements, hair length, texture, and service complexity. Details and care plans are confirmed with our specialists during consultation prior to your service. GST, if applicable, may be charged separately.",
   siteUrl: "https://sforswag.com",
 };
 

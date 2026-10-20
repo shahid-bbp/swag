@@ -9,14 +9,14 @@ const guide = (title: string, description: string, steps: [string, string][], fa
 });
 
 export const visitGuides: Record<string, VisitGuide> = {
-  'beauty-lounge': guide('Care that starts with a conversation.', 'Choose your focus, then let the details of your visit take shape.', [
+  'beauty-lounge': guide('Care That Starts With a Conversation', 'Choose your focus, then let the details of your visit take shape.', [
     ['Choose your focus', 'Explore facial care, grooming, waxing, manicures and pedicures. Start with the area you would most like to give attention.'],
     ['Share your routine', 'Tell the team about your usual products, preferences and any sensitivities before choosing a service.'],
     ['Plan the time', 'If you want to combine services, ask reception about the order and time needed when you enquire.'],
   ], [
     ['Can I combine beauty services?', 'Share the services you are considering when booking. The team can confirm which can be scheduled together and the time to allow.'],
     ['How do I choose between a clean-up and a facial?', 'Use the menu to compare options, then discuss your skin-care goals with the team before deciding.'],
-    ['Can services be customized?', 'Yes. Your service choice, custom preferences, and any additions will be confirmed with your specialist before the appointment begins.'],
+    ['Can services be customised?', 'Yes. Your service choice, custom preferences, and any additions will be confirmed with your specialist before the appointment begins.'],
   ]),
   'facials': guide('Make room for your skin-care goals.', 'A little context helps make your facial consultation more useful.', [
     ['Describe your priorities', 'Tell the team whether you are looking for a simple clean-up, a relaxing facial or help choosing between the menu options.'],
@@ -64,7 +64,7 @@ export const visitGuides: Record<string, VisitGuide> = {
     ['Plan the upkeep', 'Ask about appointment length, treatment steps and the care your chosen service will need afterwards.'],
   ], [
     ['Can I enquire before deciding on a treatment?', 'Yes. Tell the team what you would like to change or maintain, and request a consultation to compare the menu options.'],
-    ['Can treatments be tailored to my hair?', 'Hair length, density, texture and service complexity are assessed during consultation to create your customized hair plan.'],
+    ['Can treatments be tailored to my hair?', 'Hair length, density, texture and service complexity are assessed during consultation to create your customised hair plan.'],
     ['Can I combine colour and a texture service?', 'Ask your stylist to assess and advise on the sequence before scheduling. Do not assume both can be performed in the same visit.'],
   ]),
   'hair-treatment': guide('Start with the care your hair needs.', 'Use your consultation to discuss your routine and compare treatment options.', [

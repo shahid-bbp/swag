@@ -39,7 +39,7 @@ export const servicesData: ServiceCategory[] = [
     shortDesc:
       "From bespoke deep clean-ups and luxury facials to gentle waxing and precision threading, experience personalized rejuvenation.",
     fullDesc:
-      "Our Beauty Lounge is a peaceful sanctuary where holistic skincare meets botanical elegance. Designed for both men and women, each treatment begins with a careful skin analysis followed by customized cleansers, steam, extractions, massage, and therapeutic masks.",
+      "Our Beauty Lounge is a peaceful sanctuary where holistic skincare meets botanical elegance. Designed for both men and women, each treatment begins with a careful skin analysis followed by customised cleansers, steam, extractions, massage, and therapeutic masks.",
     image: "/images/services/Services 800 x 600 5 images 1.jpg",
     imageAlt: "Therapist applying a facial mask to a reclining client at S For Swag Beauty Lounge",
     accentIcon: "sparkles",
@@ -773,7 +773,7 @@ export const servicesData: ServiceCategory[] = [
             price: "₹1,800 ++",
             category: "Hair Rituals",
             isPlusPlus: true,
-            description: "Concentrated active booster cocktail customized for instant hair metamorphosis in 5 minutes.",
+            description: "Concentrated active booster cocktail customised for instant hair metamorphosis in 5 minutes.",
           },
           {
             id: "japanese-hair-spa",
@@ -956,7 +956,7 @@ export const servicesData: ServiceCategory[] = [
             price: "60 mins: ₹2,500 | 90 mins: ₹3,000",
             duration: "60 / 90 mins",
             category: "Body Massage",
-            description: "Gentle flowing effleurage strokes combined with customized floral and herbal essential oils to induce deep calm.",
+            description: "Gentle flowing effleurage strokes combined with customised floral and herbal essential oils to induce deep calm.",
           },
           {
             id: "swedish-massage",
@@ -1027,7 +1027,7 @@ export const servicesData: ServiceCategory[] = [
             price: "₹15,000 ++",
             category: "Makeup & Hair",
             isPlusPlus: true,
-            description: "Camera-ready HD base with high-end micro-pigments, water-resistant coverage, and customized eye detailing.",
+            description: "Camera-ready HD base with high-end micro-pigments, water-resistant coverage, and customised eye detailing.",
           },
           {
             id: "bridal-makeup-airbrush",
