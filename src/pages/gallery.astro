@@ -15,65 +15,65 @@ const breadcrumbs = [{ name: 'Gallery', url: '/gallery/' }];
 
 const galleryItems = [
   {
-    title: "Luxury Reception & Arches",
+    title: "Signature Salon Reception",
     category: "Salon Interior",
     categorySlug: "salon",
-    image: "/images/salon/salon-interior.webp",
-    alt: "Warm ambient backlit arches and marble reception at S For Swag Salon Kochi",
+    image: "/images/gallery/Gallery images Salon Interior.jpg",
+    alt: "Cream and gold reception desk beneath an illuminated S For Swag salon sign",
   },
   {
     title: "Couture Bridal Glamour",
     category: "Bridal",
     categorySlug: "bridal",
-    image: "/images/services/bridal-studio.webp",
-    alt: "Couture bride wearing golden champagne silk with luminous makeup and delicate earrings",
+    image: "/images/gallery/Gallery images Bridal.jpg",
+    alt: "Bride in an embroidered champagne outfit and veil with pearl and gold jewellery",
   },
   {
-    title: "Silk Waves & Hair Artistry",
+    title: "Sculpted Waves & Hair Artistry",
     category: "Hair Artistry",
     categorySlug: "hair",
-    image: "/images/optimized/hair-care.webp",
-    alt: "Glossy brunette silk waves and hair transformation",
+    image: "/images/gallery/Gallery images Hair Artistry.jpg",
+    alt: "Stylist shaping glossy copper hair into sculpted waves with a comb",
   },
   {
     title: "Radiant Skincare Glow",
     category: "Skincare",
     categorySlug: "beauty",
-    image: "/images/beauty/beauty-care.webp",
-    alt: "Dewy glowing skin after luxury facial treatment at S For Swag",
+    image: "/images/gallery/Gallery images Skincare.jpg",
+    alt: "Woman applying moisturiser to her cheek against a warm beige background",
   },
   {
-    title: "Champagne Glitter Nail Couture",
+    title: "Glossy Pink Nail Couture",
     category: "Nails",
     categorySlug: "nails",
-    image: "/images/optimized/nail-care.webp",
-    alt: "Luxury manicure with champagne gold glitter accents",
+    image: "/images/gallery/Gallery images Nails.jpg",
+    alt: "Glossy pink manicure on a hand holding soft white fabric",
   },
   {
     title: "Therapeutic Spa Sanctuary",
     category: "Wellness & Spa",
     categorySlug: "spa",
-    image: "/images/spa/spa-wellness.webp",
-    alt: "Relaxing head and face pressure point therapy in calm spa suite",
+    image: "/images/gallery/Gallery images Wellness & Spa.jpg",
+    alt: "Client receiving a gentle face and forehead massage beside warm candlelight",
   },
   {
-    title: "Modern Men's Styling Station",
-    category: "Salon Interior",
-    categorySlug: "salon",
-    image: "/images/salon/mens-grooming.webp",
-    alt: "Men's precision haircut and beard grooming styling chair",
+    title: "Men's Skincare Ritual",
+    category: "Skincare",
+    categorySlug: "beauty",
+    image: "/images/gallery/Gallery images Salon Interior 2.jpg",
+    alt: "Therapist brushing a facial mask onto a reclining man's cheek",
   },
   {
     title: "Editorial Beauty Portrait",
     category: "Beauty",
     categorySlug: "beauty",
-    image: "/images/hero/model-3-hero.webp",
-    alt: "Editorial luxury beauty portrait with champagne silk wrap",
+    image: "/images/gallery/Gallery images Beauty.jpg",
+    alt: "Beauty portrait of a woman with luminous makeup and long brunette waves",
   },
 ];
 galleryItems.push(
-  { title: 'The Art of a Little Care', category: 'Editorial inspiration', categorySlug: 'editorial', image: '/images/editorial/ritual.webp', alt: 'AI-generated still life of beauty ritual objects in warm light' },
-  { title: 'The Bridal Details', category: 'Editorial inspiration', categorySlug: 'editorial', image: '/images/editorial/bridal-details.webp', alt: 'AI-generated still life of kasavu silk, jasmine and gold jewellery' },
+  { title: 'The Art of a Little Care', category: 'Editorial inspiration', categorySlug: 'editorial', image: '/images/gallery/Gallery images Editorial inspiration.jpg', alt: 'Golden beauty oil, a wooden hairbrush, a white flower and a ceramic bowl on a marble surface' },
+  { title: 'The Bridal Details', category: 'Editorial inspiration', categorySlug: 'editorial', image: '/images/gallery/Gallery images Editorial inspiration 2.jpg', alt: 'Pink and gold embroidered bridal attire arranged with pearl jewellery and white flowers' },
 );
 const filters = [['all', 'All images'], ['bridal', 'Bridal'], ['hair', 'Hair'], ['nails', 'Nails'], ['beauty', 'Beauty'], ['spa', 'Wellness'], ['salon', 'The salon'], ['editorial', 'Inspiration']];
 ---
@@ -118,17 +118,17 @@ const filters = [['all', 'All images'], ['bridal', 'Bridal'], ['hair', 'Hair'], 
           {galleryItems.map((item) => (
             <a class="gallery-item" href={item.image} data-gallery-item data-category={item.categorySlug} data-title={item.title} data-description={item.alt} aria-label={`View ${item.title}`}>
               <figure>
-                <div class="gallery-image"><img src={item.image} alt={item.alt} width="600" height="450" loading="lazy" decoding="async" /></div>
+                <div class="gallery-image"><img src={item.image} alt={item.alt} width="896" height="1200" loading="lazy" decoding="async" /></div>
                 <figcaption><span>{item.category}</span><h2>{item.title}</h2><span class="gallery-open" aria-hidden="true">↗</span></figcaption>
               </figure>
             </a>
           ))}
         </div>
-        <p class="gallery-note">The two editorial still-life images are AI-generated inspiration, rather than photographs of salon products or customer results.</p>
+        <p class="gallery-note">The editorial still-life images offer visual inspiration for your consultation.</p>
         <dialog class="gallery-dialog" aria-labelledby="gallery-view-title">
           <div class="gallery-dialog-inner">
             <button type="button" data-gallery-close class="gallery-close" aria-label="Close image viewer">×</button>
-            <img data-gallery-full alt="" width="1200" height="900" />
+            <img data-gallery-full alt="" width="896" height="1200" />
             <div class="gallery-view-caption"><h2 id="gallery-view-title"></h2><p data-gallery-caption></p></div>
             <div class="gallery-view-controls"><button type="button" data-gallery-prev aria-label="Previous image">← Previous</button><span data-gallery-position></span><button type="button" data-gallery-next aria-label="Next image">Next →</button></div>
           </div>
