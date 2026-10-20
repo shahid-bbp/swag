@@ -1,9 +1,10 @@
 ---
+import { serviceImages, type ServiceImage } from '../data/service-images';
+
 interface ServiceCardItem {
   title: string;
   href: string;
-  image: string;
-  alt: string;
+  image: ServiceImage;
   icon: string;
 }
 
@@ -11,43 +12,37 @@ const serviceCards: ServiceCardItem[] = [
   {
     title: "Hair Care",
     href: "/hair-artistry-spa/",
-    image: "/images/optimized/hair-care.webp",
-    alt: "Flowing healthy hair styling at S For Swag Hair Artistry",
+    image: serviceImages.hair,
     icon: "hair",
   },
   {
     title: "Men's Grooming",
     href: "/hair-artistry-spa/mens-hair-care/",
-    image: "/images/hero/mens-model-sidepart.webp",
-    alt: "Precision hair styling and grooming for men at S For Swag",
+    image: serviceImages.mens,
     icon: "mens",
   },
   {
     title: "Nail Care",
     href: "/nail-studio/",
-    image: "/images/optimized/nail-care.webp",
-    alt: "Champagne glitter nail art at S For Swag Nail Studio",
+    image: serviceImages.nails,
     icon: "nail",
   },
   {
     title: "Beauty Care",
     href: "/beauty-lounge/",
-    image: "/images/beauty/beauty-care.webp",
-    alt: "Dewy radiant facial treatment at S For Swag Beauty Lounge",
+    image: serviceImages.beauty,
     icon: "beauty",
   },
   {
     title: "Bridal Session",
     href: "/bridal/",
-    image: "/images/services/bridal-studio.webp",
-    alt: "Couture bride with luminous makeup draped in champagne gold satin at S For Swag Bridal Studio",
+    image: serviceImages.bridal,
     icon: "bridal",
   },
   {
     title: "Spa & Wellness",
     href: "/body-wellness-spa/",
-    image: "/images/spa/spa-wellness.webp",
-    alt: "Relaxing wellness massage at S For Swag Spa",
+    image: serviceImages.spa,
     icon: "spa",
   },
 ];
@@ -93,11 +88,11 @@ const serviceCards: ServiceCardItem[] = [
           <!-- Arched Photo Container -->
           <div class="w-full aspect-[4/5] rounded-t-full rounded-b-xl overflow-hidden relative bg-[#F5ECDB]">
             <img
-              src={card.image}
-              alt={card.alt}
+              src={card.image.src}
+              alt={card.image.alt}
               class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
-              width="300"
-              height="380"
+              width={card.image.width}
+              height={card.image.height}
               loading="lazy"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-[#28221C]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>

@@ -31,8 +31,6 @@ const displaySubcategories = activeSubcategorySlug
   ? category.subcategories.filter((s) => s.slug === activeSubcategorySlug)
   : category.subcategories;
 const activeSubcategory = category.subcategories.find((sub) => sub.slug === activeSubcategorySlug);
-const heroImage = activeSubcategory?.image || category.image;
-const heroImageAlt = activeSubcategory?.imageAlt || category.imageAlt || category.title;
 
 const getWhatsAppServiceUrl = (serviceName: string) => {
   const text = `Hello S For Swag, I would like to enquire about ${serviceName}.`;
@@ -65,8 +63,8 @@ const getWhatsAppServiceUrl = (serviceName: string) => {
         <div class="lg:col-span-5">
           <div class="relative rounded-3xl overflow-hidden border-2 border-[#FFFCF6] shadow-xl max-w-md mx-auto lg:max-w-none">
             <img
-              src={heroImage}
-              alt={heroImageAlt}
+              src={category.image}
+              alt={category.imageAlt}
               class="block w-full h-auto object-contain"
               width="800"
               height="600"

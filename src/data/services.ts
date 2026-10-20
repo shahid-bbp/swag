@@ -26,8 +26,6 @@ export interface ServiceCategory {
     title: string;
     slug: string;
     description: string;
-    image?: string;
-    imageAlt?: string;
     items: ServiceItem[];
   }[];
 }
@@ -856,8 +854,6 @@ export const servicesData: ServiceCategory[] = [
         slug: "mens-hair-care",
         description:
           "Targeted grooming treatments, restorative scalp therapies, and natural colour restoration curated specifically for men.",
-        image: "/images/services/mens-grooming.webp",
-        imageAlt: "Executive men's grooming and hair care styling at S For Swag Salon Kochi",
         items: [
           {
             id: "hot-oil-massage-men-tab",
