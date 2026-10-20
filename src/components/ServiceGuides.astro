@@ -12,6 +12,6 @@ if (activeSlug && related.length === 0) related.push({ title: `All ${category.ti
 ---
 {guide && <>
   <JourneySection title={guide.title} description={guide.description} steps={guide.steps} tinted />
-  <FAQSection title={`Before your ${activeSlug ? 'appointment' : category.title.toLowerCase() + ' visit'}.`} items={guide.faqs} />
-  {activeSlug && related.length > 0 && <RelatedServices links={related} title="Explore the rest of the menu." />}
+  <FAQSection title={`Before Your ${activeSlug ? 'Appointment' : category.title + ' Visit'}`} items={guide.faqs} />
+  {activeSlug && related.length > 0 && <RelatedServices links={related} title="Explore the Rest of the Menu" />}
 </>}

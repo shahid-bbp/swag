@@ -133,7 +133,7 @@ export const visitGuides: Record<string, VisitGuide> = {
     ['Can I change the pressure during a session?', 'Let the therapist know if you would like the pressure adjusted or would prefer to pause.'],
     ['What should I include in my booking enquiry?', 'Include your selected service, preferred date and time, and any preferences you would like to discuss before arriving.'],
   ]),
-  'bridal': guide('Your bridal story, beautifully considered.', 'Bring the occasion, outfit and schedule into one conversation.', [
+  'bridal': guide('Your Bridal Story, Beautifully Considered', 'Bring the occasion, outfit and schedule into one conversation.', [
     ['Gather your inspiration', 'Save makeup and hair references alongside photographs of your outfits and jewellery.'],
     ['Map your celebrations', 'Share ceremony dates, locations and ready-by times so the team can discuss the services for each event.'],
     ['Confirm every detail', 'Ask about package inclusions, any trial arrangements, travel and accessories before confirming your booking.'],
@@ -150,7 +150,7 @@ export const visitGuides: Record<string, VisitGuide> = {
     ['How do I choose HD or airbrush makeup?', 'Both options appear on the menu. Discuss your preferred finish and event details with the artist before selecting a service.'],
     ['Can I book for an engagement or reception?', 'The menu includes engagement, reception and party makeup. Share your event details when enquiring.'],
   ]),
-  'draping': guide('The final fold, thoughtfully placed.', 'A few practical details help your draping appointment run smoothly.', [
+  'draping': guide('The Final Fold, Thoughtfully Placed', 'A few practical details help your draping appointment run smoothly.', [
     ['Share the style', 'Tell the team whether you need regular, bridal or Kerala set saree draping, or veil and dupatta setting.'],
     ['Discuss what to bring', 'Ask which garments, footwear, accessories and fastening items you should bring with you.'],
     ['Plan the sequence', 'Confirm the order of hair, makeup and draping, along with the time you need to be ready.'],

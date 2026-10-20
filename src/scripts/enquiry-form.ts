@@ -11,7 +11,7 @@ function initEnquiry() {
   const controller = new AbortController();
   const { signal } = controller;
   const endpoint = form.dataset.endpoint;
-  const idleLabel = endpoint ? 'Send appointment enquiry' : 'Prepare WhatsApp enquiry';
+  const idleLabel = endpoint ? 'Send appointment enquiry' : 'WHATSAPP ENQUIRY';
   label.textContent = idleLabel;
   const field = (name: string) => form.elements.namedItem(name) as HTMLInputElement;
   for (const name of ['name', 'phone', 'email', 'service', 'consent']) field(name).setAttribute('aria-describedby', `error-${name}`);
