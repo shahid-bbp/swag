@@ -11,7 +11,13 @@ const { eyebrow, title, description, image, alt, points = [], href, link, revers
     <div data-reveal>
       <SectionIntro {eyebrow} {title} {description} />
       {points.length > 0 && <ul class="editorial-points">{points.map((point) => <li>{point}</li>)}</ul>}
-      <a class="section-link" href={href}>{link}<span aria-hidden="true">→</span></a>
+      <a class="section-link group" href={href}>
+        {link}
+        <svg class="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
     </div>
   </div>
 </section>

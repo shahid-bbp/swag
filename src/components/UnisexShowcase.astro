@@ -80,15 +80,24 @@ const departments: DepartmentCard[] = [
       {departments.map((dept) => (
         <a
           href={dept.href}
-          class="bg-[#FFFCF6] border border-[#eeda9b] rounded-2xl p-5 flex flex-col justify-between hover:border-[#b7802c] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+          data-department={dept.icon}
+          class="department-card border border-[#eeda9b] rounded-2xl p-5 flex flex-col justify-between hover:border-[#b7802c] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
         >
-          <div class="space-y-2">
+          <svg class="department-card-lines" viewBox="0 0 280 200" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" focusable="false">
+            {Array.from({ length: 10 }, (_, index) => (
+              <path d="M148 -28 C306 32 94 88 172 152 S268 198 260 232" transform={`translate(${index * 9} 0)`} />
+            ))}
+          </svg>
+          <div class="relative z-10 space-y-2">
             <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#8E7864] block">
               {dept.category}
             </span>
-            <h3 class="text-base sm:text-lg font-serif font-semibold text-[#28221C] group-hover:text-[#b7802c] transition-colors flex items-center justify-between">
+            <h3 class="text-base sm:text-lg font-serif font-semibold text-[#28221C] group-hover:text-[#b7802c] transition-colors flex items-center justify-between gap-2">
               <span>{dept.title}</span>
-              <span class="text-xs text-[#b7802c] group-hover:translate-x-1 transition-transform">&rarr;</span>
+              <svg class="w-4 h-4 shrink-0 text-[#b7802c] transition-transform group-hover:translate-x-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
             </h3>
             <p class="text-xs text-[#5C4D3E] leading-relaxed pt-1">
               {dept.description}
@@ -108,11 +117,11 @@ const departments: DepartmentCard[] = [
           <!-- Image Frame -->
           <div class="relative rounded-2xl overflow-hidden border-2 border-[#FFFCF6] shadow-md group-hover:shadow-lg transition-all aspect-[16/10] bg-[#FAF4E8]">
             <img
-              src="/images/optimized/hair-care.webp"
-              alt="Couture hair artistry and styling for women at S For Swag Salon Kochi"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              width="600"
-              height="375"
+              src="/images/grid/2 images 1.jpg"
+              alt="Woman with long, glossy brunette hair"
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+              width="750"
+              height="600"
               loading="lazy"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-[#28221C]/60 via-transparent to-transparent"></div>
@@ -180,11 +189,11 @@ const departments: DepartmentCard[] = [
           <!-- Image Frame -->
           <div class="relative rounded-2xl overflow-hidden border-2 border-[#FFFCF6] shadow-md group-hover:shadow-lg transition-all aspect-[16/10] bg-gradient-to-t from-[#28221C] via-[#3a2d20] to-[#544131]">
             <img
-              src="/images/hero/mens-model-sidepart.webp"
-              alt="Executive men's grooming and hair styling at S For Swag Salon Kochi"
-              class="w-full h-full object-contain object-bottom group-hover:scale-105 transition-transform duration-700"
-              width="600"
-              height="375"
+              src="/images/grid/2 images 2.jpg"
+              alt="Man with styled textured hair and a neatly groomed beard"
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+              width="750"
+              height="600"
               loading="lazy"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-[#28221C]/80 via-transparent to-transparent pointer-events-none"></div>
@@ -253,3 +262,48 @@ const departments: DepartmentCard[] = [
 
   </div>
 </section>
+
+<style>
+  .department-card {
+    --card-shade: #edd4a7;
+    --card-line: #b7802c;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+      linear-gradient(115deg, #fffcf6 10%, rgb(255 252 246 / 86%) 55%, transparent 100%),
+      var(--card-shade);
+  }
+
+  .department-card[data-department='skin'] {
+    --card-shade: #ead2c7;
+    --card-line: #a57865;
+  }
+
+  .department-card[data-department='spa'] {
+    --card-shade: #dbe0ca;
+    --card-line: #7b8860;
+  }
+
+  .department-card[data-department='grooming'] {
+    --card-shade: #d7c5ac;
+    --card-line: #927458;
+  }
+
+  .department-card-lines {
+    position: absolute;
+    inset-block: 0;
+    right: -24px;
+    width: 85%;
+    height: 100%;
+    color: var(--card-line);
+    opacity: 0.24;
+    pointer-events: none;
+    mask-image: linear-gradient(to right, transparent, #000 55%);
+    transition: opacity 300ms ease;
+  }
+
+  .department-card:is(:hover, :focus-visible) .department-card-lines {
+    opacity: 0.38;
+  }
+</style>

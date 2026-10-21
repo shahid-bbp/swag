@@ -15,9 +15,20 @@ function initMotion() {
       entries.forEach((entry, index) => {
         if (!entry.isIntersecting) return;
         observer?.unobserve(entry.target);
+        const direction = entry.target.getAttribute('data-reveal');
+        const slidesIn = direction === 'left' || direction === 'right';
+        const distance = matchMedia('(min-width: 1024px)').matches ? 64 : 28;
+        const from = slidesIn
+          ? `translateX(${direction === 'left' ? -distance : distance}px)`
+          : 'translateY(16px)';
         const animation = entry.target.animate(
-          [{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'translateY(0)' }],
-          { duration: 650, delay: Math.min(index * 55, 165), easing: 'cubic-bezier(.2,.65,.3,1)', fill: 'backwards' },
+          [{ opacity: 0, transform: from }, { opacity: 1, transform: 'translate(0, 0)' }],
+          {
+            duration: slidesIn ? 900 : 650,
+            delay: slidesIn ? (direction === 'right' ? 120 : 0) : Math.min(index * 55, 165),
+            easing: 'cubic-bezier(.2,.65,.3,1)',
+            fill: 'backwards',
+          },
         );
         animations.add(animation);
         animation.finished.catch(() => {}).finally(() => animations.delete(animation));
