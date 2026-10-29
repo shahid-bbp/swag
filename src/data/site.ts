@@ -36,7 +36,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: "S For Swag",
-  legalName: "S For Swag — The Salon by Seematti",
+  legalName: "S For Swag — The Premium Unisex Salon",
   tagline: "Your Beauty. Your Style. Your Swag.",
   subtitle: "More Than Just a Salon — It's a Beautiful Experience",
   byLine: "BY SEEMATTI",
@@ -50,7 +50,7 @@ export const siteConfig: SiteConfig = {
   facebookUrl: "https://facebook.com/sforswagsalon",
   address: {
     floor: "First Floor",
-    building: "Narayan Center (66/4990)",
+    building: "Urban Junction (66/4990)",
     street: "Mahatma Gandhi Road",
     landmark: "Opp. Seematti, Kacheripady",
     area: "Kacheripady",
@@ -58,7 +58,7 @@ export const siteConfig: SiteConfig = {
     district: "Ernakulam",
     state: "Kerala",
     pincode: "682018",
-    full: "First Floor, 66/4990, Narayan Center, Mahatma Gandhi Road, Opp. Seematti, Kacheripady, Kochi, Ernakulam, Kerala – 682018",
+    full: "First Floor, 66/4990, Urban Junction, Mahatma Gandhi Road, Opp. Seematti, Kacheripady, Kochi, Ernakulam, Kerala – 682018",
   },
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Narayan+Center+Opp+Seematti+Mahatma+Gandhi+Road+Kacheripady+Kochi+Kerala+682018",
