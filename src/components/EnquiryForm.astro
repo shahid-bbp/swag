@@ -64,7 +64,7 @@ if (preselectedService && !serviceOptions.includes(preselectedService)) serviceO
         <div>
           <p class="font-semibold text-[#75451d]">Send your enquiry on WhatsApp</p>
           <p class="mt-1 leading-relaxed">
-            Fill in your preferences below to prepare a message, then open WhatsApp to send it. Reception will confirm availability. You can also call <a href={`tel:${siteConfig.phone}`} class="font-semibold text-[#75451d] underline">{siteConfig.phoneFormatted}</a>.
+            Submit the form to open WhatsApp with your enquiry details filled in, then tap Send in WhatsApp. Reception will confirm availability. You can also call <a href={`tel:${siteConfig.phone}`} class="font-semibold text-[#75451d] underline">{siteConfig.phoneFormatted}</a>.
           </p>
         </div>
       </div>
@@ -259,7 +259,7 @@ if (preselectedService && !serviceOptions.includes(preselectedService)) serviceO
         id="submit-btn"
         class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#b7802c] hover:bg-[#75451d] text-[#FFFCF6] text-xs uppercase tracking-[0.18em] font-medium transition-all shadow-sm flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        <span id="btn-text">{isEndpointConfigured ? 'Send appointment enquiry' : 'Prepare WhatsApp enquiry'}</span>
+        <span id="btn-text">{isEndpointConfigured ? 'Send appointment enquiry' : 'WhatsApp enquiry'}</span>
         <svg id="btn-spinner" class="w-4 h-4 animate-spin hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <circle cx="12" cy="12" r="10" stroke-width="4" stroke="currentColor" stroke-opacity="0.25"></circle>
           <path d="M4 12a8 8 0 018-8" stroke-width="4" stroke="currentColor"></path>

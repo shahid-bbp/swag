@@ -11,7 +11,7 @@ function initEnquiry() {
   const controller = new AbortController();
   const { signal } = controller;
   const endpoint = form.dataset.endpoint;
-  const idleLabel = endpoint ? 'Send appointment enquiry' : 'WHATSAPP ENQUIRY';
+  const idleLabel = endpoint ? 'Send appointment enquiry' : 'WhatsApp enquiry';
   label.textContent = idleLabel;
   const field = (name: string) => form.elements.namedItem(name) as HTMLInputElement;
   for (const name of ['name', 'phone', 'email', 'service', 'consent']) field(name).setAttribute('aria-describedby', `error-${name}`);
@@ -37,7 +37,7 @@ function initEnquiry() {
     const invalid = form.querySelector<HTMLElement>('[aria-invalid="true"]');
     if (invalid) { invalid.focus(); return; }
     submit.disabled = true;
-    label.textContent = endpoint ? 'Sending enquiry…' : 'Preparing message…';
+    label.textContent = endpoint ? 'Sending enquiry…' : 'Opening WhatsApp…';
     try {
       if (!endpoint) {
         const message = [
@@ -48,7 +48,9 @@ function initEnquiry() {
           `Preferred time: ${field('time').value}`,
           field('notes').value.trim() && `Notes: ${field('notes').value.trim()}`,
         ].filter(Boolean).join('\n');
-        whatsapp.href = `https://wa.me/${form.dataset.whatsapp}?text=${encodeURIComponent(message)}`;
+        window.location.assign(`https://wa.me/${form.dataset.whatsapp}?text=${encodeURIComponent(message)}`);
+        form.reset();
+        return;
       } else {
         const response = await fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' }, signal });
         if (!response.ok) throw new Error('Your enquiry could not be sent. Please try again or contact reception directly.');
