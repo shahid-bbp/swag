@@ -934,7 +934,7 @@ export const servicesData: ServiceCategory[] = [
   {
     id: "body-wellness-spa",
     slug: "body-wellness-spa",
-    title: "Body Wellness Spa",
+    title: "Body Wellness Spa (Women)",
     tagline: "Therapeutic Massages & Holistic Healing",
     shortDesc:
       "Aroma Bliss, Swedish massage, Deep Tissue, Foot reflexology, and Indian Head massage.",
