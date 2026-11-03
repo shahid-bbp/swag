@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://sforswag.com',
+  site: 'https://sforswagsalon.com',
   trailingSlash: 'always',
   vite: {
     plugins: [tailwindcss()]

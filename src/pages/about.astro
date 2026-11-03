@@ -6,8 +6,8 @@ import FAQSection from '../components/FAQSection.astro';
 import { siteConfig } from '../data/site';
 
 const seo = {
-  title: "About Us | S For Swag The Salon by Seematti Kochi",
-  description: "Learn about S For Swag — a premium unisex salon by Seematti on MG Road, Kochi. Our beauty philosophy, expert stylists, modern space, and bespoke self-care experience.",
+  title: `About Us | ${siteConfig.legalName} Kochi`,
+  description: "Learn about S For Swag — The Premium Unisex Salon on MG Road, Kochi. Our beauty philosophy, expert stylists, modern space, and bespoke self-care experience.",
   canonical: `${siteConfig.siteUrl}/about/`,
 };
 
@@ -53,7 +53,7 @@ const breadcrumbs = [{ name: 'About Us', url: '/about/' }];
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
         <div class="lg:col-span-6 space-y-6">
-          <span class="text-xs uppercase tracking-[0.2em] font-semibold text-[#b7802c]">Philosophy & Heritage</span>
+          <span class="text-xs uppercase tracking-[0.2em] font-semibold text-[#b7802c]">Our Philosophy</span>
           <h2 class="text-3xl sm:text-4xl font-serif text-[#28221C]">
             Crafted with Artistry, Powered by Care
           </h2>
@@ -135,8 +135,8 @@ const breadcrumbs = [{ name: 'About Us', url: '/about/' }];
 
         <div class="bg-[#FFFCF6] p-6 rounded-2xl border border-[#eeda9b] space-y-2">
           <div class="text-[#b7802c] font-serif text-2xl font-bold">04</div>
-          <h3 class="font-serif text-lg text-[#28221C]">Seematti Heritage</h3>
-          <p class="text-xs text-[#6C5D4F] leading-relaxed">Backed by the trusted legacy of Seematti, synonymous with South Indian grace, couture, and bridal excellence.</p>
+          <h3 class="font-serif text-lg text-[#28221C]">Complete Salon Care</h3>
+          <p class="text-xs text-[#6C5D4F] leading-relaxed">Hair, beauty, nail, wellness, and bridal services with personalised care for every visit.</p>
         </div>
       </div>
 
@@ -151,7 +151,7 @@ const breadcrumbs = [{ name: 'About Us', url: '/about/' }];
     ]} tinted />
   <FAQSection title="A Place for Your Questions." items={[
     { question: 'Is S For Swag a unisex salon?', answer: 'Yes. S For Swag offers beauty, hair, nail and wellness services for men and women. Browse the menus for individual service options.' },
-    { question: 'How is S For Swag connected to Seematti?', answer: 'S For Swag is the Salon, located opposite Seematti on Mahatma Gandhi Road in Kochi.' },
+    { question: 'Where is S For Swag located?', answer: `${siteConfig.legalName} is at ${siteConfig.address.full}.` },
     { question: 'Can I visit for a consultation first?', answer: 'Contact reception with your interests and preferred time so the team can confirm the right consultation arrangement.' },
   ]} />
 </BaseLayout>

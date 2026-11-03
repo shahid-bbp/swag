@@ -1,4 +1,4 @@
-# S For Swag — The Salon by Seematti
+# S For Swag — The Premium Unisex Salon
 
 > **Your Beauty. Your Style. Your Swag.**  
 > A premium, fully responsive, SEO-optimized static website for **S For Swag**, a luxury unisex salon and bridal beauty destination located opposite Seematti on Mahatma Gandhi Road, Kochi, Kerala, India.
@@ -23,7 +23,7 @@ All 23 required routes are statically pre-rendered with descriptive, lowercase U
 | Route | Page Title / Description |
 | :--- | :--- |
 | `/` | Homepage (Editorial Hero, About Us, 5 Service Arches, Experience Workflow, Bridal Banner, Contact) |
-| `/about/` | Brand story, philosophy, interior ambiance, Seematti heritage, and core pillars |
+| `/about/` | Brand story, philosophy, interior ambiance, salon care, and core pillars |
 | `/services/` | Master salon directory with category cards and brochure pricing policy |
 | `/beauty-lounge/` | Skincare, facials, waxing, grooming, and manicure/pedicure overview |
 | `/beauty-lounge/manicure/` | Express, Classic Spa, Advanced, and Signature Manicure pricing |
@@ -40,7 +40,7 @@ All 23 required routes are statically pre-rendered with descriptive, lowercase U
 | `/hair-artistry-spa/hair-transformation/` | Botox (₹8,500), Cysteine, Nanoplasty, smoothing, and Fusio Dose rituals |
 | `/body-wellness-spa/` | Body wellness spa overview and therapeutic massage menu |
 | `/body-wellness-spa/body-massage/` | Aroma Bliss, Swedish, Deep Tissue (60/90 mins), Foot reflexology, Head massage |
-| `/bridal/` | Master bridal studio destination by Seematti |
+| `/bridal/` | Master bridal studio destination at S For Swag |
 | `/bridal/packages/` | Silver Bride (₹25,999), Gold Bride (₹45,999), Platinum Bride (₹65,999) matrix |
 | `/bridal/makeup-and-hair/` | Traditional/HD makeup (₹15,000++), Airbrush (₹25,000++), bridal hairstyles |
 | `/bridal/draping/` | Regular & bridal saree draping, Kerala Set Saree draping, veil setting |
@@ -111,7 +111,7 @@ npm run preview
 3. Vercel automatically detects Astro. Confirm the build command `astro build` and output directory `dist`.
 4. Add environment variables under **Project Settings > Environment Variables**:
    - `FORMSPREE_ENDPOINT`: `https://formspree.io/f/<your-id>`
-   - `PUBLIC_SITE_URL`: `https://sforswag.com`
+   - `PUBLIC_SITE_URL`: `https://sforswagsalon.com`
 5. Click **Deploy**.
 
 ### Deploying to Cloudflare Pages
@@ -127,7 +127,7 @@ npm run preview
 
 ## 6. Official Salon Information (Source of Truth)
 
-- **Brand**: S For Swag — The Salon by Seematti
+- **Brand**: S For Swag — The Premium Unisex Salon
 - **Tagline**: Your Beauty. Your Style. Your Swag.
 - **Telephone**: `+91 90610 77722`
 - **Email**: `sforswagsalon@gmail.com`

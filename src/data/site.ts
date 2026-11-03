@@ -39,7 +39,7 @@ export const siteConfig: SiteConfig = {
   legalName: "S For Swag — The Premium Unisex Salon",
   tagline: "Your Beauty. Your Style. Your Swag.",
   subtitle: "More Than Just a Salon — It's a Beautiful Experience",
-  byLine: "BY SEEMATTI",
+  byLine: "The Premium Unisex Salon",
   description:
     "S For Swag is a luxury unisex salon and bridal beauty destination on MG Road, Kochi, Kerala. Offering bespoke hair artistry, couture bridal styling, skin care, nail art, and therapeutic body wellness.",
   phone: "+919061077722",
@@ -79,7 +79,7 @@ export const siteConfig: SiteConfig = {
     "Operating hours to be confirmed with appointment booking. Early morning bridal appointments available on request.",
   pricingDisclaimer:
     "Services and treatments are customised based on individual requirements, hair length, texture, and service complexity. Details and care plans are confirmed with our specialists during consultation prior to your service. GST, if applicable, may be charged separately.",
-  siteUrl: "https://sforswag.com",
+  siteUrl: "https://sforswagsalon.com",
 };
 
 export const navLinks = [

@@ -4,7 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { siteConfig } from '../data/site';
 
 const seo = {
-  title: "Privacy Policy | S For Swag The Salon Kochi",
+  title: `Privacy Policy | ${siteConfig.legalName} Kochi`,
   description: "Privacy Policy for S For Swag Salon, Kochi. Learn how we handle appointment enquiries, contact information, and guest communications.",
   canonical: `${siteConfig.siteUrl}/privacy-policy/`,
 };
@@ -18,7 +18,7 @@ const breadcrumbs = [{ name: 'Privacy Policy', url: '/privacy-policy/' }];
       <Breadcrumbs items={breadcrumbs} class="mb-5 sm:mb-6" />
       <span class="text-xs uppercase tracking-[0.24em] text-[#75451d] font-semibold">Legal & Transparency</span>
       <h1 class="text-4xl sm:text-5xl font-serif text-[#28221C] mt-2">Privacy Policy</h1>
-      <p class="text-xs text-[#8E7864] mt-2">Last Updated: October 2026 &bull; S For Swag — The Salon by Seematti</p>
+      <p class="text-xs text-[#8E7864] mt-2">Last Updated: October 2026 &bull; {siteConfig.legalName}</p>
     </div>
   </section>
 
