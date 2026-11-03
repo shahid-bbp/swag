@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { siteConfig } from '../data/site';
+
+const seo = {
+  title: "Terms and Conditions | S For Swag The Salon Kochi",
+  description: "Terms and Conditions for S For Swag Salon, Kochi, covering service pricing, bridal packages, customization, travel expenses, and GST.",
+  canonical: `${siteConfig.siteUrl}/terms-and-conditions/`,
+};
+
+const breadcrumbs = [{ name: 'Terms and Conditions', url: '/terms-and-conditions/' }];
+---
+
+<BaseLayout seo={seo}>
+  <section class="py-12 sm:py-18 bg-[#F5ECDB] border-b border-[#eeda9b]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-8">
+      <Breadcrumbs items={breadcrumbs} class="mb-5 sm:mb-6" />
+      <span class="text-xs uppercase tracking-[0.24em] text-[#75451d] font-semibold">Legal & Transparency</span>
+      <h1 class="text-4xl sm:text-5xl font-serif text-[#28221C] mt-2">Terms and Conditions</h1>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#F7F0E4]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-8 text-sm text-[#5C4D3E] leading-relaxed">
+      <ul class="list-disc space-y-4 pl-5">
+        <li>Prices are in Indian Rupees (₹).</li>
+        <li>All prices mentioned are starting prices and may vary based on individual requirements, hair length, density, and service complexity. Final pricing will be confirmed prior to the service.</li>
+        <li>Bridal packages are customized after consultation and are subject to appointment availability.</li>
+        <li>Makeup, hairstyle, saree draping and accessories can be customized according to the bride's look and functions.</li>
+        <li>Travel Expenses will be additional if outside city limits based on the location.</li>
+        <li>GST, if applicable, may be charged separately.</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
